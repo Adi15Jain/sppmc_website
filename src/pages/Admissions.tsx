@@ -85,10 +85,10 @@ export default function Admissions() {
                                 key={item.label}
                                 className="card border-l-4 border-primary"
                             >
-                                <p className="text-sm text-slate-500">
+                                <p className="text-sm text-body">
                                     {item.label}
                                 </p>
-                                <p className="mt-1 text-lg font-semibold text-slate-900">
+                                <p className="mt-1 text-lg font-semibold text-heading">
                                     {item.value}
                                 </p>
                             </div>
@@ -127,7 +127,7 @@ export default function Admissions() {
                                 <h3 className="text-lg font-semibold">
                                     {program.title}
                                 </h3>
-                                <ul className="mt-4 space-y-3 text-slate-600">
+                                <ul className="mt-4 space-y-3 text-body">
                                     {program.points.map((p) => (
                                         <li
                                             key={p}
@@ -171,10 +171,10 @@ export default function Admissions() {
 
                                 {/* Content */}
                                 <div className="card flex-1 animate-fade-up">
-                                    <h3 className="font-semibold text-slate-900">
+                                    <h3 className="font-semibold text-heading">
                                         {step.title}
                                     </h3>
-                                    <p className="mt-2 text-slate-600">
+                                    <p className="mt-2 text-body">
                                         {step.description}
                                     </p>
                                 </div>
@@ -201,11 +201,8 @@ export default function Admissions() {
                             "Passport-size photographs",
                             "Government-issued ID proof",
                         ].map((doc) => (
-                            <div
-                                key={doc}
-                                className="card text-sm text-slate-700"
-                            >
-                                <div className="card flex items-center gap-3">
+                            <div key={doc} className="card text-sm text-body">
+                                <div className="flex items-center gap-3">
                                     <span className="h-2 w-2 rounded-full bg-primary" />
                                     <span>{doc}</span>
                                 </div>

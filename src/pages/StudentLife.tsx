@@ -32,9 +32,9 @@ export default function StudentLife() {
             />
 
             {/* Facilities */}
-            <section className="py-20 animate-[var(--animate-fade-up)]">
+            <section className="section animate-[var(--animate-fade-up)]">
                 <Container>
-                    <h2 className="text-2xl font-semibold text-slate-900">
+                    <h2 className="text-2xl font-semibold text-heading">
                         Campus Facilities
                     </h2>
 
@@ -42,7 +42,7 @@ export default function StudentLife() {
                         {FACILITIES.map((item) => (
                             <li
                                 key={item}
-                                className="rounded-lg border bg-white p-4 text-sm text-slate-700"
+                                className="rounded-lg border bg-white p-4 text-sm text-body card"
                             >
                                 {item}
                             </li>
@@ -52,9 +52,9 @@ export default function StudentLife() {
             </section>
 
             {/* Activities */}
-            <section className="bg-slate-50 py-20 animate-[var(--animate-fade-up)]">
+            <section className="section section-soft py-20 animate-[var(--animate-fade-up)]">
                 <Container>
-                    <h2 className="text-2xl font-semibold text-slate-900">
+                    <h2 className="text-2xl font-semibold text-heading">
                         Student Activities
                     </h2>
 
@@ -62,7 +62,7 @@ export default function StudentLife() {
                         {ACTIVITIES.map((item) => (
                             <li
                                 key={item}
-                                className="rounded-lg border bg-white p-4 text-sm text-slate-700"
+                                className="rounded-lg border bg-white p-4 text-sm text-body card"
                             >
                                 {item}
                             </li>
@@ -72,9 +72,9 @@ export default function StudentLife() {
             </section>
 
             {/* Support */}
-            <section className="py-20 animate-[var(--animate-fade-up)]">
+            <section className="section animate-[var(--animate-fade-up)]">
                 <Container>
-                    <h2 className="text-2xl font-semibold text-slate-900">
+                    <h2 className="text-2xl font-semibold text-heading">
                         Student Support Services
                     </h2>
 
@@ -82,7 +82,7 @@ export default function StudentLife() {
                         {SUPPORT.map((item) => (
                             <li
                                 key={item}
-                                className="rounded-lg border bg-white p-4 text-sm text-slate-700"
+                                className="rounded-lg border bg-white p-4 text-sm text-body card"
                             >
                                 {item}
                             </li>

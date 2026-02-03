@@ -131,7 +131,7 @@ export default function Academics() {
                                     <p className="mt-1 text-sm text-slate-500">
                                         Duration: {program.duration}
                                     </p>
-                                    <p className="mt-3 text-slate-600 leading-relaxed">
+                                    <p className="mt-3 text-body leading-relaxed">
                                         {program.description}
                                     </p>
                                 </div>
@@ -149,7 +149,7 @@ export default function Academics() {
                             <h2 className="text-2xl font-semibold">
                                 Academic Framework
                             </h2>
-                            <p className="mt-4 text-slate-600 leading-relaxed">
+                            <p className="mt-4 text-body leading-relaxed">
                                 The academic framework is designed in accordance
                                 with SCERT and Government of Uttar Pradesh
                                 guidelines, integrating theory, practice,
@@ -186,7 +186,7 @@ export default function Academics() {
                         ].map((outcome) => (
                             <div
                                 key={outcome}
-                                className="card animate-fade-up text-slate-700"
+                                className="card animate-fade-up text-body"
                             >
                                 {outcome}
                             </div>
@@ -211,7 +211,7 @@ export default function Academics() {
                         ].map((method) => (
                             <div
                                 key={method}
-                                className="card text-sm text-slate-700 animate-fade-up"
+                                className="card text-sm text-body animate-fade-up"
                             >
                                 {method}
                             </div>

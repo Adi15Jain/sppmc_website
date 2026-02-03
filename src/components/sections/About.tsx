@@ -2,22 +2,25 @@ import Container from "../layout/Container";
 
 export default function About() {
     return (
-        <section id="about" className="py-20 animate-[var(--animate-fade-up)]">
+        <section
+            id="about"
+            className="section animate-[var(--animate-fade-up)]"
+        >
             <Container>
                 <div className="grid gap-12 md:grid-cols-2 md:items-center">
                     <div>
-                        <h2 className="text-3xl font-semibold text-slate-900">
+                        <h2 className="text-3xl font-semibold text-heading">
                             About the College
                         </h2>
 
-                        <p className="mt-4 text-slate-600 leading-relaxed">
+                        <p className="mt-4 text-body leading-relaxed">
                             Shri Prem Prakash Memorial College is committed to
                             nurture, motivate, and empower future teachers who
                             will serve as beacons of excellence in education and
                             society.
                         </p>
 
-                        <p className="mt-4 text-slate-600 leading-relaxed">
+                        <p className="mt-4 text-body leading-relaxed">
                             The institution focuses on academic rigor, ethical
                             values, and holistic development to meet the demands
                             of a globalized world.
@@ -40,12 +43,12 @@ export default function About() {
                         ].map((item) => (
                             <div
                                 key={item.title}
-                                className="rounded-lg border bg-white p-6 shadow-sm"
+                                className="rounded-lg border bg-white p-6 shadow-sm card"
                             >
-                                <p className="text-sm text-slate-500">
+                                <p className="text-sm text-body">
                                     {item.title}
                                 </p>
-                                <p className="mt-2 text-xl font-semibold text-slate-900">
+                                <p className="mt-2 text-xl font-semibold text-heading">
                                     {item.value}
                                 </p>
                             </div>

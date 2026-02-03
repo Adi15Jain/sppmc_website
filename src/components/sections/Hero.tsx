@@ -33,11 +33,11 @@ function HeroImageCarousel() {
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden bg-slate-50 animate-[var(--animate-fade-up)]">
+        <section className="relative overflow-hidden bg-section-soft animate-[var(--animate-fade-up)]">
             <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 py-20 md:grid-cols-2 md:items-center">
                 {/* Text */}
                 <div>
-                    <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-slate-900">
+                    <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-heading">
                         Building Future Educators with
                         <span className="text-primary">
                             {" "}
@@ -45,7 +45,7 @@ export default function Hero() {
                         </span>
                     </h2>
 
-                    <p className="mt-6 text-lg text-slate-600 animate-[var(--animate-fade-up)]">
+                    <p className="mt-6 text-lg text-body animate-[var(--animate-fade-up)]">
                         Shri Prem Prakash Memorial College is committed to
                         nurturing, motivating, and empowering future teachers to
                         meet the challenges of a globalized education system.
@@ -60,7 +60,7 @@ export default function Hero() {
                         </a>
                         <a
                             href="#about"
-                            className="rounded-md border border-slate-300 px-6 py-3 text-sm font-medium text-slate-700 hover:bg-slate-100"
+                            className="rounded-md border border-slate-300 px-6 py-3 text-sm font-medium text-body hover:bg-slate-100"
                         >
                             About the College
                         </a>
