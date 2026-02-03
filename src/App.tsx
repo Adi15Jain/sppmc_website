@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -8,13 +7,12 @@ import Admissions from "./pages/Admissions";
 import StudentLife from "./pages/StudentLife";
 import Gallery from "./pages/Gallery";
 import Downloads from "./pages/ Downloads";
-import Header from "./components/layout/Header";
+import SiteChrome from "./components/layout/SiteChrome";
 
 export default function App() {
     return (
         <BrowserRouter>
-            <Header />
-            <Navbar />
+            <SiteChrome />
 
             <Routes>
                 <Route path="/" element={<Home />} />

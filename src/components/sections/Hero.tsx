@@ -1,76 +1,66 @@
-import { useEffect, useState } from "react";
-
-const IMAGES = [
-    "/images/campus-1.png",
-    "/images/classroom.jpeg",
-    "/images/library.jpeg",
-    "/images/event.jpeg",
-    "/images/seminar.jpeg",
-    "/images/activity.png",
-];
-
-function HeroImageCarousel() {
-    const [current, setCurrent] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % IMAGES.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
-
-    return (
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
-            <img
-                key={IMAGES[current]}
-                src={IMAGES[current]}
-                alt=""
-                className="h-full w-full object-cover transition-opacity duration-700 ease-in-out"
-            />
-        </div>
-    );
-}
+import Container from "../layout/Container";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden bg-section-soft animate-[var(--animate-fade-up)]">
-            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 py-20 md:grid-cols-2 md:items-center">
-                {/* Text */}
-                <div>
-                    <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-heading">
-                        Building Future Educators with
-                        <span className="text-primary">
-                            {" "}
-                            Purpose & Integrity
-                        </span>
-                    </h2>
+        <section
+            className="
+                relative
+                h-screen
+                min-h-[100vh]
+                w-full
+                overflow-hidden
+            "
+        >
+            {/* Background image */}
+            <div className="absolute inset-0">
+                <img
+                    src="/images/campus-3.jpg"
+                    alt="Shri Prem Prakash Memorial College Campus"
+                    className="h-full w-full object-cover"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-[var(--color-primary)]/75" />
+            </div>
 
-                    <p className="mt-6 text-lg text-body animate-[var(--animate-fade-up)]">
-                        Shri Prem Prakash Memorial College is committed to
-                        nurturing, motivating, and empowering future teachers to
-                        meet the challenges of a globalized education system.
-                    </p>
+            {/* Content */}
+            <div className="relative z-10 flex h-full items-center">
+                <Container>
+                    <div className="max-w-3xl pt-32 md:pt-40 animate-fade-up">
+                        <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-white">
+                            Building Future Educators with
+                            <span className="text-[var(--color-accent)]">
+                                {" "}
+                                Purpose & Integrity
+                            </span>
+                        </h1>
 
-                    <div className="mt-8 flex gap-4">
-                        <a
-                            href="#academics"
-                            className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-white hover:opacity-90"
-                        >
-                            Explore Academics
-                        </a>
-                        <a
-                            href="#about"
-                            className="rounded-md border border-slate-300 px-6 py-3 text-sm font-medium text-body hover:bg-slate-100"
-                        >
-                            About the College
-                        </a>
+                        <p className="mt-6 text-lg text-white/90 leading-relaxed">
+                            Shri Prem Prakash Memorial College is committed to
+                            nurturing, motivating, and empowering future
+                            teachers to meet the challenges of a globalized
+                            education system.
+                        </p>
+
+                        <div className="mt-10 flex flex-wrap gap-4">
+                            <a href="#academics" className="btn-primary">
+                                Explore Academics
+                            </a>
+
+                            <a
+                                href="#about"
+                                className="
+                                    btn-secondary
+                                    border-white
+                                    text-white
+                                    hover:bg-white
+                                    hover:text-[var(--color-primary)]
+                                "
+                            >
+                                About the College
+                            </a>
+                        </div>
                     </div>
-                </div>
-
-                {/* Visual */}
-                <div className="relative h-full w-full">
-                    <HeroImageCarousel />
-                </div>
+                </Container>
             </div>
         </section>
     );
