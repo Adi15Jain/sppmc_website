@@ -21,14 +21,18 @@ export default function Navbar({ onMenuOpen, onSearchOpen }: NavbarProps) {
                 <div className="flex items-center justify-between py-4">
                     {/* Brand */}
                     <div className="flex items-center gap-3">
-                        <img
-                            src="/logo.png"
-                            alt="College Logo"
-                            className="h-12 w-12 object-contain"
-                        />
-                        <span className="text-lg font-semibold text-[var(--color-text-primary)]">
-                            Shri Prem Prakash Memorial College
-                        </span>
+                        <a href="/">
+                            <img
+                                src="/logo.png"
+                                alt="College Logo"
+                                className="h-12 w-12 object-contain"
+                            />
+                        </a>
+                        <a href="/">
+                            <span className="text-lg font-semibold text-[var(--color-text-primary)]">
+                                Shri Prem Prakash Memorial College
+                            </span>
+                        </a>
                     </div>
 
                     {/* Actions */}
