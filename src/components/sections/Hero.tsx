@@ -66,7 +66,7 @@ export default function Hero() {
             {/* Content */}
             <div className="relative z-10 flex h-full items-center">
                 <Container>
-                    <div className="max-w-3xl pt-32 md:pt-40 animate-fade-up">
+                    <div className="max-w-3xl animate-fade-up">
                         {/* Badge */}
                         <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 glass rounded-full text-white/90 text-sm font-medium animate-fade-in">
                             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />

@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import FullscreenMenu from "./FullscreenMenu";
+import SearchModal from "./SearchModal";
 
 export default function SiteChrome() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [searchOpen, setSearchOpen] = useState(false);
 
     useEffect(() => {
         const onScroll = () => {
@@ -39,6 +41,7 @@ export default function SiteChrome() {
                     <Navbar
                         scrolled={scrolled}
                         onMenuOpen={() => setMenuOpen(true)}
+                        onSearchOpen={() => setSearchOpen(true)}
                     />
                 </div>
             </div>
@@ -47,6 +50,12 @@ export default function SiteChrome() {
             <FullscreenMenu
                 open={menuOpen}
                 onClose={() => setMenuOpen(false)}
+            />
+
+            {/* Search modal */}
+            <SearchModal
+                open={searchOpen}
+                onClose={() => setSearchOpen(false)}
             />
         </>
     );
