@@ -12,7 +12,7 @@ export default function About() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-slate-900/40" />
 
-                <div className="relative z-10 flex h-full items-center">
+                <div className="relative z-10 flex h-full items-center pt-[112px]">
                     <Container>
                         <div className="max-w-3xl animate-slide-in-left">
                             <h1 className="text-4xl md:text-6xl font-bold text-white text-gradient mb-2">
@@ -38,7 +38,7 @@ export default function About() {
             </section>
 
             {/* Institution Overview */}
-            <section className="section">
+            <section id="story" className="section">
                 <Container>
                     <div className="grid gap-12 md:grid-cols-2 md:items-center">
                         {/* Text */}
@@ -75,7 +75,7 @@ export default function About() {
             </section>
 
             {/* Vision & Mission */}
-            <section className="section section-soft">
+            <section id="vision" className="section section-soft">
                 <Container>
                     <div className="text-center mb-12 animate-fade-up">
                         <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4">
@@ -140,7 +140,7 @@ export default function About() {
             </section>
 
             {/* Leadership */}
-            <section className="section">
+            <section id="principal" className="section">
                 <Container>
                     <div className="grid gap-12 md:grid-cols-3 md:items-center">
                         {/* Image */}
@@ -175,7 +175,7 @@ export default function About() {
             </section>
 
             {/* Infrastructure */}
-            <section className="section section-warm">
+            <section id="faculty" className="section section-warm">
                 <Container>
                     <h3 className="text-2xl font-semibold animate-fade-up">
                         Infrastructure & Facilities

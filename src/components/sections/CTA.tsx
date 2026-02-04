@@ -40,10 +40,7 @@ export default function CTA() {
                         educator with structured programs and experienced
                         faculty.
                     </p>
-                    <a
-                        href="/admissions"
-                        className="mt-8 btn-primary text-lg px-8 py-4"
-                    >
+                    <a href="/admissions" className="mt-6 btn-primary">
                         Apply Now
                     </a>
                 </div>

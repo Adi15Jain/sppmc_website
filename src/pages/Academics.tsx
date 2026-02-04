@@ -75,7 +75,7 @@ export default function Academics() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-slate-900/40" />
 
-                <div className="relative z-10 flex h-full items-center">
+                <div className="relative z-10 flex h-full items-center pt-[112px]">
                     <Container>
                         <div className="max-w-3xl animate-slide-in-left">
                             <h1 className="text-4xl md:text-6xl font-bold text-white text-gradient mb-2">
@@ -104,7 +104,7 @@ export default function Academics() {
             </section>
 
             {/* PROGRAMS */}
-            <section className="section">
+            <section id="bed" className="section">
                 <Container>
                     <h2 className="text-2xl font-semibold animate-fade-up">
                         Programs Offered
@@ -142,7 +142,7 @@ export default function Academics() {
             </section>
 
             {/* ACADEMIC FRAMEWORK */}
-            <section className="section section-soft">
+            <section id="curriculum" className="section section-soft">
                 <Container>
                     <div className="grid gap-12 md:grid-cols-2 md:items-center">
                         <div className="animate-fade-up">

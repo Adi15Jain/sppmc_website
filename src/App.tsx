@@ -8,10 +8,12 @@ import StudentLife from "./pages/StudentLife";
 import Gallery from "./pages/Gallery";
 import Downloads from "./pages/ Downloads";
 import SiteChrome from "./components/layout/SiteChrome";
+import ScrollToHash from "./components/ScrollToHash";
 
 export default function App() {
     return (
         <BrowserRouter>
+            <ScrollToHash />
             <SiteChrome />
 
             <Routes>

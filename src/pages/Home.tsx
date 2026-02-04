@@ -1,5 +1,4 @@
 import Hero from "../components/sections/Hero";
-import Trust from "../components/sections/Trust";
 import About from "../components/sections/About";
 import Academics from "../components/sections/Academics";
 import StudentLife from "../components/sections/StudentLife";
@@ -9,7 +8,7 @@ export default function Home() {
     return (
         <>
             <Hero />
-            <Trust />
+            {/* <Trust /> */}
             <About />
             <Academics />
             <StudentLife />

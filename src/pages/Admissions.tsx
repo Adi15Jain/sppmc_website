@@ -41,7 +41,7 @@ export default function Admissions() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-hover animate-fade-in"></div>
                 <div className="absolute inset-0 bg-[url('/images/academics.jpg')] bg-cover bg-center opacity-10"></div>
 
-                <div className="relative z-10 flex h-full items-center">
+                <div className="relative z-10 flex h-full items-center pt-[112px]">
                     <Container>
                         <div className="max-w-4xl animate-slide-in-left">
                             <h1 className="text-4xl md:text-6xl font-bold text-white text-gradient mb-2">
@@ -98,7 +98,7 @@ export default function Admissions() {
             </section>
 
             {/* ELIGIBILITY */}
-            <section className="section">
+            <section id="eligibility" className="section">
                 <Container>
                     <h2 className="text-2xl py-2 font-semibold animate-fade-up">
                         Eligibility Criteria
@@ -145,7 +145,7 @@ export default function Admissions() {
             </section>
 
             {/* PROCESS TIMELINE */}
-            <section className="section section-soft">
+            <section id="process" className="section section-soft">
                 <Container>
                     <h2 className="text-2xl font-semibold animate-fade-up">
                         Admission Process
@@ -213,7 +213,10 @@ export default function Admissions() {
             </section>
 
             {/* IMPORTANT NOTES */}
-            <section className="section bg-primary text-white animate-fade-up">
+            <section
+                id="apply"
+                className="section bg-primary text-white animate-fade-up"
+            >
                 <Container>
                     <div className="text-center animate-fade-up">
                         <h2 className="text-3xl font-semibold">
