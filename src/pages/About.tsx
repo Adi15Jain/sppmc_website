@@ -4,7 +4,7 @@ export default function About() {
     return (
         <main>
             {/* About Hero */}
-            <section className="relative h-[60vh] overflow-hidden">
+            <section className="relative h-[100vh] overflow-hidden">
                 <img
                     src="/images/campus-1.png"
                     alt="College Campus"

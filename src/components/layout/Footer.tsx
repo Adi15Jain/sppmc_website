@@ -109,17 +109,6 @@ export default function Footer() {
                         © {new Date().getFullYear()} Shri Prem Prakash Memorial
                         College. All rights reserved.
                     </p>
-                    <div className="flex items-center gap-1">
-                        <span>Part of</span>
-                        <a
-                            href="https://www.tmu.ac.in/"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-accent hover:underline font-medium"
-                        >
-                            TMU Group
-                        </a>
-                    </div>
                 </div>
             </Container>
         </footer>

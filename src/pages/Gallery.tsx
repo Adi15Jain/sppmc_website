@@ -21,7 +21,7 @@ export default function Gallery() {
     const [activeImage, setActiveImage] = useState<GalleryImage | null>(null);
 
     return (
-        <main>
+        <main className="pt-20">
             {/* Page hero */}
             <PageHero
                 title="Gallery"

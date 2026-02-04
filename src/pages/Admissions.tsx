@@ -37,7 +37,7 @@ export default function Admissions() {
     return (
         <main>
             {/* HERO */}
-            <section className="relative h-[60vh] overflow-hidden">
+            <section className="relative h-[100vh] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-hover animate-fade-in"></div>
                 <div className="absolute inset-0 bg-[url('/images/academics.jpg')] bg-cover bg-center opacity-10"></div>
 

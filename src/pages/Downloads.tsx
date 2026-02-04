@@ -35,7 +35,7 @@ function DocumentSection({
     items: DocumentItem[];
 }) {
     return (
-        <section className="py-12">
+        <section className="py-6">
             <h2 className="text-xl font-semibold text-slate-900 animate-[var(--animate-fade-up)]">
                 {title}
             </h2>
