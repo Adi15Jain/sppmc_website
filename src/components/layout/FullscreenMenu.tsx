@@ -32,7 +32,7 @@ const PRIMARY_LINKS: PrimaryLink[] = [
         ],
     },
     {
-        label: "Academics",
+        label: "Programmes",
         to: "/academics",
         sublinks: [
             { label: "B.Ed Program", to: "/academics#bed" },
@@ -116,7 +116,14 @@ export default function FullscreenMenu({ open, onClose }: Props) {
                     <Container>
                         <div className="flex items-center justify-between py-4">
                             <span className="text-base font-semibold tracking-wide text-white">
-                                Navigation
+                                <a href="/">
+                                    <img
+                                        src="/logo.png"
+                                        alt="Sppmc logo"
+                                        width={40}
+                                        height={40}
+                                    />
+                                </a>
                             </span>
                             <button
                                 onClick={onClose}

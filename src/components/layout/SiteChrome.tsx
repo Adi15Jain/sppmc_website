@@ -20,15 +20,6 @@ export default function SiteChrome() {
 
     return (
         <>
-            {/* Spacer – occupies layout space */}
-            <div
-                className={`
-                    h-[112px]
-                    transition-all duration-300
-                    ${scrolled ? "h-[64px]" : "h-[112px]"}
-                `}
-            />
-
             {/* Fixed chrome */}
             <div className="fixed top-0 left-0 right-0 z-40">
                 <div
@@ -37,7 +28,7 @@ export default function SiteChrome() {
                         ${scrolled ? "-translate-y-[48px]" : "translate-y-0"}
                     `}
                 >
-                    <Header />
+                    <Header scrolled={scrolled} />
                     <Navbar
                         scrolled={scrolled}
                         onMenuOpen={() => setMenuOpen(true)}

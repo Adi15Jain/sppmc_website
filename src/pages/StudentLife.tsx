@@ -10,28 +10,24 @@ const FACILITIES = [
         title: "Smart Classrooms",
         description:
             "ICT-enabled rooms with projectors and digital boards for interactive learning",
-        icon: "🎓",
         image: "/images/campus-facilities.png",
     },
     {
         title: "Digital Library",
         description:
             "Extensive collection of books, journals, and e-resources for research",
-        icon: "📚",
         image: "/images/library.jpeg",
     },
     {
         title: "Computer Labs",
         description:
             "Modern computer facilities with high-speed internet connectivity",
-        icon: "💻",
         image: "/images/seminar.jpeg",
     },
     {
         title: "Seminar Hall",
         description:
             "Spacious auditorium for conferences, workshops, and cultural events",
-        icon: "🎤",
         image: "/images/event.jpeg",
     },
 ];
@@ -239,7 +235,7 @@ export default function StudentLife() {
                 />
 
                 {/* Content */}
-                <div className="relative z-10 flex h-full items-center">
+                <div className="relative z-10 flex h-full items-center pt-[112px]">
                     <Container>
                         <div className="max-w-4xl">
                             {/* Badge */}
@@ -264,16 +260,13 @@ export default function StudentLife() {
                             </p>
 
                             {/* CTA Buttons */}
-                            <div className="mt-10 flex flex-wrap gap-4 animate-reveal-up animate-delay-600">
-                                <a
-                                    href="#facilities"
-                                    className="btn-primary text-lg px-8 py-4"
-                                >
+                            <div className="mt-8 flex flex-wrap gap-3 animate-reveal-up animate-delay-600">
+                                <a href="#campus" className="btn-primary">
                                     Explore Campus
                                 </a>
                                 <a
                                     href="#activities"
-                                    className="btn-glass text-lg px-8 py-4 hover:border-white/40"
+                                    className="btn-glass hover:border-white/40"
                                 >
                                     View Activities
                                 </a>
@@ -318,7 +311,7 @@ export default function StudentLife() {
                 SECTION 2: CAMPUS FACILITIES
                ========================================== */}
             <section
-                id="facilities"
+                id="campus"
                 className="py-24 bg-gradient-to-b from-[#f8f9fa] to-white"
             >
                 <Container>
@@ -353,9 +346,6 @@ export default function StudentLife() {
 
                                     {/* Content */}
                                     <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                                        <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
-                                            {facility.icon}
-                                        </div>
                                         <h3 className="text-xl font-bold text-white mb-2">
                                             {facility.title}
                                         </h3>
@@ -732,17 +722,17 @@ export default function StudentLife() {
                             Join a community of passionate learners and future
                             educators. Your transformation begins here.
                         </p>
-                        <div className="flex flex-wrap justify-center gap-4">
+                        <div className="flex flex-wrap justify-center gap-3">
                             <a
                                 href="/admissions"
-                                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-lg"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-primary font-semibold rounded-lg hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-lg text-sm"
                             >
                                 Apply Now
-                                <span className="text-xl">→</span>
+                                <span>→</span>
                             </a>
                             <a
                                 href="/about"
-                                className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 bg-transparent border border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 text-sm"
                             >
                                 Learn More
                             </a>
