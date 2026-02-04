@@ -1,11 +1,15 @@
 import { Search, X, ArrowRight, Clock, TrendingUp } from "lucide-react";
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { search, SearchResult, getSuggestions } from "../../utils/searchEngine";
+import {
+    search,
+    type SearchResult,
+    getSuggestions,
+} from "../../utils/searchEngine";
 import {
     CATEGORY_LABELS,
     CATEGORY_COLORS,
-    SearchCategory,
+    type SearchCategory,
 } from "../../data/searchData";
 
 type Props = {
