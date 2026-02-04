@@ -19,24 +19,28 @@ const LIFE_PILLARS = [
         title: "Infrastructure",
         description: "Smart classrooms, digital library, and modern ICT labs.",
         gradient: "from-blue-500 to-indigo-600",
+        image: "/images/library.jpeg",
     },
     {
         icon: Palette,
         title: "Cultural Life",
         description: "Annual festivals, talent shows, and creative workshops.",
         gradient: "from-purple-500 to-pink-500",
+        image: "/images/event.jpeg",
     },
     {
         icon: BookOpen,
         title: "Teaching Practice",
         description: "School internships and hands-on classroom training.",
         gradient: "from-orange-500 to-amber-500",
+        image: "/images/classroom.jpeg",
     },
     {
         icon: Users,
         title: "Community",
         description: "NSS activities, outreach programs, and ethical values.",
         gradient: "from-emerald-500 to-teal-500",
+        image: "/images/seminar.jpeg",
     },
 ];
 
@@ -253,10 +257,10 @@ export default function StudentLife() {
 
             <Container>
                 <div className="relative z-10">
-                    {/* Two Column Layout - matches About section */}
-                    <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+                    {/* Two Column Layout - left-aligned cards */}
+                    <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-12">
                         {/* Left: Header Content */}
-                        <div>
+                        <div className="lg:sticky lg:top-32">
                             <div className="sl-badge inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary bg-primary/5 rounded-full border border-primary/10 mb-6">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
@@ -283,7 +287,7 @@ export default function StudentLife() {
                                 </span>
                             </h2>
 
-                            <p className="sl-body text-lg md:text-xl text-slate-600 leading-relaxed mb-6">
+                            <p className="sl-body text-base text-slate-600 leading-relaxed mb-6">
                                 Education at SPPMC extends far beyond textbooks.
                                 Our vibrant campus nurtures well-rounded
                                 educators through cultural activities, community
@@ -326,38 +330,53 @@ export default function StudentLife() {
                             </a>
                         </div>
 
-                        {/* Right: Compact Cards Grid */}
+                        {/* Right: Cards Grid with Background Images */}
                         <div className="pillars-grid grid grid-cols-2 gap-4">
                             {LIFE_PILLARS.map((pillar) => (
                                 <div
                                     key={pillar.title}
-                                    className="pillar-card group relative p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+                                    className="pillar-card group relative h-48 md:h-56 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
                                     style={{ transformStyle: "preserve-3d" }}
                                 >
-                                    {/* Top accent on hover */}
+                                    {/* Background Image */}
+                                    <img
+                                        src={pillar.image}
+                                        alt={pillar.title}
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+
+                                    {/* Gradient Overlay */}
+                                    <div
+                                        className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300`}
+                                    />
+
+                                    {/* Top accent line */}
                                     <div
                                         className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${pillar.gradient} transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
                                     />
 
-                                    {/* Icon */}
-                                    <div
-                                        className={`pillar-icon inline-flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br ${pillar.gradient} text-white mb-3 shadow-lg group-hover:scale-110 transition-transform duration-300`}
-                                    >
-                                        <pillar.icon
-                                            size={20}
-                                            strokeWidth={2}
-                                        />
+                                    {/* Content */}
+                                    <div className="absolute inset-0 flex flex-col justify-end p-5">
+                                        {/* Icon */}
+                                        <div
+                                            className={`pillar-icon inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br ${pillar.gradient} text-white mb-3 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                                        >
+                                            <pillar.icon
+                                                size={18}
+                                                strokeWidth={2}
+                                            />
+                                        </div>
+
+                                        {/* Title */}
+                                        <h3 className="text-lg font-bold text-white mb-1 drop-shadow-md">
+                                            {pillar.title}
+                                        </h3>
+
+                                        {/* Description */}
+                                        <p className="text-sm text-white/80 leading-relaxed drop-shadow">
+                                            {pillar.description}
+                                        </p>
                                     </div>
-
-                                    {/* Title */}
-                                    <h3 className="text-base font-bold text-slate-900 mb-1">
-                                        {pillar.title}
-                                    </h3>
-
-                                    {/* Description */}
-                                    <p className="text-sm text-slate-500 leading-relaxed">
-                                        {pillar.description}
-                                    </p>
                                 </div>
                             ))}
                         </div>

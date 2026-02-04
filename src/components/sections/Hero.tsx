@@ -175,12 +175,12 @@ export default function Hero() {
                     alt="Shri Prem Prakash Memorial College Campus"
                     className="h-full w-full object-cover"
                 />
-                {/* Premium gradient overlay */}
+                {/* Premium lateral gradient overlay - dark left, lighter right */}
                 <div
                     className="absolute inset-0"
                     style={{
                         background:
-                            "linear-gradient(135deg, rgba(0, 16, 85, 0.92) 0%, rgba(26, 42, 108, 0.8) 50%, rgba(0, 24, 102, 0.88) 100%)",
+                            "linear-gradient(90deg, rgba(0, 16, 85, 0.95) 0%, rgba(0, 16, 85, 0.85) 35%, rgba(26, 42, 108, 0.6) 60%, rgba(26, 42, 108, 0.3) 100%)",
                     }}
                 />
                 {/* Animated gradient mesh */}
@@ -188,9 +188,9 @@ export default function Hero() {
                     className="absolute inset-0 opacity-60"
                     style={{
                         background: `
-                            radial-gradient(ellipse at 20% 30%, rgba(255, 121, 0, 0.2) 0%, transparent 50%),
-                            radial-gradient(ellipse at 80% 70%, rgba(26, 42, 108, 0.3) 0%, transparent 50%),
-                            radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%)
+                            radial-gradient(ellipse at 10% 40%, rgba(255, 121, 0, 0.15) 0%, transparent 40%),
+                            radial-gradient(ellipse at 80% 70%, rgba(26, 42, 108, 0.2) 0%, transparent 50%),
+                            radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 70%)
                         `,
                     }}
                 />
@@ -252,7 +252,7 @@ export default function Hero() {
                             </span>
                         </h1>
 
-                        <p className="hero-description mt-6 text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl">
+                        <p className="hero-description mt-6 text-base text-white/85 leading-relaxed max-w-2xl">
                             Shri Prem Prakash Memorial College is committed to
                             nurturing, motivating, and empowering future
                             teachers to meet the challenges of a globalized

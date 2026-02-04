@@ -32,7 +32,14 @@ export default function Navbar({
                             <img
                                 src="/logo.png"
                                 alt="College Logo"
-                                className="h-15 w-15 object-contain"
+                                className={`
+                                    h-15 w-15 object-contain transition-all duration-300
+                                    ${
+                                        scrolled
+                                            ? "drop-shadow-md"
+                                            : "drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]"
+                                    }
+                                `}
                             />
                         </a>
                         <a href="/">
