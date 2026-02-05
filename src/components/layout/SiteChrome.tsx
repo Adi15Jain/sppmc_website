@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Header from "./Header";
+// import Header from "./Header";
 import Navbar from "./Navbar";
 import FullscreenMenu from "./FullscreenMenu";
 import SearchModal from "./SearchModal";
