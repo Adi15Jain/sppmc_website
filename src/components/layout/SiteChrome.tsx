@@ -24,11 +24,11 @@ export default function SiteChrome() {
             <div className="fixed top-0 left-0 right-0 z-40">
                 <div
                     className={`
-                        transition-transform duration-300 ease-out
-                        ${scrolled ? "-translate-y-[48px]" : "translate-y-0"}
-                    `}
+                    transition-transform duration-300 ease-out 
+                    ${scrolled ? "-translate-y-[0px]" : "translate-y-0"}
+                `}
                 >
-                    <Header scrolled={scrolled} />
+                    {/* <Header scrolled={scrolled} /> */}
                     <Navbar
                         scrolled={scrolled}
                         onMenuOpen={() => setMenuOpen(true)}
