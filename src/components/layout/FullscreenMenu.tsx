@@ -175,32 +175,54 @@ export default function FullscreenMenu({ open, onClose }: Props) {
                                     >
                                         {link.sublinks ? (
                                             <div>
-                                                {/* Parent with sublinks */}
-                                                <button
-                                                    onClick={() =>
-                                                        toggleExpand(link.label)
-                                                    }
-                                                    className="
-                                                        w-full flex items-center justify-between
-                                                        py-3 px-4 -mx-4 rounded-lg
-                                                        text-2xl md:text-3xl font-bold text-white
-                                                        hover:bg-white/10
-                                                        transition-all duration-300
-                                                        group
-                                                    "
-                                                >
-                                                    <span className="group-hover:text-[var(--color-accent)] transition-colors">
-                                                        {link.label}
-                                                    </span>
-                                                    <ChevronDown
-                                                        size={24}
-                                                        className={`
-                                                            text-white/60 group-hover:text-[var(--color-accent)]
-                                                            transition-transform duration-300
-                                                            ${expandedItems.includes(link.label) ? "rotate-180" : ""}
+                                                {/* Parent with sublinks - split design: link + toggle button */}
+                                                <div className="flex items-center justify-between py-3 px-4 -mx-4 rounded-lg hover:bg-white/10 transition-all duration-300 group">
+                                                    {/* Main heading as a link */}
+                                                    <NavLink
+                                                        to={link.to}
+                                                        onClick={
+                                                            handleLinkClick
+                                                        }
+                                                        className={({
+                                                            isActive,
+                                                        }) => `
+                                                            text-2xl md:text-3xl font-bold
+                                                            transition-colors duration-300
+                                                            ${
+                                                                isActive
+                                                                    ? "text-[var(--color-accent)]"
+                                                                    : "text-white group-hover:text-[var(--color-accent)]"
+                                                            }
                                                         `}
-                                                    />
-                                                </button>
+                                                    >
+                                                        {link.label}
+                                                    </NavLink>
+
+                                                    {/* Separate toggle button for sublinks */}
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            toggleExpand(
+                                                                link.label,
+                                                            );
+                                                        }}
+                                                        className="
+                                                            p-2 rounded-lg
+                                                            hover:bg-white/10
+                                                            transition-all duration-300
+                                                        "
+                                                        aria-label={`Expand ${link.label} submenu`}
+                                                    >
+                                                        <ChevronDown
+                                                            size={24}
+                                                            className={`
+                                                                text-white/60 hover:text-[var(--color-accent)]
+                                                                transition-transform duration-300
+                                                                ${expandedItems.includes(link.label) ? "rotate-180" : ""}
+                                                            `}
+                                                        />
+                                                    </button>
+                                                </div>
 
                                                 {/* Sublinks */}
                                                 <div
