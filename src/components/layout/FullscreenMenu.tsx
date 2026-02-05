@@ -33,11 +33,11 @@ const PRIMARY_LINKS: PrimaryLink[] = [
     },
     {
         label: "Programmes",
-        to: "/academics",
+        to: "/programmes",
         sublinks: [
-            { label: "B.Ed Program", to: "/academics#bed" },
-            { label: "D.El.Ed Program", to: "/academics#deled" },
-            { label: "Curriculum", to: "/academics#curriculum" },
+            { label: "B.Ed Program", to: "/programmes#bed" },
+            { label: "D.El.Ed Program", to: "/programmes#deled" },
+            { label: "Curriculum", to: "/programmes#curriculum" },
         ],
     },
     {
@@ -120,8 +120,9 @@ export default function FullscreenMenu({ open, onClose }: Props) {
                                     <img
                                         src="/logo.png"
                                         alt="Sppmc logo"
-                                        width={40}
-                                        height={40}
+                                        width={100}
+                                        height={100}
+                                        className="drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]"
                                     />
                                 </a>
                             </span>
@@ -135,7 +136,7 @@ export default function FullscreenMenu({ open, onClose }: Props) {
                                 "
                                 aria-label="Close menu"
                             >
-                                <span className="text-sm font-medium">
+                                <span className="text-xl font-medium">
                                     Close
                                 </span>
                                 <X size={20} />
@@ -158,7 +159,7 @@ export default function FullscreenMenu({ open, onClose }: Props) {
                                 }
                             `}
                         >
-                            <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-white/60 mb-8">
+                            <h3 className="text-lg font-bold uppercase tracking-[0.25em] text-white/60 mb-8">
                                 Main Menu
                             </h3>
 
@@ -285,7 +286,7 @@ export default function FullscreenMenu({ open, onClose }: Props) {
                                 }
                             `}
                         >
-                            <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-white/60 mb-8">
+                            <h3 className="text-lg font-bold uppercase tracking-[0.25em] text-white/60 mb-8">
                                 Other Portals
                             </h3>
 

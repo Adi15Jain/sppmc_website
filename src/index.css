@@ -7,7 +7,7 @@
 /* Disable rubber-band / overscroll */
 html,
 body {
-    overscroll-behavior-y: none;
+    overscroll-behavior: none;
 }
 
 /* =====================================

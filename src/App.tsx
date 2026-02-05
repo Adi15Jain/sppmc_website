@@ -2,13 +2,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Academics from "./pages/Academics";
+import Programmes from "./pages/Programmes";
 import Admissions from "./pages/Admissions";
 import StudentLife from "./pages/StudentLife";
 import Gallery from "./pages/Gallery";
-import Downloads from "./pages/ Downloads";
+import Downloads from "./pages/Downloads";
 import SiteChrome from "./components/layout/SiteChrome";
-import ScrollToHash from "./components/ScrollToHash";
+import ScrollToHash from "./components/layout/ScrollToHash";
 
 export default function App() {
     return (
@@ -19,7 +19,8 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/academics" element={<Academics />} />
+                {/* <Route path="/academics" element={<Programmes />} /> */}
+                <Route path="/programmes" element={<Programmes />} />
                 <Route path="/admissions" element={<Admissions />} />
                 <Route path="/student-life" element={<StudentLife />} />
                 <Route path="/gallery" element={<Gallery />} />
