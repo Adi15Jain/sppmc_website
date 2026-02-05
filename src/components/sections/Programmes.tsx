@@ -348,7 +348,7 @@ export default function Programmes() {
         <section
             ref={sectionRef}
             id="programmes"
-            className="relative py-20 md:py-28 overflow-hidden"
+            className="relative pt-16 pb-24 md:pt-16 md:pb-24 overflow-hidden"
             style={{ perspective: "1000px" }}
         >
             {/* Base gradient background */}

@@ -8,6 +8,7 @@ import StudentLife from "./pages/StudentLife";
 import Gallery from "./pages/Gallery";
 import MandatoryDisclosures from "./pages/MandatoryDisclosures";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 import SiteChrome from "./components/layout/SiteChrome";
 import ScrollToHash from "./components/layout/ScrollToHash";
 
@@ -40,6 +41,8 @@ export default function App() {
                     element={<MandatoryDisclosures />}
                 />
                 <Route path="/contact" element={<Contact />} />
+                {/* Catch-all route for 404 */}
+                <Route path="*" element={<NotFound />} />
             </Routes>
 
             <ConditionalFooter />

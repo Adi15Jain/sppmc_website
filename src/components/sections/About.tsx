@@ -250,7 +250,7 @@ export default function About() {
         <section
             ref={sectionRef}
             id="about"
-            className="relative py-24 md:py-32 overflow-hidden"
+            className="relative pt-16 pb-24 md:pt-16 md:pb-24 overflow-hidden"
             style={{ perspective: "1000px" }}
         >
             {/* Multi-layer gradient background - smooth transition from Hero blue */}

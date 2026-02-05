@@ -116,7 +116,7 @@ export default function CTA() {
     return (
         <section
             ref={sectionRef}
-            className="relative overflow-hidden py-24 md:py-32"
+            className="relative overflow-hidden pt-16 pb-24 md:pt-16 md:pb-24"
         >
             {/* Animated gradient background */}
             <div
