@@ -7,28 +7,81 @@ import Container from "../components/layout/Container";
 
 const FACILITIES = [
     {
+        title: "Digital Library",
+        description:
+            "Well-stocked library with 9,138+ books, journals, magazines, and encyclopedias for research",
+        image: "/images/library.jpeg",
+        stats: { books: 9138, journals: 6, magazines: 10, capacity: 50 },
+    },
+    {
+        title: "ET & ICT Lab",
+        description:
+            "High-speed internet, language lab, and modern computers for 100 students",
+        image: "/images/seminar.jpeg",
+    },
+    {
         title: "Smart Classrooms",
         description:
             "ICT-enabled rooms with projectors and digital boards for interactive learning",
         image: "/images/campus-facilities.png",
     },
     {
-        title: "Digital Library",
-        description:
-            "Extensive collection of books, journals, and e-resources for research",
-        image: "/images/library.jpeg",
-    },
-    {
-        title: "Computer Labs",
-        description:
-            "Modern computer facilities with high-speed internet connectivity",
-        image: "/images/seminar.jpeg",
-    },
-    {
         title: "Seminar Hall",
         description:
-            "Spacious auditorium for conferences, workshops, and cultural events",
+            "Multipurpose hall for conferences, workshops, and cultural events",
         image: "/images/event.jpeg",
+    },
+];
+
+// Detailed library statistics from parent website
+const LIBRARY_STATS = [
+    { value: "9,138+", label: "Books", icon: "📚" },
+    { value: "6", label: "Journals", icon: "📰" },
+    { value: "10", label: "Magazines", icon: "📖" },
+    { value: "4", label: "Encyclopedias", icon: "📕" },
+    { value: "50", label: "Seating Capacity", icon: "💺" },
+];
+
+// Infrastructure rooms list
+const INFRASTRUCTURE_ROOMS = [
+    "Principal Office",
+    "Administrative Office",
+    "Faculty / Staff Room",
+    "Library cum Reading Room",
+    "Classrooms",
+    "Multipurpose Hall",
+    "Educational Technology & ICT Lab",
+];
+
+// Additional services from parent website
+const CAMPUS_SERVICES = [
+    {
+        title: "Medical Facility",
+        description:
+            "Monthly health check-ups at the 599-bed multi-specialty TMU Hospital under qualified doctors",
+        icon: "🏥",
+        gradient: "from-red-500 to-pink-500",
+    },
+    {
+        title: "Sports Complex",
+        description:
+            "Playground and sports room for cricket, volleyball, badminton, football, kabaddi, chess & more",
+        icon: "⚽",
+        gradient: "from-green-500 to-teal-500",
+    },
+    {
+        title: "Canteen & Mess",
+        description:
+            "On-campus dining with sumptuous dishes and delicious food options",
+        icon: "🍽️",
+        gradient: "from-yellow-500 to-orange-500",
+    },
+    {
+        title: "College Transport",
+        description:
+            "Dedicated buses from Moradabad city to campus and vice-versa for students & staff",
+        icon: "🚌",
+        gradient: "from-blue-500 to-indigo-500",
     },
 ];
 
@@ -360,6 +413,106 @@ export default function StudentLife() {
                             </AnimatedSection>
                         ))}
                     </div>
+
+                    {/* Library Statistics */}
+                    <AnimatedSection delay={600} className="mt-20">
+                        <div className="bg-gradient-to-br from-primary to-primary-light rounded-3xl p-8 md:p-12 text-white">
+                            <div className="text-center mb-10">
+                                <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-semibold mb-4">
+                                    📚 Library Resources
+                                </span>
+                                <h3 className="text-3xl md:text-4xl font-bold">
+                                    Well-Stocked Digital Library
+                                </h3>
+                                <p className="mt-4 text-white/80 max-w-2xl mx-auto">
+                                    Our library houses an extensive collection
+                                    including textbooks, reference materials,
+                                    educational CDs, and resources from Indian
+                                    and foreign authors.
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+                                {LIBRARY_STATS.map((stat, index) => (
+                                    <div
+                                        key={stat.label}
+                                        className="text-center p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300"
+                                        style={{
+                                            animationDelay: `${index * 100}ms`,
+                                        }}
+                                    >
+                                        <span className="text-3xl block mb-2">
+                                            {stat.icon}
+                                        </span>
+                                        <div className="text-2xl md:text-3xl font-bold">
+                                            {stat.value}
+                                        </div>
+                                        <div className="text-sm text-white/70 mt-1">
+                                            {stat.label}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </AnimatedSection>
+
+                    {/* Infrastructure Rooms */}
+                    <AnimatedSection delay={800} className="mt-16">
+                        <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-lg">
+                            <h3 className="text-xl font-bold text-heading mb-6 flex items-center gap-3">
+                                <span className="text-2xl">🏛️</span>
+                                Campus Infrastructure
+                            </h3>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                {INFRASTRUCTURE_ROOMS.map((room) => (
+                                    <div
+                                        key={room}
+                                        className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors duration-300"
+                                    >
+                                        <span className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
+                                        <span className="text-sm text-body">
+                                            {room}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </AnimatedSection>
+
+                    {/* Campus Services */}
+                    <AnimatedSection delay={1000} className="mt-16">
+                        <div className="text-center mb-10">
+                            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                                Essential Services
+                            </span>
+                            <h3 className="text-3xl font-bold text-heading">
+                                Campus Life Support
+                            </h3>
+                        </div>
+
+                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                            {CAMPUS_SERVICES.map((service) => (
+                                <div
+                                    key={service.title}
+                                    className="group p-6 bg-white rounded-2xl border border-gray-100 hover:shadow-xl hover:border-transparent transition-all duration-500"
+                                >
+                                    <div
+                                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                                    >
+                                        <span className="text-2xl">
+                                            {service.icon}
+                                        </span>
+                                    </div>
+                                    <h4 className="text-lg font-bold text-heading mb-2 group-hover:text-primary transition-colors">
+                                        {service.title}
+                                    </h4>
+                                    <p className="text-sm text-body leading-relaxed">
+                                        {service.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </AnimatedSection>
                 </Container>
             </section>
 

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -7,8 +7,19 @@ import Admissions from "./pages/Admissions";
 import StudentLife from "./pages/StudentLife";
 import Gallery from "./pages/Gallery";
 import MandatoryDisclosures from "./pages/MandatoryDisclosures";
+import Contact from "./pages/Contact";
 import SiteChrome from "./components/layout/SiteChrome";
 import ScrollToHash from "./components/layout/ScrollToHash";
+
+// Conditional Footer wrapper - hides on Contact page
+function ConditionalFooter() {
+    const location = useLocation();
+    // Contact page has its own custom footer
+    if (location.pathname === "/contact") {
+        return null;
+    }
+    return <Footer />;
+}
 
 export default function App() {
     return (
@@ -28,11 +39,10 @@ export default function App() {
                     path="/mandatory-disclosures"
                     element={<MandatoryDisclosures />}
                 />
-                {/* Legacy route for old downloads links */}
-                {/* <Route path="/downloads" element={<MandatoryDisclosures />} /> */}
+                <Route path="/contact" element={<Contact />} />
             </Routes>
 
-            <Footer />
+            <ConditionalFooter />
         </BrowserRouter>
     );
 }

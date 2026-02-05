@@ -481,9 +481,9 @@ export default function SearchModal({ open, onClose }: Props) {
                                                     query: "program",
                                                 },
                                                 {
-                                                    icon: "📥",
-                                                    label: "Downloads",
-                                                    query: "download syllabus",
+                                                    icon: "📄",
+                                                    label: "Disclosures",
+                                                    query: "mandatory disclosures",
                                                 },
                                                 {
                                                     icon: "🏫",

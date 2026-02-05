@@ -149,7 +149,7 @@ export default function Programmes() {
             {/* Hero Section */}
             <section
                 ref={heroRef}
-                className="relative h-[60vh] min-h-[400px] overflow-hidden"
+                className="relative h-[100vh] min-h-[400px] overflow-hidden"
             >
                 <img
                     src="/images/campus-1.png"

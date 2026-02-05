@@ -177,37 +177,111 @@ export default function About() {
             {/* Infrastructure */}
             <section id="faculty" className="section section-warm">
                 <Container>
-                    <h3 className="text-2xl font-semibold animate-fade-up">
-                        Infrastructure & Facilities
-                    </h3>
+                    <div className="text-center mb-12 animate-fade-up">
+                        <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                            World-Class Amenities
+                        </span>
+                        <h3 className="text-3xl md:text-4xl font-bold text-gradient">
+                            Infrastructure & Facilities
+                        </h3>
+                        <p className="mt-4 text-body max-w-2xl mx-auto">
+                            The college has necessary buildings with spacious
+                            rooms, furniture, equipment and materials as per
+                            course requirements
+                        </p>
+                    </div>
 
-                    <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    {/* Main Facilities Grid */}
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-12">
                         {[
                             {
                                 title: "Classrooms",
                                 img: "/images/classroom.jpeg",
+                                desc: "ICT-enabled smart rooms",
                             },
-                            { title: "Library", img: "/images/library.jpeg" },
-                            { title: "ICT Labs", img: "/images/seminar.jpeg" },
+                            {
+                                title: "Library",
+                                img: "/images/library.jpeg",
+                                desc: "9,138+ books & resources",
+                            },
+                            {
+                                title: "ICT Labs",
+                                img: "/images/seminar.jpeg",
+                                desc: "100 computer workstations",
+                            },
                             {
                                 title: "Seminar Hall",
                                 img: "/images/event.jpeg",
+                                desc: "Multipurpose auditorium",
                             },
                         ].map((item) => (
                             <div
                                 key={item.title}
-                                className="group relative overflow-hidden rounded-xl card animate-fade-up"
+                                className="group relative overflow-hidden rounded-xl card animate-fade-up h-48"
                             >
                                 <img
                                     src={item.img}
                                     alt={item.title}
-                                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
-                                <div className="relative z-10 bg-slate-900/60 p-4 text-white">
-                                    <h4 className="font-medium">
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
+                                <div className="relative z-10 h-full flex flex-col justify-end p-5 text-white">
+                                    <h4 className="font-bold text-lg">
                                         {item.title}
                                     </h4>
+                                    <p className="text-sm text-white/70 mt-1">
+                                        {item.desc}
+                                    </p>
                                 </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Additional Services */}
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        {[
+                            {
+                                icon: "🏥",
+                                title: "Medical Facility",
+                                desc: "Monthly health check-ups at TMU's 599-bed hospital",
+                                color: "from-red-500 to-pink-500",
+                            },
+                            {
+                                icon: "⚽",
+                                title: "Sports Complex",
+                                desc: "Cricket, volleyball, badminton, football & indoor games",
+                                color: "from-green-500 to-teal-500",
+                            },
+                            {
+                                icon: "🍽️",
+                                title: "Canteen & Mess",
+                                desc: "On-campus dining with variety of food options",
+                                color: "from-yellow-500 to-orange-500",
+                            },
+                            {
+                                icon: "🚌",
+                                title: "College Transport",
+                                desc: "Dedicated buses from Moradabad city to campus",
+                                color: "from-blue-500 to-indigo-500",
+                            },
+                        ].map((service) => (
+                            <div
+                                key={service.title}
+                                className="group p-6 bg-white rounded-2xl border border-gray-100 hover:shadow-xl hover:border-transparent transition-all duration-500 animate-fade-up"
+                            >
+                                <div
+                                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                                >
+                                    <span className="text-xl">
+                                        {service.icon}
+                                    </span>
+                                </div>
+                                <h4 className="font-bold text-heading mb-2 group-hover:text-primary transition-colors">
+                                    {service.title}
+                                </h4>
+                                <p className="text-sm text-body leading-relaxed">
+                                    {service.desc}
+                                </p>
                             </div>
                         ))}
                     </div>
