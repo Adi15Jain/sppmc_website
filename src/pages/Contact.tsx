@@ -239,65 +239,77 @@ export default function Contact() {
                 </section>
 
                 {/* Contact Cards Section */}
-                <section className="py-16 md:py-24 bg-white">
+                <section className="relative py-20 -mt-16 z-20">
                     <Container>
-                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                            {CONTACT_INFO.map((info, index) => (
+                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                            {CONTACT_INFO.map((info) => (
                                 <div
                                     key={info.title}
-                                    className="group relative p-6 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-gray-100 hover:shadow-xl hover:border-transparent transition-all duration-500 animate-fade-up"
-                                    style={{
-                                        animationDelay: `${index * 100}ms`,
-                                    }}
+                                    className="group relative bg-white rounded-2xl p-8 shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                                 >
-                                    {/* Icon */}
+                                    {/* Top Color Line (Animates on Hover) */}
                                     <div
-                                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${info.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
-                                    >
-                                        <info.icon className="w-6 h-6 text-white" />
+                                        className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${info.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                                    />
+
+                                    {/* Icon Container */}
+                                    <div className="relative mb-6">
+                                        {/* Background blob */}
+                                        <div
+                                            className={`absolute -inset-2 bg-gradient-to-r ${info.color} rounded-full opacity-0 group-hover:opacity-10 blur-md transition-opacity duration-300`}
+                                        />
+
+                                        {/* Icon Circle */}
+                                        <div className="relative w-14 h-14 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:border-transparent transition-colors duration-300">
+                                            {/* We use the gradient text clip trick for the icon on hover */}
+                                            <info.icon className="w-6 h-6 text-slate-400 group-hover:text-slate-700 transition-colors duration-300" />
+                                        </div>
                                     </div>
 
-                                    {/* Title */}
-                                    <h3 className="text-lg font-bold text-heading mb-3">
-                                        {info.title}
-                                    </h3>
+                                    {/* Content */}
+                                    <div>
+                                        <h3 className="text-lg font-bold text-slate-800 mb-3 group-hover:text-primary transition-colors duration-300">
+                                            {info.title}
+                                        </h3>
 
-                                    {/* Details */}
-                                    <div className="space-y-1">
-                                        {info.details.map((detail, i) => (
-                                            <p
-                                                key={i}
-                                                className="text-sm text-body leading-relaxed"
+                                        <div className="space-y-1.5 mb-5">
+                                            {info.details.map((detail, i) => (
+                                                <p
+                                                    key={i}
+                                                    className="text-sm text-slate-500 font-medium leading-relaxed"
+                                                >
+                                                    {detail}
+                                                </p>
+                                            ))}
+                                        </div>
+
+                                        {/* Action Link */}
+                                        {info.action && (
+                                            <a
+                                                href={info.action.href}
+                                                target={
+                                                    info.action.href.startsWith(
+                                                        "http",
+                                                    )
+                                                        ? "_blank"
+                                                        : undefined
+                                                }
+                                                rel={
+                                                    info.action.href.startsWith(
+                                                        "http",
+                                                    )
+                                                        ? "noopener noreferrer"
+                                                        : undefined
+                                                }
+                                                className={`inline-flex items-center gap-2 text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r ${info.color} opacity-80 group-hover:opacity-100 transition-all duration-300`}
                                             >
-                                                {detail}
-                                            </p>
-                                        ))}
+                                                {info.action.label}
+                                                <ChevronRight
+                                                    className={`w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform duration-300`}
+                                                />
+                                            </a>
+                                        )}
                                     </div>
-
-                                    {/* Action */}
-                                    {info.action && (
-                                        <a
-                                            href={info.action.href}
-                                            target={
-                                                info.action.href.startsWith(
-                                                    "http",
-                                                )
-                                                    ? "_blank"
-                                                    : undefined
-                                            }
-                                            rel={
-                                                info.action.href.startsWith(
-                                                    "http",
-                                                )
-                                                    ? "noopener noreferrer"
-                                                    : undefined
-                                            }
-                                            className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-accent transition-colors duration-300 group/link"
-                                        >
-                                            {info.action.label}
-                                            <ChevronRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                                        </a>
-                                    )}
                                 </div>
                             ))}
                         </div>
