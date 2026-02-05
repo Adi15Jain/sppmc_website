@@ -60,7 +60,7 @@ const PRIMARY_LINKS: PrimaryLink[] = [
         ],
     },
     { label: "Gallery", to: "/gallery" },
-    { label: "Downloads", to: "/downloads" },
+    { label: "Mandatory Disclosures", to: "/mandatory-disclosures" },
     { label: "Contact", to: "/contact" },
 ];
 

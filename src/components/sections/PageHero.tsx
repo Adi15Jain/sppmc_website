@@ -7,7 +7,7 @@ type PageHeroProps = {
 
 export default function PageHero({ title, subtitle }: PageHeroProps) {
     return (
-        <section className="bg-slate-50 py-16 animate-[var(--animate-fade-up)]">
+        <section className="bg-slate-50 pt-28 pb-16 animate-[var(--animate-fade-up)]">
             <Container>
                 <div className="max-w-3xl">
                     <h1 className="text-4xl font-semibold text-slate-900">

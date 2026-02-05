@@ -6,7 +6,7 @@ import Programmes from "./pages/Programmes";
 import Admissions from "./pages/Admissions";
 import StudentLife from "./pages/StudentLife";
 import Gallery from "./pages/Gallery";
-import Downloads from "./pages/Downloads";
+import MandatoryDisclosures from "./pages/MandatoryDisclosures";
 import SiteChrome from "./components/layout/SiteChrome";
 import ScrollToHash from "./components/layout/ScrollToHash";
 
@@ -19,12 +19,17 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                {/* <Route path="/academics" element={<Programmes />} /> */}
+                <Route path="/academics" element={<Programmes />} />
                 <Route path="/programmes" element={<Programmes />} />
                 <Route path="/admissions" element={<Admissions />} />
                 <Route path="/student-life" element={<StudentLife />} />
                 <Route path="/gallery" element={<Gallery />} />
-                <Route path="/downloads" element={<Downloads />} />
+                <Route
+                    path="/mandatory-disclosures"
+                    element={<MandatoryDisclosures />}
+                />
+                {/* Legacy route for old downloads links */}
+                {/* <Route path="/downloads" element={<MandatoryDisclosures />} /> */}
             </Routes>
 
             <Footer />

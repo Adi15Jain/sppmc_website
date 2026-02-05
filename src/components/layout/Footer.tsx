@@ -299,7 +299,10 @@ export default function Footer() {
                                 {[
                                     { label: "Student Portal", href: "#" },
                                     { label: "Library", href: "#" },
-                                    { label: "Downloads", href: "#" },
+                                    {
+                                        label: "Mandatory Disclosures",
+                                        href: "/mandatory-disclosures",
+                                    },
                                 ].map((item) => (
                                     <li key={item.label}>
                                         <a
@@ -402,7 +405,7 @@ export default function Footer() {
 
                             {/* Map preview */}
                             <a
-                                href="https://maps.google.com/?q=Moradabad,+Uttar+Pradesh"
+                                href="https://maps.app.goo.gl/ZJaMNv5biS8BWgKHA"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="mt-5 block relative overflow-hidden rounded-lg group"
