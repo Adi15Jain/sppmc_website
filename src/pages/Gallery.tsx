@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { gsap } from "gsap";
 import {
-    Camera,
     Landmark,
     Building2,
     Theater,
@@ -16,7 +15,6 @@ import {
     ChevronRight,
     ZoomIn,
     ZoomOut,
-    FolderOpen,
 } from "lucide-react";
 import Container from "../components/layout/Container";
 
@@ -112,6 +110,55 @@ const IMAGES: GalleryImage[] = [
         src: "/images/student-support.png",
         alt: "Student Support Services",
         category: "facilities",
+    },
+    {
+        id: 13,
+        src: "/images/campus-1.png",
+        alt: "Administrative Block",
+        category: "campus",
+    },
+    {
+        id: 14,
+        src: "/images/event.jpeg",
+        alt: "Annual Sports Day",
+        category: "events",
+    },
+    {
+        id: 15,
+        src: "/images/classroom.jpeg",
+        alt: "Computer Laboratory",
+        category: "facilities",
+    },
+    {
+        id: 16,
+        src: "/images/activity.png",
+        alt: "Art Workshop",
+        category: "activities",
+    },
+    {
+        id: 17,
+        src: "/images/campus-2.jpg",
+        alt: "Evening Campus View",
+        category: "campus",
+        featured: true,
+    },
+    {
+        id: 18,
+        src: "/images/seminar.jpeg",
+        alt: "Guest Lecture Series",
+        category: "events",
+    },
+    {
+        id: 19,
+        src: "/images/library.jpeg",
+        alt: "Reading Room",
+        category: "facilities",
+    },
+    {
+        id: 20,
+        src: "/images/student-activities.png",
+        alt: "Music Club Jam",
+        category: "activities",
     },
 ];
 
@@ -664,11 +711,8 @@ export default function Gallery() {
                         ))}
                     </div>
 
-                    {/* Photo Grid - Masonry-like layout */}
-                    <div
-                        ref={gridRef}
-                        className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-                    >
+                    {/* Photo Grid - True Masonry Layout */}
+                    <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
                         {filteredImages.map((image, index) => (
                             <button
                                 key={image.id}
@@ -676,16 +720,16 @@ export default function Gallery() {
                                 onMouseEnter={() => setHoveredId(image.id)}
                                 onMouseLeave={() => setHoveredId(null)}
                                 className={`
+                                    break-inside-avoid mb-4 w-full text-left
                                     group relative overflow-hidden rounded-xl
                                     transition-all duration-500 hover:shadow-2xl hover:z-10
-                                    ${image.featured ? "md:col-span-2 md:row-span-2" : ""}
                                     ${hoveredId === image.id ? "scale-[1.02]" : ""}
                                 `}
                             >
                                 <div
                                     className={`
-                                    relative overflow-hidden
-                                    ${image.featured ? "h-64 md:h-[400px]" : "h-48 md:h-64"}
+                                    relative overflow-hidden w-full
+                                    ${image.featured ? "aspect-[4/5]" : index % 3 === 0 ? "aspect-[3/4]" : "aspect-square"}
                                 `}
                                 >
                                     <img
@@ -733,7 +777,7 @@ export default function Gallery() {
                                                 .toUpperCase() +
                                                 image.category.slice(1)}
                                         </span>
-                                        <h3 className="text-white font-semibold text-sm md:text-base">
+                                        <h3 className="text-white font-semibold text-sm md:text-base line-clamp-2">
                                             {image.alt}
                                         </h3>
                                     </div>
@@ -774,53 +818,6 @@ export default function Gallery() {
                             </p>
                         </div>
                     )}
-                </Container>
-            </section>
-
-            {/* Stats Section */}
-            <section className="section section-soft">
-                <Container>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center animate-fade-up">
-                        {[
-                            {
-                                value: IMAGES.length,
-                                label: "Photos",
-                                icon: Camera,
-                            },
-                            {
-                                value: IMAGES.filter(
-                                    (i) => i.category === "events",
-                                ).length,
-                                label: "Events Captured",
-                                icon: Theater,
-                            },
-                            {
-                                value: IMAGES.filter((i) => i.featured).length,
-                                label: "Featured Images",
-                                icon: Star,
-                            },
-                            {
-                                value: CATEGORIES.length - 1,
-                                label: "Categories",
-                                icon: FolderOpen,
-                            },
-                        ].map((stat) => (
-                            <div
-                                key={stat.label}
-                                className="card group p-8 hover:bg-white transition-all duration-500"
-                            >
-                                <div className="inline-flex p-3 rounded-2xl bg-accent/10 mb-4 group-hover:bg-accent group-hover:text-white transition-colors duration-500">
-                                    <stat.icon className="w-8 h-8 text-accent group-hover:text-white transition-colors" />
-                                </div>
-                                <div className="text-3xl md:text-4xl font-bold text-slate-900">
-                                    {stat.value}+
-                                </div>
-                                <div className="text-slate-500 text-sm mt-1 uppercase tracking-wider font-semibold">
-                                    {stat.label}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
                 </Container>
             </section>
 

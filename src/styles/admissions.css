@@ -16,9 +16,9 @@
 .admissions-hero-gradient {
     background: linear-gradient(
         135deg,
-        rgba(0, 16, 85, 0.92) 0%,
-        rgba(26, 42, 108, 0.78) 50%,
-        rgba(0, 24, 102, 0.88) 100%
+        rgba(0, 16, 85, 0.95) 0%,
+        rgba(26, 42, 108, 0.8) 50%,
+        rgba(0, 24, 102, 0.9) 100%
     );
 }
 
@@ -26,17 +26,17 @@
     background:
         radial-gradient(
             ellipse at 20% 30%,
-            rgba(255, 121, 0, 0.2) 0%,
+            rgba(255, 121, 0, 0.25) 0%,
             transparent 50%
         ),
         radial-gradient(
             ellipse at 80% 70%,
-            rgba(26, 42, 108, 0.3) 0%,
+            rgba(26, 42, 108, 0.4) 0%,
             transparent 50%
         ),
         radial-gradient(
             ellipse at 50% 90%,
-            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0.1) 0%,
             transparent 40%
         );
 }
@@ -60,10 +60,11 @@
         to bottom,
         transparent 0%,
         var(--color-accent) 10%,
-        var(--color-primary) 50%,
+        var(--color-primary-light) 50%,
         var(--color-accent) 90%,
         transparent 100%
     );
+    opacity: 0.3;
 }
 
 @media (min-width: 768px) {
@@ -76,7 +77,7 @@
 .admissions-timeline-step {
     position: relative;
     padding-left: 64px;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 @media (min-width: 768px) {
@@ -87,11 +88,11 @@
 
     .admissions-timeline-step:nth-child(odd) {
         margin-left: auto;
-        padding-left: 3rem;
+        padding-left: 4rem;
     }
 
     .admissions-timeline-step:nth-child(even) {
-        padding-right: 3rem;
+        padding-right: 4rem;
         text-align: right;
     }
 }
@@ -103,27 +104,25 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-accent) 0%, #ffb36b 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #ff8c00 100%);
     color: white;
-    font-weight: 700;
-    font-size: 1.125rem;
+    font-weight: 800;
+    font-size: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow:
-        0 4px 20px rgba(255, 121, 0, 0.3),
-        0 0 0 4px rgba(255, 121, 0, 0.1);
+        0 10px 25px -5px rgba(255, 121, 0, 0.4),
+        0 0 0 6px rgba(255, 121, 0, 0.1);
     z-index: 10;
-    transition:
-        transform 0.3s var(--ease-premium),
-        box-shadow 0.3s var(--ease-premium);
+    transition: all 0.5s var(--ease-premium);
 }
 
-.admissions-step-number:hover {
-    transform: scale(1.1);
+.admissions-timeline-step:hover .admissions-step-number {
+    transform: scale(1.15) rotate(10deg);
     box-shadow:
-        0 6px 30px rgba(255, 121, 0, 0.4),
-        0 0 0 6px rgba(255, 121, 0, 0.15);
+        0 15px 35px -5px rgba(255, 121, 0, 0.5),
+        0 0 0 8px rgba(255, 121, 0, 0.15);
 }
 
 @media (min-width: 768px) {
@@ -143,61 +142,33 @@
 
 .admissions-doc-card {
     position: relative;
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem 1.75rem;
     background: white;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: 1.25rem;
     overflow: hidden;
-    transition:
-        transform 0.4s var(--ease-premium),
-        box-shadow 0.4s var(--ease-premium),
-        border-color 0.4s var(--ease-premium);
-}
-
-.admissions-doc-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 121, 0, 0.03) 0%,
-        rgba(0, 16, 85, 0.02) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.4s var(--ease-smooth);
+    transition: all 0.5s var(--ease-premium);
+    box-shadow: 0 4px 6px -1px rgba(0, 16, 85, 0.05);
 }
 
 .admissions-doc-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow:
-        0 12px 40px -12px rgba(0, 16, 85, 0.2),
-        0 4px 12px -4px rgba(0, 0, 0, 0.08);
-    border-color: rgba(255, 121, 0, 0.3);
-}
-
-.admissions-doc-card:hover::before {
-    opacity: 1;
+        0 20px 40px -12px rgba(0, 16, 85, 0.15),
+        0 0 0 1px rgba(255, 121, 0, 0.1);
+    border-color: var(--color-accent);
 }
 
 .admissions-doc-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: linear-gradient(
-        135deg,
-        var(--color-primary) 0%,
-        var(--color-primary-light) 100%
-    );
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     flex-shrink: 0;
-    transition: transform 0.3s var(--ease-bounce);
-}
-
-.admissions-doc-card:hover .admissions-doc-icon {
-    transform: scale(1.1) rotate(5deg);
+    transition: all 0.5s var(--ease-premium);
 }
 
 /* ===================================
@@ -206,60 +177,32 @@
 
 .admissions-eligibility-card {
     position: relative;
-    padding: 2rem;
-    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
-    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 2rem;
     overflow: hidden;
-    transition:
-        transform 0.5s var(--ease-premium),
-        box-shadow 0.5s var(--ease-premium);
-    transform-style: preserve-3d;
-}
-
-.admissions-eligibility-card::before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    background: linear-gradient(
-        135deg,
-        var(--color-border) 0%,
-        rgba(255, 121, 0, 0.3) 50%,
-        var(--color-border) 100%
-    );
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s var(--ease-smooth);
+    transition: all 0.6s var(--ease-premium);
+    box-shadow: 0 10px 30px -5px rgba(0, 16, 85, 0.05);
 }
 
 .admissions-eligibility-card:hover {
-    transform: perspective(1000px) rotateY(2deg) rotateX(2deg) translateY(-8px);
-    box-shadow:
-        0 25px 50px -12px rgba(0, 16, 85, 0.25),
-        0 12px 24px -8px rgba(0, 0, 0, 0.1);
-}
-
-.admissions-eligibility-card:hover::before {
-    opacity: 1;
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px -15px rgba(0, 16, 85, 0.15);
+    border-color: rgba(255, 121, 0, 0.2);
 }
 
 .admissions-eligibility-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: linear-gradient(
-        135deg,
-        var(--color-primary) 0%,
-        var(--color-primary-light) 100%
-    );
-    color: white;
+    padding: 0.625rem 1.25rem;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     border-radius: 9999px;
-    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* ===================================
@@ -268,59 +211,28 @@
 
 .admissions-stat-card {
     position: relative;
-    padding: 1.5rem;
+    padding: 2.5rem 1.5rem;
     background: white;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: 1.5rem;
     text-align: center;
     overflow: hidden;
-    transition:
-        transform 0.4s var(--ease-premium),
-        box-shadow 0.4s var(--ease-premium),
-        border-color 0.4s var(--ease-premium);
-}
-
-.admissions-stat-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(
-        90deg,
-        var(--color-accent),
-        var(--color-primary),
-        var(--color-accent)
-    );
-    background-size: 200% 100%;
-    animation: gradient-shift 3s ease infinite;
-    opacity: 0;
-    transition: opacity 0.4s var(--ease-smooth);
+    transition: all 0.5s var(--ease-premium);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 .admissions-stat-card:hover {
-    transform: translateY(-6px);
-    box-shadow:
-        0 16px 40px -12px rgba(0, 16, 85, 0.2),
-        0 6px 16px -6px rgba(0, 0, 0, 0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(0, 16, 85, 0.1);
     border-color: rgba(255, 121, 0, 0.3);
 }
 
-.admissions-stat-card:hover::after {
-    opacity: 1;
-}
-
 .admissions-stat-value {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 800;
     color: var(--color-primary);
-    margin-bottom: 0.25rem;
-    transition: transform 0.3s var(--ease-bounce);
-}
-
-.admissions-stat-card:hover .admissions-stat-value {
-    transform: scale(1.05);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
 }
 
 /* ===================================
@@ -329,59 +241,38 @@
 
 .admissions-date-card {
     position: relative;
-    padding: 1.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 2rem;
+    background: white;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: 1.5rem;
     overflow: hidden;
-    transition:
-        transform 0.4s var(--ease-premium),
-        box-shadow 0.4s var(--ease-premium);
-}
-
-.admissions-date-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        var(--color-accent),
-        var(--color-primary)
-    );
-    opacity: 0;
-    transition: opacity 0.4s var(--ease-smooth);
+    transition: all 0.5s var(--ease-premium);
 }
 
 .admissions-date-card:hover {
-    transform: translateX(4px);
-    box-shadow:
-        0 10px 30px -10px rgba(0, 16, 85, 0.15),
-        0 4px 10px -4px rgba(0, 0, 0, 0.08);
-}
-
-.admissions-date-card:hover::before {
-    opacity: 1;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px -10px rgba(0, 16, 85, 0.12);
+    border-color: rgba(255, 121, 0, 0.2);
 }
 
 .admissions-date-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
-    padding: 0.375rem 0.75rem;
-    background: rgba(255, 121, 0, 0.1);
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 121, 0, 0.08);
     color: var(--color-accent);
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     border-radius: 9999px;
 }
 
 .admissions-date-badge.active {
-    background: linear-gradient(135deg, var(--color-accent) 0%, #ffb36b 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #ff9d00 100%);
     color: white;
-    animation: pulse-glow 2s ease-in-out infinite;
+    box-shadow: 0 4px 12px rgba(255, 121, 0, 0.3);
 }
 
 /* ===================================
@@ -390,44 +281,41 @@
 
 .admissions-cta {
     position: relative;
-    background: linear-gradient(
-        135deg,
-        var(--color-primary) 0%,
-        var(--color-primary-light) 50%,
-        var(--color-primary-hover) 100%
-    );
+    background: linear-gradient(135deg, #001055 0%, #1a2a6c 50%, #001866 100%);
     overflow: hidden;
 }
 
 .admissions-cta-decoration {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    animation: float 6s ease-in-out infinite;
+    background: radial-gradient(
+        circle,
+        rgba(255, 121, 0, 0.15) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
 }
 
 .admissions-cta-decoration:nth-child(1) {
-    width: 300px;
-    height: 300px;
-    top: -100px;
-    right: -50px;
-    animation-delay: 0s;
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    right: -100px;
 }
 
 .admissions-cta-decoration:nth-child(2) {
-    width: 200px;
-    height: 200px;
-    bottom: -80px;
-    left: 10%;
-    animation-delay: 1s;
+    width: 400px;
+    height: 400px;
+    bottom: -150px;
+    left: -50px;
 }
 
 .admissions-cta-decoration:nth-child(3) {
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     top: 50%;
-    left: 5%;
-    animation-delay: 2s;
+    left: 20%;
+    opacity: 0.5;
 }
 
 /* ===================================
@@ -443,63 +331,7 @@
         padding-left: 56px;
     }
 
-    .admissions-step-number {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-
     .admissions-eligibility-card {
-        padding: 1.5rem;
+        padding: 1.75rem;
     }
-
-    .admissions-eligibility-card:hover {
-        transform: translateY(-4px);
-    }
-}
-
-/* ===================================
-   ANIMATION UTILITIES (page-specific)
-   =================================== */
-
-@keyframes timeline-draw {
-    from {
-        height: 0;
-    }
-    to {
-        height: 100%;
-    }
-}
-
-@keyframes check-pop {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.animate-check-pop {
-    animation: check-pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-}
-
-@keyframes count-up {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-count-up {
-    animation: count-up 0.6s ease-out forwards;
 }

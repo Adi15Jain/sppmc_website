@@ -1,4 +1,26 @@
 import { useState, useEffect, useRef } from "react";
+import {
+    Book,
+    Newspaper,
+    BookOpen,
+    Library,
+    Armchair,
+    Hospital,
+    Trophy,
+    Utensils,
+    Bus,
+    PenTool,
+    FlaskConical,
+    Palette,
+    Music,
+    MessageSquare,
+    Sprout,
+    Target,
+    HeartHandshake,
+    ShieldCheck,
+    Rocket,
+    Building2,
+} from "lucide-react";
 import Container from "../components/layout/Container";
 
 // ============================================
@@ -35,11 +57,11 @@ const FACILITIES = [
 
 // Detailed library statistics from parent website
 const LIBRARY_STATS = [
-    { value: "9,138+", label: "Books", icon: "📚" },
-    { value: "6", label: "Journals", icon: "📰" },
-    { value: "10", label: "Magazines", icon: "📖" },
-    { value: "4", label: "Encyclopedias", icon: "📕" },
-    { value: "50", label: "Seating Capacity", icon: "💺" },
+    { value: "9,138+", label: "Books", icon: Book },
+    { value: "6", label: "Journals", icon: Newspaper },
+    { value: "10", label: "Magazines", icon: BookOpen },
+    { value: "4", label: "Encyclopedias", icon: Library },
+    { value: "50", label: "Seating Capacity", icon: Armchair },
 ];
 
 // Infrastructure rooms list
@@ -59,29 +81,29 @@ const CAMPUS_SERVICES = [
         title: "Medical Facility",
         description:
             "Monthly health check-ups at the 599-bed multi-specialty TMU Hospital under qualified doctors",
-        icon: "🏥",
-        gradient: "from-red-500 to-pink-500",
+        icon: Hospital,
+        gradient: "from-yellow-500 to-orange-500",
     },
     {
         title: "Sports Complex",
         description:
             "Playground and sports room for cricket, volleyball, badminton, football, kabaddi, chess & more",
-        icon: "⚽",
-        gradient: "from-green-500 to-teal-500",
+        icon: Trophy,
+        gradient: "from-yellow-500 to-orange-500",
     },
     {
         title: "Canteen & Mess",
         description:
             "On-campus dining with sumptuous dishes and delicious food options",
-        icon: "🍽️",
+        icon: Utensils,
         gradient: "from-yellow-500 to-orange-500",
     },
     {
         title: "College Transport",
         description:
             "Dedicated buses from Moradabad city to campus and vice-versa for students & staff",
-        icon: "🚌",
-        gradient: "from-blue-500 to-indigo-500",
+        icon: Bus,
+        gradient: "from-yellow-500 to-orange-500",
     },
 ];
 
@@ -89,32 +111,32 @@ const ACTIVITIES = [
     {
         title: "Cultural Programs",
         description: "Annual festivals, dance, music, and drama performances",
-        gradient: "from-orange-500 to-pink-500",
+        gradient: "from-orange-500 to-amber-500",
     },
     {
         title: "Sports Events",
         description: "Inter-college tournaments and fitness activities",
-        gradient: "from-blue-500 to-cyan-500",
+        gradient: "from-orange-500 to-amber-500",
     },
     {
         title: "Educational Workshops",
         description: "Skill development sessions and expert lectures",
-        gradient: "from-purple-500 to-indigo-500",
+        gradient: "from-orange-500 to-amber-500",
     },
     {
         title: "Community Outreach",
         description: "Social service initiatives and awareness campaigns",
-        gradient: "from-green-500 to-teal-500",
+        gradient: "from-orange-500 to-amber-500",
     },
 ];
 
 const CLUBS = [
-    { name: "Literary Club", icon: "✍️", members: 45 },
-    { name: "Science Club", icon: "🔬", members: 38 },
-    { name: "Art & Craft", icon: "🎨", members: 52 },
-    { name: "Music Society", icon: "🎵", members: 34 },
-    { name: "Debate Forum", icon: "🗣️", members: 28 },
-    { name: "Eco Warriors", icon: "🌱", members: 41 },
+    { name: "Literary Club", icon: PenTool, members: 45 },
+    { name: "Science Club", icon: FlaskConical, members: 38 },
+    { name: "Art & Craft", icon: Palette, members: 52 },
+    { name: "Music Society", icon: Music, members: 34 },
+    { name: "Debate Forum", icon: MessageSquare, members: 28 },
+    { name: "Eco Warriors", icon: Sprout, members: 41 },
 ];
 
 const TESTIMONIALS = [
@@ -123,18 +145,21 @@ const TESTIMONIALS = [
         program: "B.Ed Graduate, 2023",
         quote: "The supportive environment and practical training prepared me perfectly for my teaching career. The faculty mentorship was exceptional.",
         avatar: "PS",
+        image: "/images/testimonials/student1.png",
     },
     {
         name: "Rahul Verma",
         program: "D.El.Ed Graduate, 2022",
         quote: "My time at SPPMC shaped me into a confident educator. The hands-on experience in local schools was invaluable.",
         avatar: "RV",
+        image: "/images/testimonials/student2.png",
     },
     {
         name: "Anjali Singh",
         program: "B.Ed Graduate, 2024",
         quote: "The modern facilities and dedicated teachers created the perfect learning atmosphere. I'm grateful for every moment here.",
         avatar: "AS",
+        image: "/images/testimonials/student3.png",
     },
 ];
 
@@ -143,25 +168,25 @@ const SUPPORT_SERVICES = [
         title: "Academic Mentoring",
         description:
             "Personalized guidance from experienced faculty to help you excel",
-        icon: "🎯",
+        icon: Target,
     },
     {
         title: "Grievance Redressal",
         description:
             "Transparent system ensuring student concerns are heard and resolved",
-        icon: "🤝",
+        icon: HeartHandshake,
     },
     {
         title: "Anti-Ragging Cell",
         description:
             "Zero tolerance policy with dedicated committee for a safe campus",
-        icon: "🛡️",
+        icon: ShieldCheck,
     },
     {
         title: "Career Guidance",
         description:
             "Placement support and career counseling for your future success",
-        icon: "🚀",
+        icon: Rocket,
     },
 ];
 
@@ -300,7 +325,7 @@ export default function StudentLife() {
                             {/* Main Heading */}
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-text-blur animate-delay-200">
                                 Where Learning
-                                <span className="block mt-2 text-gradient-primary">
+                                <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-accent via-orange-400 to-amber-300">
                                     Meets Life
                                 </span>
                             </h1>
@@ -365,7 +390,7 @@ export default function StudentLife() {
                ========================================== */}
             <section
                 id="campus"
-                className="py-24 bg-gradient-to-b from-[#f8f9fa] to-white"
+                className="py-16 bg-gradient-to-b from-[#f8f9fa] to-white"
             >
                 <Container>
                     <AnimatedSection className="text-center mb-16">
@@ -419,7 +444,7 @@ export default function StudentLife() {
                         <div className="bg-gradient-to-br from-primary to-primary-light rounded-3xl p-8 md:p-12 text-white">
                             <div className="text-center mb-10">
                                 <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-semibold mb-4">
-                                    📚 Library Resources
+                                    Library Resources
                                 </span>
                                 <h3 className="text-3xl md:text-4xl font-bold">
                                     Well-Stocked Digital Library
@@ -441,9 +466,9 @@ export default function StudentLife() {
                                             animationDelay: `${index * 100}ms`,
                                         }}
                                     >
-                                        <span className="text-3xl block mb-2">
-                                            {stat.icon}
-                                        </span>
+                                        <div className="flex justify-center mb-2">
+                                            <stat.icon className="w-8 h-8 text-accent" />
+                                        </div>
                                         <div className="text-2xl md:text-3xl font-bold">
                                             {stat.value}
                                         </div>
@@ -460,7 +485,7 @@ export default function StudentLife() {
                     <AnimatedSection delay={800} className="mt-16">
                         <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-lg">
                             <h3 className="text-xl font-bold text-heading mb-6 flex items-center gap-3">
-                                <span className="text-2xl">🏛️</span>
+                                <Building2 className="w-6 h-6 text-accent" />
                                 Campus Infrastructure
                             </h3>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -499,9 +524,7 @@ export default function StudentLife() {
                                     <div
                                         className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                                     >
-                                        <span className="text-2xl">
-                                            {service.icon}
-                                        </span>
+                                        <service.icon className="w-7 h-7 text-white" />
                                     </div>
                                     <h4 className="text-lg font-bold text-heading mb-2 group-hover:text-primary transition-colors">
                                         {service.title}
@@ -521,7 +544,7 @@ export default function StudentLife() {
                ========================================== */}
             <section
                 id="activities"
-                className="py-24 relative overflow-hidden"
+                className="py-16 relative overflow-hidden"
                 style={{
                     background:
                         "linear-gradient(135deg, #001055 0%, #1a2a6c 50%, #001866 100%)",
@@ -603,7 +626,7 @@ export default function StudentLife() {
             {/* ==========================================
                 SECTION 4: CLUBS & ORGANIZATIONS
                ========================================== */}
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <Container>
                     <AnimatedSection className="text-center mb-16">
                         <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
@@ -631,9 +654,7 @@ export default function StudentLife() {
 
                                     <div className="relative z-10">
                                         <div className="flex items-center justify-between mb-4">
-                                            <span className="text-5xl group-hover:scale-110 transition-transform duration-300">
-                                                {club.icon}
-                                            </span>
+                                            <club.icon className="w-10 h-10 text-accent group-hover:scale-110 transition-transform duration-300" />
                                             <span className="px-3 py-1 bg-gray-100 group-hover:bg-accent/10 text-gray-600 group-hover:text-accent text-xs font-semibold rounded-full transition-colors duration-300">
                                                 {club.members} Members
                                             </span>
@@ -685,73 +706,186 @@ export default function StudentLife() {
             {/* ==========================================
                 SECTION 5: TESTIMONIALS
                ========================================== */}
-            <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+            <section className="py-16 md:py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
                 <Container>
-                    <AnimatedSection className="text-center mb-16">
-                        <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-4">
+                    <AnimatedSection className="text-center mb-12">
+                        <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-6">
                             Student Voices
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-heading">
+                        <h2 className="text-4xl md:text-5xl font-bold text-heading tracking-tight">
                             What Our Students Say
                         </h2>
                     </AnimatedSection>
 
-                    {/* Testimonial Carousel */}
+                    {/* Horizontal Stacked Card Testimonial Queue */}
                     <AnimatedSection delay={200}>
-                        <div className="max-w-4xl mx-auto">
-                            <div className="relative bg-white rounded-3xl shadow-xl p-8 md:p-12 overflow-hidden">
-                                {/* Quote decoration */}
-                                <div className="absolute top-6 left-8 text-8xl text-accent/10 font-serif leading-none">
-                                    "
-                                </div>
+                        <div className="max-w-4xl mx-auto relative h-[400px] md:h-[350px]">
+                            {TESTIMONIALS.map((testimonial, index) => {
+                                // Calculate position relative to activeTestimonial
+                                let position = index - activeTestimonial;
+                                if (position < 0)
+                                    position += TESTIMONIALS.length;
 
-                                {/* Content */}
-                                <div className="relative z-10">
-                                    {TESTIMONIALS.map((testimonial, index) => (
+                                const isActive = position === 0;
+                                const isNext = position === 1;
+                                const isFar = position === 2;
+                                const isPast =
+                                    index ===
+                                    (activeTestimonial -
+                                        1 +
+                                        TESTIMONIALS.length) %
+                                        TESTIMONIALS.length;
+
+                                // Card Styles based on horizontal position in queue with refined polish
+                                let cardStyle =
+                                    "opacity-0 scale-75 translate-x-24 z-0 blur-2xl pointer-events-none";
+
+                                if (isActive) {
+                                    cardStyle =
+                                        "opacity-100 scale-100 translate-x-0 z-30 blur-0 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)] border-accent/10";
+                                } else if (isNext) {
+                                    cardStyle =
+                                        "opacity-40 scale-95 translate-x-12 z-20 blur-[2px] shadow-xl pointer-events-none border-gray-100";
+                                } else if (isFar) {
+                                    cardStyle =
+                                        "opacity-10 scale-90 translate-x-24 z-10 blur-[4px] shadow-lg pointer-events-none border-gray-50";
+                                } else if (isPast) {
+                                    cardStyle =
+                                        "opacity-0 -translate-x-full scale-95 z-40 blur-xl pointer-events-none";
+                                }
+
+                                return (
+                                    <div
+                                        key={testimonial.name}
+                                        className={`absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] ${cardStyle}`}
+                                    >
                                         <div
-                                            key={testimonial.name}
-                                            className={`transition-all duration-700 ${
-                                                index === activeTestimonial
-                                                    ? "opacity-100 translate-y-0"
-                                                    : "opacity-0 translate-y-4 absolute inset-0 p-8 md:p-12"
-                                            }`}
+                                            className={`bg-white rounded-[1.5rem] md:rounded-[2rem] border p-8 md:p-12 h-full flex flex-col justify-between relative overflow-hidden transition-all duration-500`}
                                         >
-                                            <p className="text-xl md:text-2xl text-body leading-relaxed mb-8">
-                                                {testimonial.quote}
-                                            </p>
-                                            <div className="flex items-center gap-4">
-                                                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-bold text-lg">
-                                                    {testimonial.avatar}
+                                            {/* Student Portrait - Uncapped Massive Scale */}
+                                            <div className="absolute bottom-[52%] right-[-5%] w-[60%] h-[140%] z-0 pointer-events-none select-none flex items-end justify-end">
+                                                {/* Professional Radial Glow */}
+                                                <div
+                                                    className={`absolute bottom-[20%] right-[10%] w-[100%] h-[80%] bg-radial-gradient from-accent/20 via-accent/5 to-transparent transition-opacity duration-1000 ${isActive ? "opacity-100" : "opacity-0"}`}
+                                                    style={{
+                                                        backgroundImage:
+                                                            "radial-gradient(circle at center, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 70%)",
+                                                    }}
+                                                />
+
+                                                <img
+                                                    src={testimonial.image}
+                                                    alt=""
+                                                    className={`w-full h-full object-contain object-bottom transition-all duration-1000 delay-300 ${isActive ? "scale-250 translate-y-0 opacity-100" : "scale-250 translate-y-8 opacity-0"}`}
+                                                    style={{
+                                                        mixBlendMode:
+                                                            "multiply",
+                                                        WebkitMaskImage:
+                                                            "linear-gradient(to right, transparent 0%, black 25%, black 100%)",
+                                                        maskImage:
+                                                            "linear-gradient(to right, transparent 0%, black 25%, black 100%)",
+                                                        WebkitMaskComposite:
+                                                            "source-in",
+                                                        maskComposite:
+                                                            "intersect",
+                                                    }}
+                                                />
+                                            </div>
+
+                                            <div className="relative z-10 w-[60%]">
+                                                <div className="text-7xl text-accent/20 font-serif h-8 select-none leading-none">
+                                                    "
                                                 </div>
-                                                <div>
-                                                    <div className="font-bold text-heading">
-                                                        {testimonial.name}
-                                                    </div>
-                                                    <div className="text-sm text-body">
-                                                        {testimonial.program}
-                                                    </div>
+                                                <p className="text-xl md:text-2xl text-heading leading-relaxed font-medium italic mb-2 tracking-tight">
+                                                    {testimonial.quote}
+                                                </p>
+                                            </div>
+
+                                            <div className="relative z-10 flex flex-col gap-1 mt-auto">
+                                                <div className="font-bold text-2xl text-heading tracking-tighter">
+                                                    {testimonial.name}
+                                                </div>
+                                                <div className="text-accent font-semibold text-base md:text-lg flex items-center gap-2 tracking-tight">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-accent/60 animate-pulse" />
+                                                    {testimonial.program}
                                                 </div>
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
+                                    </div>
+                                );
+                            })}
 
-                                {/* Navigation dots */}
-                                <div className="absolute bottom-6 right-8 flex gap-2">
+                            {/* Navigation Controls */}
+                            <div className="absolute -bottom-16 left-0 right-0 flex justify-center items-center gap-8">
+                                <button
+                                    onClick={() =>
+                                        setActiveTestimonial(
+                                            (prev) =>
+                                                (prev -
+                                                    1 +
+                                                    TESTIMONIALS.length) %
+                                                TESTIMONIALS.length,
+                                        )
+                                    }
+                                    className="p-3 rounded-full bg-white border border-gray-100 shadow-md hover:shadow-lg hover:border-accent/30 text-gray-400 hover:text-accent transition-all group"
+                                    aria-label="Previous testimonial"
+                                >
+                                    <svg
+                                        className="w-6 h-6 transform rotate-180"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M9 5l7 7-7 7"
+                                        />
+                                    </svg>
+                                </button>
+
+                                <div className="flex gap-2">
                                     {TESTIMONIALS.map((_, index) => (
                                         <button
                                             key={index}
                                             onClick={() =>
                                                 setActiveTestimonial(index)
                                             }
-                                            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                            className={`h-1.5 rounded-full transition-all duration-500 ${
                                                 index === activeTestimonial
                                                     ? "bg-accent w-8"
-                                                    : "bg-gray-300 hover:bg-gray-400"
+                                                    : "bg-gray-200 hover:bg-gray-300 w-2"
                                             }`}
                                         />
                                     ))}
                                 </div>
+
+                                <button
+                                    onClick={() =>
+                                        setActiveTestimonial(
+                                            (prev) =>
+                                                (prev + 1) %
+                                                TESTIMONIALS.length,
+                                        )
+                                    }
+                                    className="p-3 rounded-full bg-white border border-gray-100 shadow-md hover:shadow-lg hover:border-accent/30 text-gray-400 hover:text-accent transition-all group"
+                                    aria-label="Next testimonial"
+                                >
+                                    <svg
+                                        className="w-6 h-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M9 5l7 7-7 7"
+                                        />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </AnimatedSection>
@@ -761,7 +895,7 @@ export default function StudentLife() {
             {/* ==========================================
                 SECTION 6: SUPPORT SERVICES
                ========================================== */}
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <Container>
                     <AnimatedSection className="text-center mb-16">
                         <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
@@ -784,8 +918,8 @@ export default function StudentLife() {
                             >
                                 <div className="flex gap-6 p-8 rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 hover:shadow-lg hover:border-primary/20 transition-all duration-500 group">
                                     <div className="flex-shrink-0">
-                                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300">
-                                            {service.icon}
+                                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                            <service.icon className="w-8 h-8 text-accent" />
                                         </div>
                                     </div>
                                     <div>

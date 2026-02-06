@@ -635,7 +635,7 @@ export default function About() {
                     <AnimatedSection className="text-center max-w-3xl mx-auto">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                             Ready to Begin Your
-                            <span className="block text-gradient-primary mt-2">
+                            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-accent via-orange-400 to-amber-300">
                                 Teaching Journey?
                             </span>
                         </h2>

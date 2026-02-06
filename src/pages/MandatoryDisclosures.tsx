@@ -104,8 +104,12 @@ export default function MandatoryDisclosures() {
                                 </svg>
                                 Official Documents
                             </span>
-                            <h1 className="text-4xl md:text-6xl font-bold text-white text-gradient mb-4">
-                                Mandatory Disclosures
+                            {/* Main Heading */}
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-text-blur animate-delay-200">
+                                Mandatory
+                                <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-accent via-orange-400 to-amber-300">
+                                    Disclosures
+                                </span>
                             </h1>
                             <p className="mt-4 text-xl text-white/90 leading-relaxed animate-slide-in-left animate-delay-200">
                                 Access official documents, student records, and
@@ -126,7 +130,7 @@ export default function MandatoryDisclosures() {
                 <Container>
                     {/* Section Header */}
                     <div className="text-center mb-12 animate-fade-up">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4">
+                        <h2 className="text-3xl md:text-4xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent via-orange-400 to-amber-400">
                             Download Important Documents
                         </h2>
                         <p className="text-body text-lg max-w-2xl mx-auto">
