@@ -1,4 +1,14 @@
 import { useState, useEffect, useRef } from "react";
+import {
+    Eye,
+    Target,
+    BookOpen,
+    Users,
+    Lightbulb,
+    Award,
+    MapPin,
+    Phone,
+} from "lucide-react";
 import Container from "../components/layout/Container";
 import "../styles/about.css";
 
@@ -15,19 +25,19 @@ const COLLEGE_STATS = [
 
 const MISSION_POINTS = [
     {
-        icon: "📚",
+        icon: <BookOpen className="w-6 h-6 text-accent" />,
         text: "Deliver quality professional education that meets national standards",
     },
     {
-        icon: "🤝",
+        icon: <Users className="w-6 h-6 text-accent" />,
         text: "Promote ethical values, social responsibility, and moral integrity",
     },
     {
-        icon: "💡",
+        icon: <Lightbulb className="w-6 h-6 text-accent" />,
         text: "Encourage reflective, innovative, and research-based teaching",
     },
     {
-        icon: "🎯",
+        icon: <Award className="w-6 h-6 text-accent" />,
         text: "Develop competent, confident, and committed educators",
     },
 ];
@@ -190,7 +200,7 @@ export default function About() {
                             {/* Main Heading */}
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-text-blur animate-delay-200">
                                 Shaping the
-                                <span className="block mt-1 text-gradient-primary">
+                                <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-accent via-orange-400 to-amber-300">
                                     Future of Education
                                 </span>
                             </h1>
@@ -261,9 +271,10 @@ export default function About() {
             >
                 <Container>
                     <AnimatedSection className="text-center mb-16">
-                        <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-4">
+                        <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary bg-primary/5 rounded-full border border-primary/10 mb-6">
+                            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                             Our Journey
-                        </span>
+                        </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-heading">
                             A Legacy of Excellence
                         </h2>
@@ -357,9 +368,10 @@ export default function About() {
             <section id="vision" className="py-12 bg-white">
                 <Container>
                     <AnimatedSection className="text-center mb-12">
-                        <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6">
+                        <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary bg-primary/5 rounded-full border border-primary/10 mb-6">
+                            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                             Our Purpose
-                        </span>
+                        </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-heading">
                             Vision & Mission
                         </h2>
@@ -373,8 +385,8 @@ export default function About() {
                         {/* Vision Card */}
                         <AnimatedSection>
                             <div className="about-vision-card h-full">
-                                <div className="about-vision-icon bg-gradient-to-br from-accent/20 to-accent/5">
-                                    👁️
+                                <div className="about-vision-icon bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
+                                    <Eye className="w-8 h-8 text-accent" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-heading mb-4">
                                     Our Vision
@@ -404,8 +416,8 @@ export default function About() {
                         {/* Mission Card */}
                         <AnimatedSection delay={150}>
                             <div className="about-vision-card h-full">
-                                <div className="about-vision-icon bg-gradient-to-br from-primary/20 to-primary/5">
-                                    🎯
+                                <div className="about-vision-icon bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                                    <Target className="w-8 h-8 text-primary" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-heading mb-4">
                                     Our Mission
@@ -650,11 +662,11 @@ export default function About() {
                         {/* Contact info */}
                         <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/70">
                             <div className="flex items-center gap-2">
-                                <span>📍</span>
+                                <MapPin className="w-5 h-5 text-accent" />
                                 <span>Moradabad, Uttar Pradesh</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <span>📞</span>
+                                <Phone className="w-5 h-5 text-accent" />
                                 <span>+91-591-2460664</span>
                             </div>
                         </div>

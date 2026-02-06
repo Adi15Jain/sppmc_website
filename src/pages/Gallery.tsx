@@ -1,5 +1,23 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { gsap } from "gsap";
+import {
+    Camera,
+    Landmark,
+    Building2,
+    Theater,
+    Palette,
+    Image as ImageIcon,
+    Star,
+    LayoutGrid,
+    Search,
+    Download,
+    X,
+    ChevronLeft,
+    ChevronRight,
+    ZoomIn,
+    ZoomOut,
+    FolderOpen,
+} from "lucide-react";
 import Container from "../components/layout/Container";
 
 type GalleryImage = {
@@ -11,11 +29,11 @@ type GalleryImage = {
 };
 
 const CATEGORIES = [
-    { id: "all", label: "All Photos", icon: "📸" },
-    { id: "campus", label: "Campus", icon: "🏛️" },
-    { id: "facilities", label: "Facilities", icon: "🏫" },
-    { id: "events", label: "Events", icon: "🎭" },
-    { id: "activities", label: "Activities", icon: "🎨" },
+    { id: "all", label: "All Photos", icon: LayoutGrid },
+    { id: "campus", label: "Campus", icon: Landmark },
+    { id: "facilities", label: "Facilities", icon: Building2 },
+    { id: "events", label: "Events", icon: Theater },
+    { id: "activities", label: "Activities", icon: Palette },
 ];
 
 const IMAGES: GalleryImage[] = [
@@ -234,19 +252,7 @@ function Lightbox({
                             className="p-2 hover:bg-white/10 rounded transition-colors"
                             disabled={zoom <= 1}
                         >
-                            <svg
-                                className="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M20 12H4"
-                                />
-                            </svg>
+                            <ZoomOut className="w-5 h-5" />
                         </button>
                         <span className="px-2 text-sm min-w-[3rem] text-center">
                             {Math.round(zoom * 100)}%
@@ -256,19 +262,7 @@ function Lightbox({
                             className="p-2 hover:bg-white/10 rounded transition-colors"
                             disabled={zoom >= 4}
                         >
-                            <svg
-                                className="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M12 4v16m8-8H4"
-                                />
-                            </svg>
+                            <ZoomIn className="w-5 h-5" />
                         </button>
                     </div>
 
@@ -279,19 +273,7 @@ function Lightbox({
                         className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                         title="Download"
                     >
-                        <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                            />
-                        </svg>
+                        <Download className="w-5 h-5" />
                     </a>
 
                     {/* Close button */}
@@ -300,19 +282,7 @@ function Lightbox({
                         className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                         title="Close (Esc)"
                     >
-                        <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        </svg>
+                        <X className="w-6 h-6" />
                     </button>
                 </div>
             </div>
@@ -355,19 +325,7 @@ function Lightbox({
                         }}
                         className="absolute left-4 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
                     >
-                        <svg
-                            className="w-6 h-6 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M15 19l-7-7 7-7"
-                            />
-                        </svg>
+                        <ChevronLeft className="w-6 h-6 text-white" />
                     </button>
                 )}
                 {currentIndex < images.length - 1 && (
@@ -378,19 +336,7 @@ function Lightbox({
                         }}
                         className="absolute right-4 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all hover:scale-110"
                     >
-                        <svg
-                            className="w-6 h-6 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5l7 7-7 7"
-                            />
-                        </svg>
+                        <ChevronRight className="w-6 h-6 text-white" />
                     </button>
                 )}
             </div>
@@ -441,13 +387,126 @@ export default function Gallery() {
     const [activeCategory, setActiveCategory] = useState("all");
     const [hoveredId, setHoveredId] = useState<number | null>(null);
     const gridRef = useRef<HTMLDivElement>(null);
+    const heroRef = useRef<HTMLElement>(null);
+    const backgroundRef = useRef<HTMLDivElement>(null);
+    const floatingRefs = useRef<HTMLDivElement[]>([]);
 
     const filteredImages =
         activeCategory === "all"
             ? IMAGES
             : IMAGES.filter((img) => img.category === activeCategory);
 
-    // GSAP animation on mount and category change
+    // Hero GSAP animations
+    useEffect(() => {
+        const hero = heroRef.current;
+        if (!hero) return;
+
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+            // Background zoom out entrance
+            tl.fromTo(
+                backgroundRef.current,
+                { scale: 1.1, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 1.5 },
+            );
+
+            // Staggered content reveal
+            tl.from(
+                ".hero-badge",
+                {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.8,
+                },
+                "-=1",
+            );
+
+            tl.from(
+                ".hero-title",
+                {
+                    opacity: 0,
+                    y: 40,
+                    duration: 1,
+                },
+                "-=0.6",
+            );
+
+            tl.from(
+                ".hero-subtitle",
+                {
+                    opacity: 0,
+                    y: 30,
+                    duration: 0.8,
+                },
+                "-=0.7",
+            );
+
+            tl.from(
+                ".scroll-indicator",
+                {
+                    opacity: 0,
+                    y: -20,
+                    duration: 0.6,
+                },
+                "-=0.4",
+            );
+
+            // Floating elements continuous animation
+            floatingRefs.current.forEach((el, i) => {
+                if (el) {
+                    gsap.to(el, {
+                        y: "random(-30, 30)",
+                        x: "random(-20, 20)",
+                        rotation: "random(-15, 15)",
+                        duration: "random(4, 7)",
+                        repeat: -1,
+                        yoyo: true,
+                        ease: "sine.inOut",
+                        delay: i * 0.4,
+                    });
+                }
+            });
+        }, hero);
+
+        return () => ctx.revert();
+    }, []);
+
+    // Mouse Parallax for Hero
+    useEffect(() => {
+        const hero = heroRef.current;
+        if (!hero) return;
+
+        const handleMouseMove = (e: MouseEvent) => {
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+            const xPercent = (clientX / innerWidth - 0.5) * 2;
+            const yPercent = (clientY / innerHeight - 0.5) * 2;
+
+            floatingRefs.current.forEach((el, i) => {
+                if (el) {
+                    const depth = (i + 1) * 0.45;
+                    gsap.to(el, {
+                        x: xPercent * 15 * depth,
+                        y: yPercent * 10 * depth,
+                        duration: 1,
+                        ease: "power2.out",
+                    });
+                }
+            });
+        };
+
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
+    }, []);
+
+    const addToFloatingRefs = (el: HTMLDivElement | null) => {
+        if (el && !floatingRefs.current.includes(el)) {
+            floatingRefs.current.push(el);
+        }
+    };
+
+    // GSAP animation on category change for grid
     useEffect(() => {
         if (!gridRef.current) return;
 
@@ -484,36 +543,93 @@ export default function Gallery() {
     return (
         <main>
             {/* Hero Section */}
-            <section className="relative h-[100vh] min-h-[400px] overflow-hidden">
-                <img
-                    src="/images/gallery-hero.png"
-                    alt="Gallery Collage"
-                    className="absolute inset-0 h-full w-full object-cover animate-fade-in"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/50" />
+            <section
+                ref={heroRef}
+                className="relative h-[100vh] min-h-[600px] w-full overflow-hidden"
+            >
+                {/* Background Layer with Parallax capability */}
+                <div ref={backgroundRef} className="absolute inset-0">
+                    <img
+                        src="/images/gallery-hero.png"
+                        alt="Gallery Collage"
+                        className="absolute inset-0 h-full w-full object-cover"
+                    />
+                    {/* Multi-layered premium overlay */}
+                    <div
+                        className="absolute inset-0"
+                        style={{
+                            background:
+                                "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 50%, rgba(255, 121, 0, 0.1) 100%)",
+                        }}
+                    />
+                    <div className="absolute inset-0 bg-slate-900/40" />
+                </div>
 
+                {/* Subtle Grid Overlay */}
+                <div
+                    className="absolute inset-0 opacity-[0.03]"
+                    style={{
+                        backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+                        backgroundSize: "60px 60px",
+                    }}
+                />
+
+                {/* Decorative Elements */}
+                <div
+                    ref={addToFloatingRefs}
+                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"
+                />
+                <div
+                    ref={addToFloatingRefs}
+                    className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent/20 rounded-full blur-[100px]"
+                />
+                <div
+                    ref={addToFloatingRefs}
+                    className="absolute top-1/3 right-10 w-20 h-20 border border-white/10 rounded-full hidden md:block"
+                />
+                <div
+                    ref={addToFloatingRefs}
+                    className="absolute bottom-1/3 left-10 w-28 h-28 border border-accent/10 rounded-full hidden md:block"
+                />
+
+                {/* Content */}
                 <div className="relative z-10 flex h-full items-center pt-[112px]">
                     <Container>
-                        <div className="max-w-3xl animate-slide-in-left">
-                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium mb-6 animate-fade-in">
-                                <span className="text-lg">📸</span>
-                                Photo Gallery
-                            </span>
-                            <h1 className="text-4xl md:text-6xl font-bold text-white text-gradient mb-4">
-                                Campus Gallery
+                        <div className="max-w-4xl">
+                            {/* Animated Badge */}
+                            <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 mb-8 glass rounded-full text-white/90 text-sm font-semibold tracking-wide border border-white/10">
+                                <span className="w-2 h-2 bg-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(255,121,0,0.8)]" />
+                                Capturing Moments
+                            </div>
+
+                            <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
+                                Campus{" "}
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-orange-400 to-amber-300">
+                                    Gallery
+                                </span>
                             </h1>
-                            <p className="mt-4 text-xl text-white/90 leading-relaxed animate-slide-in-left animate-delay-200">
-                                Explore the vibrant life at SPPMC through our
-                                collection of photographs capturing memorable
-                                moments, events, and campus experiences.
+
+                            <p className="hero-subtitle text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl font-light">
+                                A visual journey through SPPMC&apos;s vibrant
+                                academic life, cultural festivities, and
+                                world-class infrastructure.
                             </p>
+
+                            {/* Decorative Line */}
+                            <div className="mt-12 h-1 w-24 bg-gradient-to-r from-accent to-transparent rounded-full" />
                         </div>
                     </Container>
                 </div>
 
-                {/* Floating elements */}
-                <div className="absolute top-20 right-20 w-16 h-16 bg-white/10 rounded-full animate-float animate-delay-300"></div>
-                <div className="absolute bottom-24 left-16 w-10 h-10 bg-accent/20 rounded-full animate-float animate-delay-700"></div>
+                {/* Scroll Indicator */}
+                <div className="scroll-indicator absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+                    <span className="text-white/40 text-sm font-bold tracking-[0.3em] uppercase">
+                        Explore
+                    </span>
+                    <div className="w-[1px] h-16 bg-gradient-to-b from-white/60 to-transparent relative">
+                        <div className="absolute top-0 left-0 w-full h-1/2 bg-accent animate-infinite-scroll" />
+                    </div>
+                </div>
             </section>
 
             {/* Gallery Section */}
@@ -535,7 +651,9 @@ export default function Gallery() {
                                     }
                                 `}
                             >
-                                <span className="text-lg">{cat.icon}</span>
+                                <cat.icon
+                                    className={`w-5 h-5 ${activeCategory === cat.id ? "text-white" : "text-accent"}`}
+                                />
                                 {cat.label}
                                 {activeCategory === cat.id && (
                                     <span className="ml-1 px-2 py-0.5 bg-white/20 rounded-full text-xs">
@@ -629,24 +747,13 @@ export default function Gallery() {
                                         ${hoveredId === image.id ? "scale-100 opacity-100" : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"}
                                     `}
                                     >
-                                        <svg
-                                            className="w-6 h-6 text-white"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
-                                            />
-                                        </svg>
+                                        <Search className="w-6 h-6 text-white" />
                                     </div>
 
                                     {/* Featured badge */}
                                     {image.featured && (
-                                        <div className="absolute top-4 right-4 px-3 py-1 bg-accent text-white text-xs font-bold rounded-full">
+                                        <div className="absolute top-4 right-4 px-3 py-1 bg-accent text-white text-xs font-bold rounded-full flex items-center gap-1">
+                                            <Star className="w-3 h-3 fill-current" />
                                             Featured
                                         </div>
                                     )}
@@ -657,8 +764,8 @@ export default function Gallery() {
 
                     {/* Empty state */}
                     {filteredImages.length === 0 && (
-                        <div className="text-center py-16">
-                            <span className="text-5xl mb-4 block">📷</span>
+                        <div className="text-center py-24 bg-slate-50/50 rounded-3xl border border-dashed border-slate-200">
+                            <ImageIcon className="w-16 h-16 text-accent/40 mx-auto mb-4" />
                             <h3 className="text-xl font-semibold text-slate-900 mb-2">
                                 No photos in this category
                             </h3>
@@ -678,34 +785,37 @@ export default function Gallery() {
                             {
                                 value: IMAGES.length,
                                 label: "Photos",
-                                icon: "📸",
+                                icon: Camera,
                             },
                             {
                                 value: IMAGES.filter(
                                     (i) => i.category === "events",
                                 ).length,
                                 label: "Events Captured",
-                                icon: "🎭",
+                                icon: Theater,
                             },
                             {
                                 value: IMAGES.filter((i) => i.featured).length,
                                 label: "Featured Images",
-                                icon: "⭐",
+                                icon: Star,
                             },
                             {
                                 value: CATEGORIES.length - 1,
                                 label: "Categories",
-                                icon: "📂",
+                                icon: FolderOpen,
                             },
                         ].map((stat) => (
-                            <div key={stat.label} className="card p-6">
-                                <span className="text-3xl mb-2 block">
-                                    {stat.icon}
-                                </span>
-                                <div className="text-3xl md:text-4xl font-bold text-gradient">
+                            <div
+                                key={stat.label}
+                                className="card group p-8 hover:bg-white transition-all duration-500"
+                            >
+                                <div className="inline-flex p-3 rounded-2xl bg-accent/10 mb-4 group-hover:bg-accent group-hover:text-white transition-colors duration-500">
+                                    <stat.icon className="w-8 h-8 text-accent group-hover:text-white transition-colors" />
+                                </div>
+                                <div className="text-3xl md:text-4xl font-bold text-slate-900">
                                     {stat.value}+
                                 </div>
-                                <div className="text-slate-600 text-sm mt-1">
+                                <div className="text-slate-500 text-sm mt-1 uppercase tracking-wider font-semibold">
                                     {stat.label}
                                 </div>
                             </div>

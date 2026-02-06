@@ -18,28 +18,28 @@ const LIFE_PILLARS = [
         icon: Building2,
         title: "Infrastructure",
         description: "Smart classrooms, digital library, and modern ICT labs.",
-        gradient: "from-blue-500 to-indigo-600",
+        gradient: "from-blue-950 to-blue-950",
         image: "/images/library.jpeg",
     },
     {
         icon: Palette,
         title: "Cultural Life",
         description: "Annual festivals, talent shows, and creative workshops.",
-        gradient: "from-purple-500 to-pink-500",
+        gradient: "from-blue-950 to-blue-950",
         image: "/images/event.jpeg",
     },
     {
         icon: BookOpen,
         title: "Teaching Practice",
         description: "School internships and hands-on classroom training.",
-        gradient: "from-orange-500 to-amber-500",
+        gradient: "from-blue-950 to-blue-950",
         image: "/images/classroom.jpeg",
     },
     {
         icon: Users,
         title: "Community",
         description: "NSS activities, outreach programs, and ethical values.",
-        gradient: "from-emerald-500 to-teal-500",
+        gradient: "from-blue-950 to-blue-950",
         image: "/images/seminar.jpeg",
     },
 ];
@@ -302,7 +302,7 @@ export default function StudentLife() {
                                         className="text-center"
                                     >
                                         <div className="flex items-baseline justify-center gap-0.5">
-                                            <span className="text-2xl md:text-3xl font-bold text-slate-900 tabular-nums">
+                                            <span className="text-2xl md:text-5xl font-bold text-slate-900 tabular-nums">
                                                 {counters[stat.label] ?? 0}
                                             </span>
                                             <span className="text-lg font-bold text-accent">

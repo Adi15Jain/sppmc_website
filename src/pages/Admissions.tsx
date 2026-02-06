@@ -254,7 +254,7 @@ export default function Admissions() {
                             </div>
 
                             {/* Quick Stats */}
-                            <div className="mt-16 flex flex-wrap gap-8 md:gap-12 animate-reveal-up animate-delay-800">
+                            <div className="mt-12 flex flex-wrap gap-8 md:gap-12 animate-reveal-up animate-delay-800">
                                 {[
                                     { value: "2", label: "Programs" },
                                     { value: "NCTE", label: "Approved" },
@@ -331,7 +331,7 @@ export default function Admissions() {
             {/* ==========================================
                 SECTION 3: ELIGIBILITY CRITERIA
                ========================================== */}
-            <section id="eligibility" className="py-24 bg-white">
+            <section id="eligibility" className="py-12 bg-white">
                 <Container>
                     <AnimatedSection className="text-center mb-16">
                         <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">

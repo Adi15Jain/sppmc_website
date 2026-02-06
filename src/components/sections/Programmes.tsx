@@ -56,7 +56,7 @@ const PROGRAMS: Program[] = [
             "Hands-on teaching experience",
         ],
         Icon: BookOpen,
-        gradient: "from-blue-500 to-indigo-500",
+        gradient: "from-orange-500 to-amber-500",
         accentColor: "rgba(59, 130, 246, 0.15)",
     },
 ];
@@ -348,7 +348,7 @@ export default function Programmes() {
         <section
             ref={sectionRef}
             id="programmes"
-            className="relative pt-16 pb-24 md:pt-16 md:pb-24 overflow-hidden"
+            className="relative pt-16 pb-16 md:pt-12 md:pb-12 overflow-hidden"
             style={{ perspective: "1000px" }}
         >
             {/* Base gradient background */}

@@ -29,7 +29,7 @@ const CONTACT_INFO = [
             label: "Get Directions",
             href: "https://maps.app.goo.gl/ZJaMNv5biS8BWgKHA",
         },
-        color: "from-rose-500 to-pink-600",
+        color: "from-amber-500 to-orange-500",
     },
     {
         icon: Phone,
@@ -39,7 +39,7 @@ const CONTACT_INFO = [
             label: "Call Now",
             href: "tel:+919876543210",
         },
-        color: "from-blue-500 to-cyan-500",
+        color: "from-amber-500 to-orange-500",
     },
     {
         icon: Mail,
@@ -49,7 +49,7 @@ const CONTACT_INFO = [
             label: "Send Email",
             href: "mailto:info@sppmc.edu.in",
         },
-        color: "from-purple-500 to-indigo-600",
+        color: "from-amber-500 to-orange-500",
     },
     {
         icon: Clock,
@@ -524,7 +524,7 @@ export default function Contact() {
                             {/* Map & Quick Contacts */}
                             <div className="space-y-8">
                                 {/* Embedded Map */}
-                                <div className="relative rounded-3xl overflow-hidden shadow-xl h-[350px]">
+                                <div className="relative rounded-3xl overflow-hidden shadow-xl h-[443px]">
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223912.92880802568!2d78.6569256875!3d28.861898950000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390b07b6e9be9c3d%3A0x4b7d35a7e2c32c0a!2sMoradabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                                         className="w-full h-full border-0"

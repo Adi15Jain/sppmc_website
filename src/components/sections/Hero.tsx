@@ -266,7 +266,7 @@ export default function Hero() {
                         >
                             <div className="hero-stat text-center">
                                 <div
-                                    className="stat-number text-3xl font-bold text-white"
+                                    className="stat-number text-5xl font-bold text-white"
                                     data-target="500"
                                     data-suffix="+"
                                 >
@@ -278,7 +278,7 @@ export default function Hero() {
                             </div>
                             <div className="hero-stat text-center">
                                 <div
-                                    className="stat-number text-3xl font-bold text-accent"
+                                    className="stat-number text-5xl font-bold text-accent"
                                     data-target="20"
                                     data-suffix="+"
                                 >
@@ -290,7 +290,7 @@ export default function Hero() {
                             </div>
                             <div className="hero-stat text-center">
                                 <div
-                                    className="stat-number text-3xl font-bold text-white"
+                                    className="stat-number text-5xl font-bold text-white"
                                     data-target="98"
                                     data-suffix="%"
                                 >

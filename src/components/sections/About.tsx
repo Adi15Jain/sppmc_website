@@ -29,7 +29,7 @@ const HIGHLIGHTS = [
         value: "SCERT, UP",
         isNumber: false,
         description: "Government recognized",
-        gradient: "from-blue-500 to-indigo-500",
+        gradient: "from-orange-500 to-amber-500",
         image: "/images/campus-2.jpg",
     },
     {
@@ -39,7 +39,7 @@ const HIGHLIGHTS = [
         suffix: "+",
         isNumber: true,
         description: "B.Ed & D.El.Ed",
-        gradient: "from-emerald-500 to-teal-500",
+        gradient: "from-orange-500 to-amber-500",
         image: "/images/academics.jpg",
     },
     {
@@ -49,7 +49,7 @@ const HIGHLIGHTS = [
         suffix: "+",
         isNumber: true,
         description: "Successful educators",
-        gradient: "from-purple-500 to-violet-500",
+        gradient: "from-orange-500 to-amber-500",
         image: "/images/seminar.jpeg",
     },
 ];
@@ -384,7 +384,7 @@ export default function About() {
 
                                     {/* Value with animated counter */}
                                     <div className="flex items-baseline gap-0.5">
-                                        <span className="text-2xl md:text-3xl font-bold text-white tabular-nums drop-shadow-md">
+                                        <span className="text-3xl md:text-4xl font-bold text-white tabular-nums drop-shadow-md">
                                             {stat.isNumber
                                                 ? (counters[stat.label] ?? 0)
                                                 : stat.value}
