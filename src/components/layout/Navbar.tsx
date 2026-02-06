@@ -46,7 +46,7 @@ export default function Navbar({
                             <span
                                 className={`
                                     font-bold tracking-tight transition-all duration-500
-                                    ${scrolled ? "text-lg text-[var(--color-primary)]" : "text-xl text-white"}
+                                    ${scrolled ? "text-lg text-white" : "text-xl text-white"}
                                 `}
                             >
                                 <span className="hidden md:inline">

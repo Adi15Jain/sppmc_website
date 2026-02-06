@@ -662,22 +662,22 @@ export default function Contact() {
                                     {[
                                         {
                                             icon: Facebook,
-                                            href: "#",
+                                            href: "https://www.facebook.com/tmumbd/",
                                             label: "Facebook",
                                         },
                                         {
                                             icon: Instagram,
-                                            href: "#",
+                                            href: "https://www.instagram.com/tmu_mbd/",
                                             label: "Instagram",
                                         },
                                         {
                                             icon: Twitter,
-                                            href: "#",
+                                            href: "https://x.com/Tmumbd",
                                             label: "Twitter",
                                         },
                                         {
                                             icon: Youtube,
-                                            href: "#",
+                                            href: "https://www.youtube.com/c/TeerthankerMahaveerUniversity",
                                             label: "YouTube",
                                         },
                                     ].map((social) => (
