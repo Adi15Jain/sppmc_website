@@ -10,7 +10,6 @@ import {
     Utensils,
     Bus,
     PenTool,
-    FlaskConical,
     Palette,
     Music,
     MessageSquare,
@@ -19,7 +18,6 @@ import {
     HeartHandshake,
     ShieldCheck,
     Rocket,
-    Building2,
 } from "lucide-react";
 import Container from "../components/layout/Container";
 
@@ -31,27 +29,26 @@ const FACILITIES = [
     {
         title: "Digital Library",
         description:
-            "Well-stocked library with 9,138+ books, journals, magazines, and encyclopedias for research",
+            "A well-stocked library with 9,000+ books, journals, magazines, and dictionaries for comprehensive research.",
         image: "/images/library.jpeg",
-        stats: { books: 9138, journals: 6, magazines: 10, capacity: 50 },
     },
     {
         title: "ET & ICT Lab",
         description:
-            "High-speed internet, language lab, and modern computers for 100 students",
-        image: "/images/seminar.jpeg",
+            "Requisite software, printers, and high-speed internet catering to 100 students for effective teaching.",
+        image: "/images/computer_lab.jpeg",
     },
     {
-        title: "Smart Classrooms",
+        title: "Medical Facility",
         description:
-            "ICT-enabled rooms with projectors and digital boards for interactive learning",
-        image: "/images/campus-facilities.png",
+            "Monthly health check-ups at the attached 599-bed multi-specialty hospital.",
+        image: "/images/classroom.jpeg",
     },
     {
-        title: "Seminar Hall",
+        title: "Sports & Games",
         description:
-            "Multipurpose hall for conferences, workshops, and cultural events",
-        image: "/images/event.jpeg",
+            "Large playground and sports room for diverse indoor and outdoor games.",
+        image: "/images/seminar_hall.jpeg",
     },
 ];
 
@@ -69,10 +66,10 @@ const INFRASTRUCTURE_ROOMS = [
     "Principal Office",
     "Administrative Office",
     "Faculty / Staff Room",
-    "Library cum Reading Room",
+    "Library / Reading Room",
     "Classrooms",
     "Multipurpose Hall",
-    "Educational Technology & ICT Lab",
+    "Educational & ICT Labs",
 ];
 
 // Additional services from parent website
@@ -80,63 +77,70 @@ const CAMPUS_SERVICES = [
     {
         title: "Medical Facility",
         description:
-            "Monthly health check-ups at the 599-bed multi-specialty TMU Hospital under qualified doctors",
+            "Top priority is accorded to student health with monthly check-ups at the 599-bed multi-specialty TMMC&RC hospital under expert supervision.",
         icon: Hospital,
         gradient: "from-yellow-500 to-orange-500",
     },
     {
-        title: "Sports Complex",
+        title: "Sports & Games",
         description:
-            "Playground and sports room for cricket, volleyball, badminton, football, kabaddi, chess & more",
+            "Playground and sports room for table tennis, cricket, volleyball, badminton, football, kabaddi, carrom, and chess.",
         icon: Trophy,
-        gradient: "from-yellow-500 to-orange-500",
+        gradient: "from-orange-500 to-amber-500",
     },
     {
         title: "Canteen & Mess",
         description:
-            "On-campus dining with sumptuous dishes and delicious food options",
+            "Sumptuous dishes and delicious food options provided from a well-curated menu card.",
         icon: Utensils,
-        gradient: "from-yellow-500 to-orange-500",
+        gradient: "from-amber-500 to-yellow-500",
     },
     {
         title: "College Transport",
         description:
-            "Dedicated buses from Moradabad city to campus and vice-versa for students & staff",
+            "Dedicated college buses running between Moradabad city and the campus for students and staff.",
         icon: Bus,
         gradient: "from-yellow-500 to-orange-500",
     },
 ];
 
-const ACTIVITIES = [
-    {
-        title: "Cultural Programs",
-        description: "Annual festivals, dance, music, and drama performances",
-        gradient: "from-orange-500 to-amber-500",
+const CURRICULAR_ACTIVITIES = {
+    theory: {
+        title: "Theory & Academic Foundation",
+        description:
+            "Regular theory classes conducted throughout the year with advanced syllabus completion.",
+        highlights: [
+            "Monthly Seminar & Group Discussions",
+            "Expert Guest Lectures",
+            "Internal Evaluation (Mid-term Exams)",
+            "Scientific Mindset Development",
+        ],
     },
-    {
-        title: "Sports Events",
-        description: "Inter-college tournaments and fitness activities",
-        gradient: "from-orange-500 to-amber-500",
+    practical: {
+        title: "Practical Training",
+        description:
+            "Hands-on experience through micro-teaching and professional lesson planning.",
+        records: [
+            "Micro Teaching Records",
+            "Teaching Practice L.P. Records",
+            "Observation Records",
+            "Psychological Test Records",
+            "Audio-Visual Aids Operations",
+            "Test Items & Exam Question Papers",
+            "Case Study & Cultural Records",
+            "Physical Exercise & Sports Records",
+            "Subject-specific Projects",
+        ],
     },
-    {
-        title: "Educational Workshops",
-        description: "Skill development sessions and expert lectures",
-        gradient: "from-orange-500 to-amber-500",
-    },
-    {
-        title: "Community Outreach",
-        description: "Social service initiatives and awareness campaigns",
-        gradient: "from-orange-500 to-amber-500",
-    },
-];
+};
 
-const CLUBS = [
-    { name: "Literary Club", icon: PenTool, members: 45 },
-    { name: "Science Club", icon: FlaskConical, members: 38 },
-    { name: "Art & Craft", icon: Palette, members: 52 },
-    { name: "Music Society", icon: Music, members: 34 },
-    { name: "Debate Forum", icon: MessageSquare, members: 28 },
-    { name: "Eco Warriors", icon: Sprout, members: 41 },
+const CO_CURRICULAR_ACTIVITIES = [
+    { name: "Art and Craft Activity", icon: Palette },
+    { name: "Sports & Fitness", icon: Trophy },
+    { name: "Preparation of TLM & PTA", icon: PenTool },
+    { name: "Seminars & Workshops", icon: MessageSquare },
+    { name: "Cultural - Music & Dance", icon: Music },
+    { name: "Community Service", icon: Sprout },
 ];
 
 const TESTIMONIALS = [
@@ -481,29 +485,6 @@ export default function StudentLife() {
                         </div>
                     </AnimatedSection>
 
-                    {/* Infrastructure Rooms */}
-                    <AnimatedSection delay={800} className="mt-16">
-                        <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-lg">
-                            <h3 className="text-xl font-bold text-heading mb-6 flex items-center gap-3">
-                                <Building2 className="w-6 h-6 text-accent" />
-                                Campus Infrastructure
-                            </h3>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                {INFRASTRUCTURE_ROOMS.map((room) => (
-                                    <div
-                                        key={room}
-                                        className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-primary/5 transition-colors duration-300"
-                                    >
-                                        <span className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
-                                        <span className="text-sm text-body">
-                                            {room}
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </AnimatedSection>
-
                     {/* Campus Services */}
                     <AnimatedSection delay={1000} className="mt-16">
                         <div className="text-center mb-10">
@@ -563,59 +544,111 @@ export default function StudentLife() {
                 </div>
 
                 <Container className="relative z-10">
-                    <AnimatedSection className="text-center mb-16">
+                    <AnimatedSection className="text-center mb-10">
                         <span className="inline-block px-4 py-2 bg-white/10 text-white rounded-full text-sm font-semibold mb-4">
                             Beyond Academics
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-white">
                             Student Activities
                         </h2>
-                        <p className="mt-4 text-lg text-white/70 max-w-2xl mx-auto">
+                        <p className="mt-4 text-xl text-white/70 max-w-3xl mx-auto">
                             Engage in diverse activities that nurture
                             creativity, leadership, and personal growth
                         </p>
                     </AnimatedSection>
 
-                    {/* Activities showcase image */}
-                    <AnimatedSection delay={200} className="mb-16">
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                            <img
-                                src="/images/student-activities.png"
-                                alt="Cultural Festival"
-                                className="w-full h-[400px] object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
-                            <div className="absolute bottom-0 left-0 right-0 p-8">
-                                <h3 className="text-3xl font-bold text-white mb-2">
-                                    Annual Cultural Festival
-                                </h3>
-                                <p className="text-white/80 max-w-xl">
-                                    Celebrating diversity through dance, music,
-                                    and art
-                                </p>
-                            </div>
-                        </div>
-                    </AnimatedSection>
-
-                    {/* Activity Cards */}
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                        {ACTIVITIES.map((activity, index) => (
-                            <AnimatedSection
-                                key={activity.title}
-                                delay={300 + index * 100}
-                            >
-                                <div className="glass-card-dark p-6 h-full hover:scale-105 transition-transform duration-500 cursor-pointer group">
-                                    <div
-                                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${activity.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
-                                    >
-                                        <div className="w-6 h-6 bg-white/30 rounded-full" />
+                    {/* Curricular Activities: Theory & Practical */}
+                    <div className="grid gap-8 lg:grid-cols-2 mb-16">
+                        <AnimatedSection delay={200}>
+                            <div className="glass-card-dark p-8 h-full border border-white/10 hover:border-accent/30 transition-all duration-500">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
+                                        <BookOpen className="w-6 h-6 text-accent" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-2">
-                                        {activity.title}
+                                    <h3 className="text-2xl font-bold text-white">
+                                        {CURRICULAR_ACTIVITIES.theory.title}
                                     </h3>
-                                    <p className="text-white/60 text-sm leading-relaxed">
-                                        {activity.description}
-                                    </p>
+                                </div>
+                                <p className="text-white/70 mb-8 leading-relaxed">
+                                    {CURRICULAR_ACTIVITIES.theory.description}
+                                </p>
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    {CURRICULAR_ACTIVITIES.theory.highlights.map(
+                                        (item) => (
+                                            <li
+                                                key={item}
+                                                className="flex items-start gap-3 group"
+                                            >
+                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform" />
+                                                <span className="text-sm text-white/60 group-hover:text-white transition-colors">
+                                                    {item}
+                                                </span>
+                                            </li>
+                                        ),
+                                    )}
+                                </ul>
+                            </div>
+                        </AnimatedSection>
+
+                        <AnimatedSection delay={400}>
+                            <div className="glass-card-dark p-8 h-full border border-white/10 hover:border-accent/30 transition-all duration-500">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
+                                        <PenTool className="w-6 h-6 text-accent" />
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-white">
+                                        {CURRICULAR_ACTIVITIES.practical.title}
+                                    </h3>
+                                </div>
+                                <p className="text-white/70 mb-6 text-sm leading-relaxed">
+                                    {
+                                        CURRICULAR_ACTIVITIES.practical
+                                            .description
+                                    }
+                                </p>
+                                <div className="space-y-3 max-h-[220px] overflow-y-auto pr-4 custom-scrollbar">
+                                    {CURRICULAR_ACTIVITIES.practical.records.map(
+                                        (record) => (
+                                            <div
+                                                key={record}
+                                                className="flex items-center gap-3 p-2 bg-white/5 rounded-lg border border-white/5 hover:border-accent/20 transition-all group"
+                                            >
+                                                <div className="w-6 h-6 rounded bg-accent/10 flex items-center justify-center text-[10px] font-bold text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+                                                    ✓
+                                                </div>
+                                                <span className="text-xs text-white/50 group-hover:text-white transition-colors">
+                                                    {record}
+                                                </span>
+                                            </div>
+                                        ),
+                                    )}
+                                </div>
+                            </div>
+                        </AnimatedSection>
+                    </div>
+
+                    <div className="text-center mb-10">
+                        <h3 className="text-2xl font-bold text-white">
+                            Co-Curricular Activities
+                        </h3>
+                    </div>
+
+                    {/* Co-Curricular Activity Cards */}
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        {CO_CURRICULAR_ACTIVITIES.map((activity, index) => (
+                            <AnimatedSection
+                                key={activity.name}
+                                delay={500 + index * 100}
+                            >
+                                <div className="group relative p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:shadow-xl hover:border-accent/30 transition-all duration-500 cursor-pointer overflow-hidden">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-orange-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                            <activity.icon className="w-6 h-6 text-accent" />
+                                        </div>
+                                        <h4 className="text-lg font-bold text-white leading-tight">
+                                            {activity.name}
+                                        </h4>
+                                    </div>
                                 </div>
                             </AnimatedSection>
                         ))}
@@ -624,82 +657,48 @@ export default function StudentLife() {
             </section>
 
             {/* ==========================================
-                SECTION 4: CLUBS & ORGANIZATIONS
+                SECTION 4: CAMPUS INFRASTRUCTURE (ROOMS)
                ========================================== */}
             <section className="py-16 bg-white">
                 <Container>
                     <AnimatedSection className="text-center mb-16">
                         <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
-                            Find Your Tribe
+                            Strategic Planning
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-heading">
-                            Clubs & Organizations
+                            Institutional Infrastructure
                         </h2>
                         <p className="mt-4 text-lg text-body max-w-2xl mx-auto">
-                            Join student-led communities that match your
-                            interests and passions
+                            Comprehensive building with spacious rooms and
+                            necessary materials as per NCTE requirements
                         </p>
                     </AnimatedSection>
 
-                    {/* Clubs Grid */}
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        {CLUBS.map((club, index) => (
-                            <AnimatedSection
-                                key={club.name}
-                                delay={index * 100}
-                            >
-                                <div className="group relative p-8 rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 hover:shadow-xl hover:border-accent/30 transition-all duration-500 cursor-pointer overflow-hidden">
-                                    {/* Background gradient on hover */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
+                    {/* Rooms Grid */}
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        {INFRASTRUCTURE_ROOMS.map((room, index) => (
+                            <AnimatedSection key={room} delay={index * 100}>
+                                <div className="group relative p-6 rounded-2xl border border-transparent bg-primary shadow-xl hover:bg-white hover:border-gray-100 hover:shadow-none transition-all duration-500 cursor-default overflow-hidden">
                                     <div className="relative z-10">
-                                        <div className="flex items-center justify-between mb-4">
-                                            <club.icon className="w-10 h-10 text-accent group-hover:scale-110 transition-transform duration-300" />
-                                            <span className="px-3 py-1 bg-gray-100 group-hover:bg-accent/10 text-gray-600 group-hover:text-accent text-xs font-semibold rounded-full transition-colors duration-300">
-                                                {club.members} Members
-                                            </span>
+                                        <div className="flex items-center gap-4 mb-4">
+                                            <div className="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-primary/5 flex items-center justify-center transition-colors">
+                                                <span className="text-white group-hover:text-primary font-bold text-lg">
+                                                    {index + 1}
+                                                </span>
+                                            </div>
+                                            <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors duration-300">
+                                                {room}
+                                            </h3>
                                         </div>
-                                        <h3 className="text-xl font-bold text-heading group-hover:text-primary transition-colors duration-300">
-                                            {club.name}
-                                        </h3>
-                                        <div className="mt-4 flex items-center gap-2 text-sm text-body group-hover:text-accent transition-colors duration-300">
-                                            <span>Learn more</span>
-                                            <span className="transform group-hover:translate-x-2 transition-transform duration-300">
-                                                →
-                                            </span>
-                                        </div>
+                                    </div>
+                                    {/* Decorative background number */}
+                                    <div className="absolute -bottom-4 -right-4 text-8xl font-bold text-accent group-hover:text-black/[0.02] transition-colors pointer-events-none">
+                                        {index + 1}
                                     </div>
                                 </div>
                             </AnimatedSection>
                         ))}
                     </div>
-
-                    {/* Clubs image */}
-                    <AnimatedSection delay={600} className="mt-16">
-                        <div className="relative rounded-3xl overflow-hidden img-zoom">
-                            <img
-                                src="/images/clubs-organizations.png"
-                                alt="Students collaborating"
-                                className="w-full h-[350px] object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-transparent to-transparent" />
-                            <div className="absolute inset-0 flex items-center p-12">
-                                <div className="max-w-md">
-                                    <h3 className="text-3xl font-bold text-white mb-4">
-                                        Collaborate & Create
-                                    </h3>
-                                    <p className="text-white/80 mb-6">
-                                        Work together on projects, events, and
-                                        initiatives that make a difference in
-                                        our campus community.
-                                    </p>
-                                    <button className="btn-primary">
-                                        Join a Club
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </AnimatedSection>
                 </Container>
             </section>
 

@@ -520,12 +520,14 @@ export default function Programmes() {
                                     </ul>
                                 </div>
 
-                                <a
-                                    href="/admissions"
+                                <button
+                                    disabled={true}
                                     className={`block text-center w-full px-6 py-4 bg-gradient-to-r ${program.gradient} text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
                                 >
-                                    Apply Now
-                                </a>
+                                    To Apply, please visit the college counter
+                                    <br />
+                                    and receive the application form.
+                                </button>
                             </div>
                         </div>
                     </Container>
