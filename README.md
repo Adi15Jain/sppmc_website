@@ -10,7 +10,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 [![GSAP](https://img.shields.io/badge/Animations-GSAP-green?logo=greensock)](https://greensock.com/gsap/)
 
-[Explore Website](https://sppmc.org) • [Admission Guide](https://sppmc.org/admissions) • [Academic Programs](https://sppmc.org/programmes)
+[Explore Website](https://sppmcwebsite.vercel.app/) • [Admission Guide](https://sppmcwebsite.vercel.app/admissions) • [Academic Programs](https://sppmcwebsite.vercel.app/programmes)
 
 </div>
 
@@ -39,32 +39,6 @@ Shri Prem Prakash Memorial College of Education (SPPMC) is a premier institution
 | **Icons**      | Lucide React                                  |
 | **Routing**    | React Router 7                                |
 | **Styling**    | Modern CSS (Glassmorphism, Dynamic Gradients) |
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (Latest LTS)
-- [npm](https://www.npmjs.com/)
-
-### Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/Adi15Jain/sppmc_website.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd sppmc
-    ```
-3. Install dependencies:
-    ```bash
-    npm install
-    ```
-4. Start the development server:
-    ```bash
-    npm run dev
-    ```
 
 ## 📂 Project Structure
 
