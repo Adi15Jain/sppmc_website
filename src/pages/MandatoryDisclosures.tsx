@@ -1,5 +1,12 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import {
+    FileText,
+    ExternalLink,
+    Shield,
+    Users,
+    ArrowRight,
+} from "lucide-react";
 import Container from "../components/layout/Container";
 
 type DocumentItem = {
@@ -8,6 +15,7 @@ type DocumentItem = {
     description: string;
     link: string;
     category: "student" | "regulatory";
+    type: "pdf" | "link";
 };
 
 const DOCUMENTS: DocumentItem[] = [
@@ -18,6 +26,7 @@ const DOCUMENTS: DocumentItem[] = [
             "Complete list of enrolled students in the Diploma in Elementary Education program for the academic session 2020-21.",
         link: "/assets/pdf/deled_sppmc_student_details.pdf",
         category: "student",
+        type: "pdf",
     },
     {
         id: "ba-students",
@@ -26,6 +35,7 @@ const DOCUMENTS: DocumentItem[] = [
             "Complete list of enrolled students in the Bachelor of Arts program for the academic session 2020-21.",
         link: "/assets/pdf/ba_student_details.pdf",
         category: "student",
+        type: "pdf",
     },
     {
         id: "ba-bed-students",
@@ -34,6 +44,7 @@ const DOCUMENTS: DocumentItem[] = [
             "Complete list of enrolled students in the integrated Bachelor of Arts and Bachelor of Education program for 2020-21.",
         link: "/assets/pdf/ba_bed_student_details.pdf",
         category: "student",
+        type: "pdf",
     },
     {
         id: "mandatory-disclosure",
@@ -42,6 +53,25 @@ const DOCUMENTS: DocumentItem[] = [
             "Official mandatory disclosure document containing institutional information, infrastructure details, and regulatory compliance.",
         link: "/assets/pdf/mandatory_disclosure.pdf",
         category: "regulatory",
+        type: "pdf",
+    },
+    {
+        id: "affidavit",
+        title: "Affidavit",
+        description:
+            "Self-declaration affidavit submitted by the institution regarding infrastructure, faculty, and adherence to NCTE norms and standards.",
+        link: "/assets/pdf/aff.pdf",
+        category: "regulatory",
+        type: "pdf",
+    },
+    {
+        id: "ncte",
+        title: "Recognition Order",
+        description:
+            "Redirect to the National Council for Teacher Education (NCTE) portal for comprehensive institutional recognition and committee details.",
+        link: "https://web.ncte.gov.in/page-regional-committee-institution-lists/35/uttar-pradesh?district_name=715&EdProgID=&searchTerm=shri+prem&search=",
+        category: "regulatory",
+        type: "link",
     },
 ];
 
@@ -170,33 +200,9 @@ export default function MandatoryDisclosures() {
                                             }`}
                                         >
                                             {doc.category === "regulatory" ? (
-                                                <svg
-                                                    className="w-6 h-6"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    viewBox="0 0 24 24"
-                                                >
-                                                    <path
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        strokeWidth={2}
-                                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                                                    />
-                                                </svg>
+                                                <Shield className="w-8 h-8" />
                                             ) : (
-                                                <svg
-                                                    className="w-6 h-6"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    viewBox="0 0 24 24"
-                                                >
-                                                    <path
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        strokeWidth={2}
-                                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
-                                                    />
-                                                </svg>
+                                                <Users className="w-8 h-8" />
                                             )}
                                         </div>
 
@@ -235,33 +241,15 @@ export default function MandatoryDisclosures() {
                                                 : "bg-gradient-to-r from-primary to-primary-light text-white"
                                         }`}
                                     >
-                                        <svg
-                                            className="w-5 h-5"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                                            />
-                                        </svg>
-                                        Download PDF
-                                        <svg
-                                            className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                            />
-                                        </svg>
+                                        {doc.type === "pdf" ? (
+                                            <FileText className="w-5 h-5" />
+                                        ) : (
+                                            <ExternalLink className="w-5 h-5" />
+                                        )}
+                                        {doc.type === "pdf"
+                                            ? "Download PDF"
+                                            : "Open link"}
+                                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                                     </a>
                                 </div>
 

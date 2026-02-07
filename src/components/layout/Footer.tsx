@@ -233,51 +233,20 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        {/* Quick Links */}
+                        {/* Programmes */}
                         <div className="footer-column">
                             <h4 className="text-white font-semibold text-sm uppercase tracking-wider flex items-center gap-2">
                                 <span className="w-6 h-px bg-accent" />
-                                Quick Links
-                            </h4>
-                            <ul className="mt-5 space-y-3 text-sm">
-                                {[
-                                    { label: "Home", href: "/" },
-                                    { label: "About Us", href: "/about" },
-                                    { label: "Academics", href: "/academics" },
-                                    {
-                                        label: "Admissions",
-                                        href: "/admissions",
-                                    },
-                                    { label: "Gallery", href: "/gallery" },
-                                    { label: "Contact", href: "/contact" },
-                                ].map((item) => (
-                                    <li key={item.label}>
-                                        <a
-                                            href={item.href}
-                                            className="text-slate-300/80 transition-all duration-300 hover:text-white inline-flex items-center gap-2 group"
-                                        >
-                                            <span className="w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-3" />
-                                            {item.label}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Programs */}
-                        <div className="footer-column">
-                            <h4 className="text-white font-semibold text-sm uppercase tracking-wider flex items-center gap-2">
-                                <span className="w-6 h-px bg-accent" />
-                                Programs
+                                Programmes
                             </h4>
                             <ul className="mt-5 space-y-3 text-sm">
                                 <li className="text-slate-300/80 flex items-center gap-2">
                                     <span className="w-2 h-2 bg-accent/50 rounded-full" />
                                     <span>
                                         <strong className="text-white">
-                                            B.Ed
+                                            B.A./B.Ed
                                         </strong>{" "}
-                                        – Bachelor of Education
+                                        – Bachelor of Arts and Education
                                     </span>
                                 </li>
                                 <li className="text-slate-300/80 flex items-center gap-2">
@@ -303,6 +272,48 @@ export default function Footer() {
                                         label: "Mandatory Disclosures",
                                         href: "/mandatory-disclosures",
                                     },
+                                    {
+                                        label: "IQAC",
+                                        href: "https://www.tmu.ac.in/tmu/iqac-cell/iqac",
+                                    },
+                                ].map((item) => (
+                                    <li key={item.label}>
+                                        <a
+                                            href={item.href}
+                                            className="text-slate-300/80 transition-all duration-300 hover:text-white inline-flex items-center gap-2 group"
+                                        >
+                                            <span className="w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-3" />
+                                            {item.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Quick Links */}
+                        <div className="footer-column">
+                            <h4 className="text-white font-semibold text-sm uppercase tracking-wider flex items-center gap-2">
+                                <span className="w-6 h-px bg-accent" />
+                                Quick Links
+                            </h4>
+                            <ul className="mt-5 space-y-3 text-sm">
+                                {[
+                                    { label: "Home", href: "/" },
+                                    { label: "About Us", href: "/about" },
+                                    {
+                                        label: "Programmes",
+                                        href: "/programmes",
+                                    },
+                                    {
+                                        label: "Admissions",
+                                        href: "/admissions",
+                                    },
+                                    {
+                                        label: "Student Life",
+                                        href: "/student-life",
+                                    },
+                                    { label: "Gallery", href: "/gallery" },
+                                    { label: "Contact", href: "/contact" },
                                 ].map((item) => (
                                     <li key={item.label}>
                                         <a
@@ -324,15 +335,10 @@ export default function Footer() {
                                 Contact Us
                             </h4>
                             <div className="mt-5 space-y-4 text-sm">
-                                <a
-                                    href="https://maps.google.com/?q=Moradabad,+Uttar+Pradesh"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-start gap-3 text-slate-300/80 transition-colors duration-300 hover:text-white group"
-                                >
-                                    <span className="mt-0.5 text-accent group-hover:scale-110 transition-transform duration-300">
+                                <div className="flex items-start gap-3 text-slate-300/80 transition-colors duration-300 hover:text-white group">
+                                    <span className="mt-0.5 text-accent group-hover:scale-120 transition-transform duration-300">
                                         <svg
-                                            className="w-5 h-5"
+                                            className="w-6 h-6"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -356,15 +362,15 @@ export default function Footer() {
                                         <br />
                                         Uttar Pradesh 244001
                                     </span>
-                                </a>
+                                </div>
 
                                 <a
-                                    href="mailto:info@sppmc.edu.in"
+                                    href="mailto:principal.sppmc@tmu.ac.in"
                                     className="flex items-center gap-3 text-slate-300/80 transition-colors duration-300 hover:text-white group"
                                 >
-                                    <span className="text-accent group-hover:scale-110 transition-transform duration-300">
+                                    <span className="text-accent group-hover:scale-120 transition-transform duration-300">
                                         <svg
-                                            className="w-5 h-5"
+                                            className="w-6 h-6"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -377,16 +383,17 @@ export default function Footer() {
                                             />
                                         </svg>
                                     </span>
-                                    <span>info@sppmc.edu.in</span>
+                                    <span>
+                                        principal.sppmc@tmu.ac.in
+                                        <br />
+                                        studentswelfare@tmu.ac.in
+                                    </span>
                                 </a>
 
-                                <a
-                                    href="tel:+919876543210"
-                                    className="flex items-center gap-3 text-slate-300/80 transition-colors duration-300 hover:text-white group"
-                                >
-                                    <span className="text-accent group-hover:scale-110 transition-transform duration-300">
+                                <div className="flex items-center gap-3 text-slate-300/80 transition-colors duration-300 hover:text-white group">
+                                    <span className="text-accent group-hover:scale-120 transition-transform duration-300">
                                         <svg
-                                            className="w-5 h-5"
+                                            className="w-6 h-6"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -399,13 +406,15 @@ export default function Footer() {
                                             />
                                         </svg>
                                     </span>
-                                    <span>+91 98765 43210</span>
-                                </a>
+                                    <span>
+                                        +91 9568717000 <br /> +91 9568418000
+                                    </span>
+                                </div>
                             </div>
 
                             {/* Map preview */}
                             <a
-                                href="https://maps.app.goo.gl/ZJaMNv5biS8BWgKHA"
+                                href="https://www.google.com/maps/place/Shri+PREM+PRAKASH+MEMORIAL+COLLEGE/@28.8242346,78.6749477,17z/data=!4m14!1m7!3m6!1s0x390afdeb45a33025:0x2ad784a472146430!2sShri+PREM+PRAKASH+MEMORIAL+COLLEGE!8m2!3d28.8242346!4d78.6748271!16s%2Fg%2F11c1rstzhh!3m5!1s0x390afdeb45a33025:0x2ad784a472146430!8m2!3d28.8242346!4d78.6748271!16s%2Fg%2F11c1rstzhh?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="mt-5 block relative overflow-hidden rounded-lg group"

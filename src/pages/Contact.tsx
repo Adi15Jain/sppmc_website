@@ -27,27 +27,27 @@ const CONTACT_INFO = [
         ],
         action: {
             label: "Get Directions",
-            href: "https://maps.app.goo.gl/ZJaMNv5biS8BWgKHA",
+            href: "https://www.google.com/maps/place/Shri+PREM+PRAKASH+MEMORIAL+COLLEGE/@28.8242346,78.6749477,17z/data=!4m14!1m7!3m6!1s0x390afdeb45a33025:0x2ad784a472146430!2sShri+PREM+PRAKASH+MEMORIAL+COLLEGE!8m2!3d28.8242346!4d78.6748271!16s%2Fg%2F11c1rstzhh!3m5!1s0x390afdeb45a33025:0x2ad784a472146430!8m2!3d28.8242346!4d78.6748271!16s%2Fg%2F11c1rstzhh?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D",
         },
         color: "from-amber-500 to-orange-500",
     },
     {
         icon: Phone,
         title: "Phone Numbers",
-        details: ["+91 98765 43210", "+91 0591-2345678"],
+        details: ["+91 95684 18000", "+91 95687 17000"],
         action: {
             label: "Call Now",
-            href: "tel:+919876543210",
+            href: "tel:+919568418000",
         },
         color: "from-amber-500 to-orange-500",
     },
     {
         icon: Mail,
         title: "Email Address",
-        details: ["info@sppmc.edu.in", "admissions@sppmc.edu.in"],
+        details: ["principal.sppmc@tmu.ac.in", "studentswelfare@tmu.ac.in"],
         action: {
             label: "Send Email",
-            href: "mailto:info@sppmc.edu.in",
+            href: "mailto:principal.sppmc@tmu.ac.in",
         },
         color: "from-amber-500 to-orange-500",
     },
@@ -64,12 +64,12 @@ const CONTACT_INFO = [
 ];
 
 // Quick links for the footer
-const QUICK_CONTACTS = [
-    { dept: "Admissions Office", phone: "+91 98765 43211" },
-    { dept: "Examination Cell", phone: "+91 98765 43212" },
-    { dept: "Principal's Office", phone: "+91 98765 43213" },
-    { dept: "Library", phone: "+91 98765 43214" },
-];
+// const QUICK_CONTACTS = [
+//     { dept: "Admissions Office", phone: "+91 98765 43211" },
+//     { dept: "Examination Cell", phone: "+91 98765 43212" },
+//     { dept: "Principal's Office", phone: "+91 98765 43213" },
+//     { dept: "Library", phone: "+91 98765 43214" },
+// ];
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -474,7 +474,7 @@ export default function Contact() {
                                                 id="message"
                                                 name="message"
                                                 required
-                                                rows={5}
+                                                rows={3}
                                                 value={formData.message}
                                                 onChange={handleChange}
                                                 className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none resize-none"
@@ -524,9 +524,9 @@ export default function Contact() {
                             {/* Map & Quick Contacts */}
                             <div className="space-y-8">
                                 {/* Embedded Map */}
-                                <div className="relative rounded-3xl overflow-hidden shadow-xl h-[443px]">
+                                <div className="relative rounded-3xl overflow-hidden shadow-xl h-[680px]">
                                     <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223912.92880802568!2d78.6569256875!3d28.861898950000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390b07b6e9be9c3d%3A0x4b7d35a7e2c32c0a!2sMoradabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3495.491131985771!2d78.6749477!3d28.8242346!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390afdeb45a33025%3A0x2ad784a472146430!2sShri%20PREM%20PRAKASH%20MEMORIAL%20COLLEGE!5e0!3m2!1sen!2sin!4v1770447765185!5m2!1sen!2sin"
                                         className="w-full h-full border-0"
                                         allowFullScreen
                                         loading="lazy"
@@ -535,7 +535,7 @@ export default function Contact() {
                                     />
                                     {/* Overlay with action */}
                                     <a
-                                        href="https://maps.app.goo.gl/ZJaMNv5biS8BWgKHA"
+                                        href="https://www.google.com/maps/place/Shri+PREM+PRAKASH+MEMORIAL+COLLEGE/@28.8242346,78.6749477,17z/data=!4m14!1m7!3m6!1s0x390afdeb45a33025:0x2ad784a472146430!2sShri+PREM+PRAKASH+MEMORIAL+COLLEGE!8m2!3d28.8242346!4d78.6748271!16s%2Fg%2F11c1rstzhh!3m5!1s0x390afdeb45a33025:0x2ad784a472146430!8m2!3d28.8242346!4d78.6748271!16s%2Fg%2F11c1rstzhh?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-lg text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300"
@@ -546,7 +546,7 @@ export default function Contact() {
                                 </div>
 
                                 {/* Quick Contact Cards */}
-                                <div className="bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
+                                {/* <div className="bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
                                     <h3 className="text-lg font-bold text-heading mb-4 flex items-center gap-2">
                                         <Phone className="w-5 h-5 text-accent" />
                                         Department Contacts
@@ -567,7 +567,7 @@ export default function Contact() {
                                             </a>
                                         ))}
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </Container>
@@ -610,7 +610,7 @@ export default function Contact() {
                                     <img
                                         src="/logo.png"
                                         alt="SPPMC"
-                                        className="h-16 w-auto mx-auto md:mx-0"
+                                        className="h-28 w-auto mx-auto md:mx-0"
                                     />
                                 </a>
                                 <h3 className="mt-4 text-lg font-semibold text-white">
@@ -627,28 +627,28 @@ export default function Contact() {
                                     Quick Contact
                                 </h4>
                                 <div className="space-y-3 text-sm text-slate-300/80">
+                                    <span className="flex items-center gap-3 hover:text-white transition-colors justify-center md:justify-start">
+                                        <Mail className="w-6 h-6 text-accent" />
+                                        principal.sppmc@tmu.ac.in
+                                        <br />
+                                        studentswelfare@tmu.ac.in
+                                    </span>
+                                    <span className="flex items-center gap-3 hover:text-white transition-colors justify-center md:justify-start">
+                                        <Phone className="w-6 h-6 text-accent" />
+                                        +91 95687 17000
+                                        <br />
+                                        +91 95684 18000
+                                    </span>
                                     <a
-                                        href="mailto:info@sppmc.edu.in"
-                                        className="flex items-center gap-3 hover:text-white transition-colors justify-center md:justify-start"
-                                    >
-                                        <Mail className="w-4 h-4 text-accent" />
-                                        info@sppmc.edu.in
-                                    </a>
-                                    <a
-                                        href="tel:+919876543210"
-                                        className="flex items-center gap-3 hover:text-white transition-colors justify-center md:justify-start"
-                                    >
-                                        <Phone className="w-4 h-4 text-accent" />
-                                        +91 98765 43210
-                                    </a>
-                                    <a
-                                        href="https://maps.app.goo.gl/ZJaMNv5biS8BWgKHA"
+                                        href="https://www.google.com/maps/place/Shri+PREM+PRAKASH+MEMORIAL+COLLEGE/@28.8242346,78.6749477,17z/data=!4m14!1m7!3m6!1s0x390afdeb45a33025:0x2ad784a472146430!2sShri+PREM+PRAKASH+MEMORIAL+COLLEGE!8m2!3d28.8242346!4d78.6748271!16s%2Fg%2F11c1rstzhh!3m5!1s0x390afdeb45a33025:0x2ad784a472146430!8m2!3d28.8242346!4d78.6748271!16s%2Fg%2F11c1rstzhh?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex items-center gap-3 hover:text-white transition-colors justify-center md:justify-start"
                                     >
-                                        <MapPin className="w-4 h-4 text-accent" />
-                                        Delhi Road, Moradabad
+                                        <MapPin className="w-6 h-6 text-accent" />
+                                        NH-24, Delhi Road
+                                        <br />
+                                        Moradabad
                                     </a>
                                 </div>
                             </div>
@@ -684,6 +684,8 @@ export default function Contact() {
                                         <a
                                             key={social.label}
                                             href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             aria-label={social.label}
                                             className="w-10 h-10 rounded-full flex items-center justify-center text-slate-300 hover:text-white hover:bg-accent/20 transition-all duration-300"
                                             style={{
