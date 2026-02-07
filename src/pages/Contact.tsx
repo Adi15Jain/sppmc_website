@@ -188,11 +188,8 @@ export default function Contact() {
                             </div>
 
                             {/* Main heading */}
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                                Get in{" "}
-                                <span className="text-gradient-primary">
-                                    Touch
-                                </span>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-accent via-orange-400 to-amber-300">
+                                Get in Touch
                             </h1>
 
                             {/* Subtitle */}

@@ -1,14 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import {
-    // Eye,
-    // Target,
-    // BookOpen,
-    // Users,
-    // Lightbulb,
-    // Award,
-    MapPin,
-    Phone,
-} from "lucide-react";
 import Container from "../components/layout/Container";
 import "../styles/about.css";
 
@@ -36,7 +26,7 @@ const FACILITIES = [
         description:
             "Well-stocked library with 9,138+ books, journals, magazines, and encyclopedias",
         image: "/images/library.jpeg",
-        stats: "9,138+ Books",
+        stats: "9,000+ Books",
     },
     {
         title: "ET & ICT Lab",
@@ -51,24 +41,6 @@ const FACILITIES = [
             "Multipurpose hall for conferences, workshops, and cultural events",
         image: "/images/event.jpeg",
         stats: "200+ Capacity",
-    },
-];
-
-const MANAGEMENT = [
-    {
-        name: "Mr Deepak Malik",
-        position: "President",
-        initials: "DM",
-    },
-    {
-        name: "Shri Manoj Kumar Agarwal",
-        position: "General Secretary",
-        initials: "MKA",
-    },
-    {
-        name: "Shri Sanjay Kumar Agarwal",
-        position: "Secretary",
-        initials: "SKA",
     },
 ];
 
@@ -275,14 +247,63 @@ export default function About() {
             </section>
 
             {/* ==========================================
+                SECTION 5: INFRASTRUCTURE & FACILITIES
+               ========================================== */}
+            <section className="py-16 bg-white">
+                <Container>
+                    <AnimatedSection className="text-center mb-8">
+                        <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                            World-Class Amenities
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-heading">
+                            Infrastructure & Facilities
+                        </h2>
+                        <p className="mt-4 text-lg text-body max-w-2xl mx-auto">
+                            State-of-the-art campus designed for holistic
+                            development
+                        </p>
+                    </AnimatedSection>
+
+                    {/* Facilities Grid */}
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
+                        {FACILITIES.map((facility, index) => (
+                            <AnimatedSection
+                                key={facility.title}
+                                delay={index * 100}
+                            >
+                                <div className="about-facility-card">
+                                    <img
+                                        src={facility.image}
+                                        alt={facility.title}
+                                    />
+                                    <div className="about-facility-overlay" />
+                                    <div className="about-facility-content">
+                                        <span className="inline-block px-2 py-1 bg-accent text-white text-xs font-semibold rounded mb-2">
+                                            {facility.stats}
+                                        </span>
+                                        <h4 className="text-white font-bold text-lg">
+                                            {facility.title}
+                                        </h4>
+                                        <p className="about-facility-desc text-white/80 text-sm mt-2">
+                                            {facility.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </AnimatedSection>
+                        ))}
+                    </div>
+                </Container>
+            </section>
+
+            {/* ==========================================
                 SECTION 2: OUR STORY / JOURNEY
                ========================================== */}
             <section
                 id="story"
-                className="py-12 bg-gradient-to-b from-[#f8f9fa] to-white"
+                className="py-16 bg-gradient-to-b from-[#f8f9fa] to-white"
             >
                 <Container>
-                    <AnimatedSection className="text-center mb-16">
+                    <AnimatedSection className="text-center mb-8">
                         <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary bg-primary/5 rounded-full border border-primary/10 mb-6">
                             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                             Our Journey
@@ -370,9 +391,9 @@ export default function About() {
                     </div>
 
                     {/* Image & Highlights Grid */}
-                    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
                         <AnimatedSection delay={300} className="h-full">
-                            <div className="about-facility-card">
+                            <div className="about-facility-card h-48">
                                 <img
                                     src="/images/classroom.jpeg"
                                     alt="Classroom"
@@ -380,17 +401,14 @@ export default function About() {
                                 />
                                 <div className="about-facility-overlay" />
                                 <div className="about-facility-content">
-                                    <h4 className="text-white font-bold text-lg">
+                                    <h4 className="text-white font-bold text-sm">
                                         Modern Classrooms
                                     </h4>
-                                    <p className="about-facility-desc text-white/80 text-sm mt-1">
-                                        ICT-Enabled Learning
-                                    </p>
                                 </div>
                             </div>
                         </AnimatedSection>
                         <AnimatedSection delay={400} className="h-full">
-                            <div className="about-facility-card">
+                            <div className="about-facility-card h-48">
                                 <img
                                     src="/images/library.jpeg"
                                     alt="Library"
@@ -398,17 +416,14 @@ export default function About() {
                                 />
                                 <div className="about-facility-overlay" />
                                 <div className="about-facility-content">
-                                    <h4 className="text-white font-bold text-lg">
+                                    <h4 className="text-white font-bold text-sm">
                                         Digital Library
                                     </h4>
-                                    <p className="about-facility-desc text-white/80 text-sm mt-1">
-                                        9,000+ Rich Resources
-                                    </p>
                                 </div>
                             </div>
                         </AnimatedSection>
                         <AnimatedSection delay={500} className="h-full">
-                            <div className="about-facility-card">
+                            <div className="about-facility-card h-48">
                                 <img
                                     src="/images/seminar_hall.jpeg"
                                     alt="Seminar Hall"
@@ -416,17 +431,14 @@ export default function About() {
                                 />
                                 <div className="about-facility-overlay" />
                                 <div className="about-facility-content">
-                                    <h4 className="text-white font-bold text-lg">
+                                    <h4 className="text-white font-bold text-sm">
                                         Seminar Hall
                                     </h4>
-                                    <p className="about-facility-desc text-white/80 text-sm mt-1">
-                                        Interactive Workshops
-                                    </p>
                                 </div>
                             </div>
                         </AnimatedSection>
                         <AnimatedSection delay={600} className="h-full">
-                            <div className="about-facility-card">
+                            <div className="about-facility-card h-48">
                                 <img
                                     src="/images/computer_lab.jpeg"
                                     alt="Computer Lab"
@@ -434,161 +446,13 @@ export default function About() {
                                 />
                                 <div className="about-facility-overlay" />
                                 <div className="about-facility-content">
-                                    <h4 className="text-white font-bold text-lg">
+                                    <h4 className="text-white font-bold text-sm">
                                         Computer Lab
                                     </h4>
-                                    <p className="about-facility-desc text-white/80 text-sm mt-1">
-                                        Advanced IT Systems
-                                    </p>
                                 </div>
                             </div>
                         </AnimatedSection>
                     </div>
-                </Container>
-            </section>
-
-            {/* ==========================================
-                SECTION 5: MANAGEMENT TEAM
-               ========================================== */}
-            <section
-                id="management"
-                className="py-12 bg-gradient-to-b from-white to-[#f8f9fa]"
-            >
-                <Container>
-                    <AnimatedSection className="text-center mb-12">
-                        <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-4">
-                            Our Leadership
-                        </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-heading">
-                            Managing Committee
-                        </h2>
-                        <p className="mt-4 text-lg text-body max-w-2xl mx-auto">
-                            Dedicated leaders guiding our institution towards
-                            excellence
-                        </p>
-                    </AnimatedSection>
-
-                    <div className="grid gap-8 md:grid-cols-3">
-                        {MANAGEMENT.map((member, index) => (
-                            <AnimatedSection
-                                key={member.name}
-                                delay={index * 150}
-                            >
-                                <div className="about-management-card">
-                                    <div className="about-management-avatar">
-                                        {member.initials}
-                                    </div>
-                                    <h3 className="text-xl font-bold text-heading mb-1">
-                                        {member.name}
-                                    </h3>
-                                    <p className="text-accent font-medium">
-                                        {member.position}
-                                    </p>
-                                </div>
-                            </AnimatedSection>
-                        ))}
-                    </div>
-                </Container>
-            </section>
-
-            {/* ==========================================
-                SECTION 6: INFRASTRUCTURE & FACILITIES
-               ========================================== */}
-            <section className="py-12 bg-white">
-                <Container>
-                    <AnimatedSection className="text-center mb-16">
-                        <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
-                            World-Class Amenities
-                        </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-heading">
-                            Infrastructure & Facilities
-                        </h2>
-                        <p className="mt-4 text-lg text-body max-w-2xl mx-auto">
-                            State-of-the-art campus designed for holistic
-                            development
-                        </p>
-                    </AnimatedSection>
-
-                    {/* Facilities Grid */}
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-16">
-                        {FACILITIES.map((facility, index) => (
-                            <AnimatedSection
-                                key={facility.title}
-                                delay={index * 100}
-                            >
-                                <div className="about-facility-card">
-                                    <img
-                                        src={facility.image}
-                                        alt={facility.title}
-                                    />
-                                    <div className="about-facility-overlay" />
-                                    <div className="about-facility-content">
-                                        <span className="inline-block px-2 py-1 bg-accent text-white text-xs font-semibold rounded mb-2">
-                                            {facility.stats}
-                                        </span>
-                                        <h4 className="text-white font-bold text-lg">
-                                            {facility.title}
-                                        </h4>
-                                        <p className="about-facility-desc text-white/80 text-sm mt-2">
-                                            {facility.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            </AnimatedSection>
-                        ))}
-                    </div>
-                </Container>
-            </section>
-
-            {/* ==========================================
-                SECTION 7: CTA - JOIN US
-               ========================================== */}
-            <section className="about-cta py-24 relative">
-                {/* Animated lines */}
-                <div className="about-cta-line" />
-                <div className="about-cta-line" />
-                <div className="about-cta-line" />
-
-                <Container className="relative z-10">
-                    <AnimatedSection className="text-center max-w-3xl mx-auto">
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                            Ready to Begin Your
-                            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-accent via-orange-400 to-amber-300">
-                                Teaching Journey?
-                            </span>
-                        </h2>
-                        <p className="text-xl text-white/80 mb-10 leading-relaxed">
-                            Join a community of dedicated educators and shape
-                            the future of education with us at SPPMC.
-                        </p>
-
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <a
-                                href="/admissions"
-                                className="btn-primary bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all"
-                            >
-                                Apply for Admission
-                            </a>
-                            <a
-                                href="/contact"
-                                className="btn-glass border-white/30 hover:border-white/50 px-8 py-4 text-lg"
-                            >
-                                Contact Us
-                            </a>
-                        </div>
-
-                        {/* Contact info */}
-                        <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/70">
-                            <div className="flex items-center gap-2">
-                                <MapPin className="w-5 h-5 text-accent" />
-                                <span>Moradabad, Uttar Pradesh</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Phone className="w-5 h-5 text-accent" />
-                                <span>+91-591-2460664</span>
-                            </div>
-                        </div>
-                    </AnimatedSection>
                 </Container>
             </section>
         </main>

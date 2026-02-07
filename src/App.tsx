@@ -40,7 +40,6 @@ export default function App() {
                     element={<MandatoryDisclosures />}
                 />
                 <Route path="/contact" element={<Contact />} />
-                {/* Catch-all route for 404 */}
                 <Route path="*" element={<NotFound />} />
             </Routes>
 

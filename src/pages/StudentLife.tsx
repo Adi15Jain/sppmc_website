@@ -146,7 +146,7 @@ const CO_CURRICULAR_ACTIVITIES = [
 const TESTIMONIALS = [
     {
         name: "Priya Sharma",
-        program: "B.Ed Graduate, 2023",
+        program: "B.A. B.Ed (Int) Graduate, 2023",
         quote: "The supportive environment and practical training prepared me perfectly for my teaching career. The faculty mentorship was exceptional.",
         avatar: "PS",
         image: "/images/testimonials/student1.png",
@@ -160,7 +160,7 @@ const TESTIMONIALS = [
     },
     {
         name: "Anjali Singh",
-        program: "B.Ed Graduate, 2024",
+        program: "B.A. B.Ed (Int) Graduate, 2024",
         quote: "The modern facilities and dedicated teachers created the perfect learning atmosphere. I'm grateful for every moment here.",
         avatar: "AS",
         image: "/images/testimonials/student3.png",

@@ -339,7 +339,7 @@ export default function CTA() {
                                     clipRule="evenodd"
                                 />
                             </svg>
-                            <span>B.Ed & D.El.Ed Programs</span>
+                            <span>B.A.B.Ed (Int) & D.El.Ed Programmes</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <svg

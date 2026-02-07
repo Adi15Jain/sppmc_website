@@ -244,9 +244,11 @@ export default function Footer() {
                                     <span className="w-2 h-2 bg-accent/50 rounded-full" />
                                     <span>
                                         <strong className="text-white">
-                                            B.A./B.Ed
+                                            B.A./B.Ed (Integrated)
                                         </strong>{" "}
-                                        – Bachelor of Arts and Education
+                                        – Bachelor of Arts
+                                        <br />
+                                        and Education
                                     </span>
                                 </li>
                                 <li className="text-slate-300/80 flex items-center gap-2">

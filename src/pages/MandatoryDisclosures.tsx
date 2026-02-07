@@ -39,7 +39,7 @@ const DOCUMENTS: DocumentItem[] = [
     },
     {
         id: "ba-bed-students",
-        title: "List of Students B.A.-B.Ed. 2020-21",
+        title: "List of Students B.A.-B.Ed. (Int) 2020-21",
         description:
             "Complete list of enrolled students in the integrated Bachelor of Arts and Bachelor of Education program for 2020-21.",
         link: "/assets/pdf/ba_bed_student_details.pdf",

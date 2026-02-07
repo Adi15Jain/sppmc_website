@@ -10,8 +10,6 @@ import {
     Landmark,
     Sparkles,
     Calendar,
-    Phone,
-    Mail,
     Check,
     Users,
     ArrowRight,
@@ -65,12 +63,12 @@ const PROCESS_STEPS = [
 
 const ELIGIBILITY_DATA = [
     {
-        program: "B.Ed",
-        badge: "Bachelor of Education",
-        duration: "2 Years",
+        program: "B.A. B.Ed (Integrated)",
+        badge: "Bachelor of Arts and Education",
+        duration: "4 Years",
         points: [
-            "Graduation in any discipline with minimum marks as per SCERT norms",
-            "Valid entrance examination score (if applicable)",
+            "10+2 or equivalent qualification from recognized board",
+            "Minimum marks as per government eligibility norms",
             "Admission through official UP counseling process",
             "Age criteria as per government guidelines",
         ],
@@ -91,7 +89,11 @@ const ELIGIBILITY_DATA = [
 ];
 
 const QUICK_STATS = [
-    { label: "Programs", value: "B.Ed, D.El.Ed", icon: GraduationCap },
+    {
+        label: "Programs",
+        value: "B.A. B.Ed; D.El.Ed",
+        icon: GraduationCap,
+    },
     { label: "Admission Mode", value: "Merit/Counseling", icon: UserCheck },
     { label: "Authority", value: "SCERT, UP", icon: Landmark },
     { label: "Status", value: "Admissions Open", icon: Sparkles },
@@ -318,7 +320,7 @@ export default function Admissions() {
             {/* ==========================================
                 SECTION 2: AT A GLANCE
                ========================================== */}
-            <section className="py-16 bg-gradient-to-b from-[#f8f9fa] to-white">
+            <section className="py-24 bg-gradient-to-b from-[#f8f9fa] to-white">
                 <Container>
                     <AnimatedSection className="text-center mb-16">
                         <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-4">
@@ -355,7 +357,7 @@ export default function Admissions() {
             {/* ==========================================
                 SECTION 3: ELIGIBILITY CRITERIA
                ========================================== */}
-            <section id="eligibility" className="py-12 bg-white">
+            <section id="eligibility" className="py-8 bg-white">
                 <Container>
                     <AnimatedSection className="text-center mb-16">
                         <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
@@ -386,7 +388,7 @@ export default function Admissions() {
                                                 {program.badge}
                                             </span>
                                             <h3 className="text-3xl font-bold text-heading mt-4">
-                                                {program.program} Program
+                                                {program.program}
                                             </h3>
                                         </div>
                                         <div className="text-right glass-card p-3 rounded-2xl border border-slate-100 shadow-sm">
@@ -587,66 +589,6 @@ export default function Admissions() {
                                 official SCERT, UP portal for the latest
                                 updates.
                             </p>
-                        </div>
-                    </AnimatedSection>
-                </Container>
-            </section>
-
-            {/* ==========================================
-                SECTION 7: CTA - READY TO APPLY
-               ========================================== */}
-            <section id="apply" className="admissions-cta py-20 relative">
-                {/* Decorative circles */}
-                <div className="admissions-cta-decoration" />
-                <div className="admissions-cta-decoration" />
-                <div className="admissions-cta-decoration" />
-
-                <Container className="relative z-10">
-                    <AnimatedSection className="text-center max-w-3xl mx-auto">
-                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
-                            Ready to Shape the
-                            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-accent via-orange-400 to-amber-300">
-                                Future of Education?
-                            </span>
-                        </h2>
-                        <p className="text-xl text-white/80 mb-12 leading-relaxed font-light">
-                            Begin your journey towards becoming a distinguished
-                            educator. Join SPPMC and make a difference in the
-                            lives of students.
-                        </p>
-
-                        <div className="flex flex-wrap justify-center gap-6">
-                            <a
-                                href="https://scertup.org"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group btn-primary bg-white text-primary hover:bg-white/90 px-10 py-5 text-lg shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.4)] transition-all flex items-center gap-2"
-                            >
-                                Apply Through SCERT Portal
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </a>
-                            <a
-                                href="/contact"
-                                className="btn-glass border-white/30 hover:border-white/50 px-10 py-5 text-lg backdrop-blur-md"
-                            >
-                                Contact Us
-                            </a>
-                        </div>
-
-                        {/* Contact info */}
-                        <div className="mt-16 flex flex-wrap justify-center gap-10 text-white/70">
-                            <div className="flex items-center gap-3 glass-card px-4 py-2 rounded-full border border-white/5">
-                                <Phone className="w-4 h-4 text-accent" />
-                                <span className="font-medium">
-                                    +91-591-2460664
-                                </span>
-                            </div>
-                            <div className="flex items-center gap-3 glass-card px-4 py-2 rounded-full border border-white/5">
-                                <Mail className="w-4 h-4 text-accent" />
-                                <span className="font-medium">
-                                    principal@sppmc.in
-                                </span>
-                            </div>
                         </div>
                     </AnimatedSection>
                 </Container>

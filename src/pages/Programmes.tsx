@@ -64,12 +64,12 @@ const PROGRAMS: ProgramDetail[] = [
         heroImage: "/images/classroom.jpeg",
     },
     {
-        title: "B.A.-B.Ed.",
+        title: "B.A.-B.Ed. (Integrated)",
         shortTitle: "Integrated Bachelor of Arts & Education",
         description:
             "A comprehensive four-year integrated program that combines liberal arts education with professional teacher training. This dual-degree course saves one academic year and provides a strong foundation in both subject matter and pedagogy.",
         duration: "4 Years",
-        intake: "50 Seats",
+        intake: "100 Seats",
         fees: "₹ 20,700 / Semester",
         eligibility: "10+2 (Senior Secondary) with minimum 50% marks",
         curriculum: [

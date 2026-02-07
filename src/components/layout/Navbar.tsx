@@ -49,7 +49,7 @@ export default function Navbar({
                                     ${scrolled ? "text-lg text-white" : "text-xl text-white"}
                                 `}
                             >
-                                <span className="hidden md:inline">
+                                <span className="hidden md:inline text-2xl">
                                     Shri Prem Prakash Memorial College
                                 </span>
                                 <span className="md:hidden">SPPMC</span>

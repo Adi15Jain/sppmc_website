@@ -28,11 +28,11 @@ type Program = {
 
 const PROGRAMS: Program[] = [
     {
-        title: "Bachelor of Arts Bachelor of Education",
-        shortTitle: "B.A. B.Ed",
+        title: "Bachelor of Arts and Education",
+        shortTitle: "B.A. B.Ed (Int)",
         description:
-            "A two-year professional program preparing competent secondary school educators with strong pedagogical expertise.",
-        duration: "2 Years",
+            "A four-year professional integrated program preparing competent secondary school educators with strong pedagogical expertise.",
+        duration: "4 Years",
         intake: "100 Seats",
         features: [
             "Child psychology & development",
@@ -49,7 +49,7 @@ const PROGRAMS: Program[] = [
         description:
             "A foundational two-year program focused on developing skilled primary educators with child-centered learning approaches.",
         duration: "2 Years",
-        intake: "50 Seats",
+        intake: "100 Seats",
         features: [
             "Primary education pedagogy",
             "Inclusive classroom practices",
@@ -484,7 +484,7 @@ export default function Programmes() {
                                         </div>
                                         <div>
                                             <span
-                                                className={`text-xs font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r ${program.gradient}`}
+                                                className={`text-sm font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r ${program.gradient}`}
                                             >
                                                 {program.shortTitle}
                                             </span>
