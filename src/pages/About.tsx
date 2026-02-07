@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import {
-    Eye,
-    Target,
-    BookOpen,
-    Users,
-    Lightbulb,
-    Award,
+    // Eye,
+    // Target,
+    // BookOpen,
+    // Users,
+    // Lightbulb,
+    // Award,
     MapPin,
     Phone,
 } from "lucide-react";
@@ -21,25 +21,6 @@ const COLLEGE_STATS = [
     { value: "9,138+", label: "Library Books", suffix: "" },
     { value: "100%", label: "Placement Support", suffix: "" },
     { value: "NCTE", label: "Approved", suffix: "" },
-];
-
-const MISSION_POINTS = [
-    {
-        icon: <BookOpen className="w-6 h-6 text-accent" />,
-        text: "Deliver quality professional education that meets national standards",
-    },
-    {
-        icon: <Users className="w-6 h-6 text-accent" />,
-        text: "Promote ethical values, social responsibility, and moral integrity",
-    },
-    {
-        icon: <Lightbulb className="w-6 h-6 text-accent" />,
-        text: "Encourage reflective, innovative, and research-based teaching",
-    },
-    {
-        icon: <Award className="w-6 h-6 text-accent" />,
-        text: "Develop competent, confident, and committed educators",
-    },
 ];
 
 const FACILITIES = [
@@ -75,9 +56,9 @@ const FACILITIES = [
 
 const MANAGEMENT = [
     {
-        name: "Shri Pawan Kumar Agarwal",
+        name: "Mr Deepak Malik",
         position: "President",
-        initials: "PKA",
+        initials: "DM",
     },
     {
         name: "Shri Manoj Kumar Agarwal",
@@ -359,173 +340,6 @@ export default function About() {
                             </div>
                         </AnimatedSection>
                     </div>
-                </Container>
-            </section>
-
-            {/* ==========================================
-                SECTION 3: VISION & MISSION
-               ========================================== */}
-            <section id="vision" className="py-12 bg-white">
-                <Container>
-                    <AnimatedSection className="text-center mb-12">
-                        <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary bg-primary/5 rounded-full border border-primary/10 mb-6">
-                            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                            Our Purpose
-                        </div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-heading">
-                            Vision & Mission
-                        </h2>
-                        <p className="mt-4 text-lg text-body max-w-2xl mx-auto">
-                            Guiding principles that shape our educational
-                            philosophy
-                        </p>
-                    </AnimatedSection>
-
-                    <div className="grid gap-8 lg:grid-cols-2">
-                        {/* Vision Card */}
-                        <AnimatedSection>
-                            <div className="about-vision-card h-full">
-                                <div className="about-vision-icon bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
-                                    <Eye className="w-8 h-8 text-accent" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-heading mb-4">
-                                    Our Vision
-                                </h3>
-                                <p className="text-lg text-body leading-relaxed">
-                                    To emerge as a{" "}
-                                    <strong className="text-accent">
-                                        center of excellence
-                                    </strong>{" "}
-                                    in teacher education by nurturing
-                                    innovation, integrity, and lifelong
-                                    learning. We envision educators who are not
-                                    just teachers, but
-                                    <strong className="text-accent">
-                                        {" "}
-                                        transformers of society
-                                    </strong>
-                                    .
-                                </p>
-                                <div className="mt-6 flex items-center gap-3 text-sm text-accent font-medium">
-                                    <span className="w-8 h-0.5 bg-accent rounded-full" />
-                                    Excellence in Education
-                                </div>
-                            </div>
-                        </AnimatedSection>
-
-                        {/* Mission Card */}
-                        <AnimatedSection delay={150}>
-                            <div className="about-vision-card h-full">
-                                <div className="about-vision-icon bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                                    <Target className="w-8 h-8 text-primary" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-heading mb-4">
-                                    Our Mission
-                                </h3>
-                                <ul className="space-y-4">
-                                    {MISSION_POINTS.map((point, index) => (
-                                        <li
-                                            key={index}
-                                            className="flex items-start gap-4 group"
-                                        >
-                                            <span className="text-xl group-hover:scale-110 transition-transform">
-                                                {point.icon}
-                                            </span>
-                                            <span className="text-body leading-relaxed">
-                                                {point.text}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </AnimatedSection>
-                    </div>
-                </Container>
-            </section>
-
-            {/* ==========================================
-                SECTION 4: PRINCIPAL'S MESSAGE
-               ========================================== */}
-            <section
-                id="principal"
-                className="py-12 relative overflow-hidden about-principal-section"
-                style={{
-                    background:
-                        "linear-gradient(135deg, #001055 0%, #1a2a6c 50%, #001866 100%)",
-                }}
-            >
-                {/* Background decoration */}
-                <div className="absolute inset-0 opacity-10">
-                    <div
-                        className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl"
-                        style={{ transform: "translate(30%, -30%)" }}
-                    />
-                    <div
-                        className="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full blur-3xl"
-                        style={{ transform: "translate(-30%, 30%)" }}
-                    />
-                </div>
-
-                <Container className="relative z-10">
-                    <AnimatedSection className="text-center mb-12">
-                        <span className="inline-block px-4 py-2 bg-white/10 text-white rounded-full text-sm font-semibold mb-4">
-                            Leadership
-                        </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white">
-                            Principal's Message
-                        </h2>
-                    </AnimatedSection>
-
-                    <AnimatedSection delay={200}>
-                        <div className="max-w-4xl mx-auto">
-                            <div className="glass-card-dark p-8 md:p-12 rounded-3xl">
-                                <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-                                    {/* Image */}
-                                    <div className="flex-shrink-0">
-                                        <div className="about-principal-image">
-                                            <img
-                                                src="/images/principal.jpeg"
-                                                alt="Principal"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    {/* Message */}
-                                    <div className="relative flex-1 text-center md:text-left">
-                                        <span className="about-quote-mark">
-                                            "
-                                        </span>
-                                        <blockquote className="relative z-10">
-                                            <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
-                                                Education is the cornerstone of
-                                                a progressive society. Our
-                                                institution strives to prepare
-                                                educators who are intellectually
-                                                capable, morally upright, and
-                                                socially responsible.
-                                            </p>
-                                            <p className="text-lg text-white/70 leading-relaxed">
-                                                We emphasize discipline,
-                                                professionalism, and continuous
-                                                improvement in teaching and
-                                                learning. Together, we are
-                                                building the future of
-                                                education.
-                                            </p>
-                                        </blockquote>
-                                        <footer className="mt-8">
-                                            <div className="text-accent font-bold text-lg">
-                                                Dr. (Principal Name)
-                                            </div>
-                                            <div className="text-white/60 text-sm">
-                                                Principal, SPPMC
-                                            </div>
-                                        </footer>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </AnimatedSection>
                 </Container>
             </section>
 

@@ -11,7 +11,7 @@ import {
     Target,
     Briefcase,
     IndianRupee,
-    Palette,
+    // Palette,
 } from "lucide-react";
 import Container from "../components/layout/Container";
 
@@ -92,35 +92,35 @@ const PROGRAMS: ProgramDetail[] = [
         gradient: "from-orange-500 to-amber-500",
         heroImage: "/images/library.jpeg",
     },
-    {
-        title: "B.A.",
-        shortTitle: "Bachelor of Arts",
-        description:
-            "A diverse three-year undergraduate program emphasizing critical thinking, effective communication, and cultural understanding. Students gain in-depth knowledge in humanities and social sciences.",
-        duration: "3 Years",
-        intake: "50 Seats",
-        fees: "₹ 15,300 / Semester",
-        eligibility: "10+2 (Senior Secondary) from a recognized board",
-        curriculum: [
-            "English / Hindi Literature",
-            "History of India & World",
-            "Political Science & Public Administration",
-            "Sociology & Social Anthropology",
-            "Economics & Development Studies",
-            "Environmental Studies",
-            "Communication Skills",
-        ],
-        careerProspects: [
-            "Civil Services & Public Administration",
-            "Journalism & Mass Media",
-            "Social Work & NGO Management",
-            "Corporate Communications",
-            "Higher Studies (M.A., MBA, Law)",
-        ],
-        Icon: Palette,
-        gradient: "from-orange-500 to-amber-500",
-        heroImage: "/images/seminar.jpeg",
-    },
+    // {
+    //     title: "B.A.",
+    //     shortTitle: "Bachelor of Arts",
+    //     description:
+    //         "A diverse three-year undergraduate program emphasizing critical thinking, effective communication, and cultural understanding. Students gain in-depth knowledge in humanities and social sciences.",
+    //     duration: "3 Years",
+    //     intake: "50 Seats",
+    //     fees: "₹ 15,300 / Semester",
+    //     eligibility: "10+2 (Senior Secondary) from a recognized board",
+    //     curriculum: [
+    //         "English / Hindi Literature",
+    //         "History of India & World",
+    //         "Political Science & Public Administration",
+    //         "Sociology & Social Anthropology",
+    //         "Economics & Development Studies",
+    //         "Environmental Studies",
+    //         "Communication Skills",
+    //     ],
+    //     careerProspects: [
+    //         "Civil Services & Public Administration",
+    //         "Journalism & Mass Media",
+    //         "Social Work & NGO Management",
+    //         "Corporate Communications",
+    //         "Higher Studies (M.A., MBA, Law)",
+    //     ],
+    //     Icon: Palette,
+    //     gradient: "from-orange-500 to-amber-500",
+    //     heroImage: "/images/seminar.jpeg",
+    // },
 ];
 
 export default function Programmes() {

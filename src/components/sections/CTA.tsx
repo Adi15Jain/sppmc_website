@@ -252,16 +252,7 @@ export default function CTA() {
                     <h2 className="cta-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white max-w-3xl leading-tight">
                         Admissions Open for the{" "}
                         <span className="relative inline-block">
-                            <span
-                                className="relative z-10"
-                                style={{
-                                    background:
-                                        "linear-gradient(135deg, #ffffff 0%, #ff9f40 50%, #ff7900 100%)",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                    backgroundClip: "text",
-                                }}
-                            >
+                            <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-accent to-amber-500">
                                 Academic Year
                             </span>
                             {/* Decorative underline */}

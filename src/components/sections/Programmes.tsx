@@ -28,8 +28,8 @@ type Program = {
 
 const PROGRAMS: Program[] = [
     {
-        title: "Bachelor of Education",
-        shortTitle: "B.Ed",
+        title: "Bachelor of Arts Bachelor of Education",
+        shortTitle: "B.A. B.Ed",
         description:
             "A two-year professional program preparing competent secondary school educators with strong pedagogical expertise.",
         duration: "2 Years",
