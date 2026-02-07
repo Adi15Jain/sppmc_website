@@ -1,9 +1,9 @@
 // Search engine with fuzzy matching, synonym expansion, and relevance scoring
 
-import type { SearchItem } from "../data/searchData";
-import { SEARCH_DATA, SYNONYMS } from "../data/searchData";
+import type { SearchEntry } from "../data/searchRegistry";
+import { SEARCH_REGISTRY, SYNONYMS } from "../data/searchRegistry";
 
-export type SearchResult = SearchItem & {
+export type SearchResult = SearchEntry & {
     score: number;
     matchedTerms: string[];
 };
@@ -65,7 +65,7 @@ function expandWithSynonyms(query: string): string[] {
 
 // Score a search item against query terms
 function scoreItem(
-    item: SearchItem,
+    item: SearchEntry,
     queryTerms: string[],
     expandedTerms: string[],
 ): { score: number; matchedTerms: string[] } {
@@ -75,48 +75,45 @@ function scoreItem(
     const titleLower = item.title.toLowerCase();
     const descLower = item.description.toLowerCase();
     const keywordsLower = item.keywords.map((k) => k.toLowerCase());
-    const allContent = `${titleLower} ${descLower} ${keywordsLower.join(" ")}`;
+
+    // Higher weight for exact phrase matches
+    const queryPhrase = queryTerms.join(" ");
+    if (titleLower.includes(queryPhrase)) score += 200;
+    if (descLower.includes(queryPhrase)) score += 100;
 
     for (const term of queryTerms) {
-        // Exact title match (highest priority)
+        // Boost score for term starts
+        if (titleLower.startsWith(term)) score += 50;
+
+        // Title matches
         if (titleLower.includes(term)) {
             score += 100;
             matchedTerms.push(term);
-            continue;
         }
 
-        // Exact keyword match
+        // Keyword matches
         if (keywordsLower.some((k) => k.includes(term) || term.includes(k))) {
             score += 80;
             matchedTerms.push(term);
-            continue;
         }
 
-        // Description match
+        // Description matches
         if (descLower.includes(term)) {
             score += 50;
             matchedTerms.push(term);
-            continue;
         }
 
-        // Fuzzy match on title (typo tolerance)
-        const titleWords = titleLower.split(/\s+/);
-        for (const word of titleWords) {
-            const sim = similarity(term, word);
-            if (sim >= 0.7) {
-                score += 60 * sim;
-                matchedTerms.push(term);
-                break;
-            }
-        }
-
-        // Fuzzy match on keywords
-        for (const keyword of keywordsLower) {
-            const sim = similarity(term, keyword);
-            if (sim >= 0.7) {
-                score += 40 * sim;
-                matchedTerms.push(term);
-                break;
+        // Fuzzy matches (typo tolerance) - skip for very short terms
+        if (term.length > 3) {
+            const titleWords = titleLower.split(/\s+/);
+            for (const word of titleWords) {
+                const sim = similarity(term, word);
+                if (sim >= 0.8) {
+                    // Strict fuzzy match
+                    score += 60 * sim;
+                    matchedTerms.push(term);
+                    break;
+                }
             }
         }
     }
@@ -124,14 +121,18 @@ function scoreItem(
     // Bonus for synonym matches (expanded terms not in original query)
     const synonymsOnly = expandedTerms.filter((t) => !queryTerms.includes(t));
     for (const syn of synonymsOnly) {
-        if (allContent.includes(syn)) {
+        if (
+            titleLower.includes(syn) ||
+            descLower.includes(syn) ||
+            keywordsLower.some((k) => k.includes(syn))
+        ) {
             score += 30;
             matchedTerms.push(syn);
         }
     }
 
-    // Apply priority weight
-    score = score * (1 + item.priority / 200);
+    // Apply priority weight (institutional priority)
+    score = score * (1 + item.priority / 10);
 
     return { score, matchedTerms: [...new Set(matchedTerms)] };
 }
@@ -159,7 +160,7 @@ export function search(
     // Score all items
     const results: SearchResult[] = [];
 
-    for (const item of SEARCH_DATA) {
+    for (const item of SEARCH_REGISTRY) {
         // Filter by category if specified
         if (
             categories &&

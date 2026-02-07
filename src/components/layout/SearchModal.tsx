@@ -9,8 +9,8 @@ import {
 import {
     CATEGORY_LABELS,
     CATEGORY_COLORS,
-    type SearchCategory,
-} from "../../data/searchData";
+    type ContentCategory,
+} from "../../data/searchRegistry";
 
 type Props = {
     open: boolean;
@@ -66,12 +66,23 @@ export default function SearchModal({ open, onClose }: Props) {
         });
     }, []);
 
-    // Focus input when modal opens
+    // Focus input and lock scroll when modal opens
     useEffect(() => {
-        if (open && inputRef.current) {
+        if (open) {
+            // Focus input
             setTimeout(() => inputRef.current?.focus(), 100);
-        }
-        if (!open) {
+
+            // Lock background scroll
+            const originalStyle = window.getComputedStyle(
+                document.body,
+            ).overflow;
+            document.body.style.overflow = "hidden";
+
+            // Clean up
+            return () => {
+                document.body.style.overflow = originalStyle;
+            };
+        } else {
             setQuery("");
             setResults([]);
             setSelectedIndex(0);
@@ -89,16 +100,20 @@ export default function SearchModal({ open, onClose }: Props) {
         return () => window.removeEventListener("keydown", handleEscape);
     }, [open, onClose]);
 
-    // Perform search when query changes
+    // Perform search with debounce
     useEffect(() => {
-        if (query.trim().length >= 2) {
-            const searchResults = search(query);
-            setResults(searchResults);
-            setSelectedIndex(0);
-        } else {
-            setResults([]);
-            setSelectedIndex(0);
-        }
+        const timer = setTimeout(() => {
+            if (query.trim().length >= 2) {
+                const searchResults = search(query);
+                setResults(searchResults);
+                setSelectedIndex(0);
+            } else {
+                setResults([]);
+                setSelectedIndex(0);
+            }
+        }, 150); // 150ms debounce for snappy and professional feel
+
+        return () => clearTimeout(timer);
     }, [query]);
 
     // Scroll selected item into view
@@ -120,6 +135,10 @@ export default function SearchModal({ open, onClose }: Props) {
             const path = result.section
                 ? `${result.path}#${result.section}`
                 : result.path;
+
+            // Clean up scroll lock before navigating
+            document.body.style.overflow = "auto";
+
             navigate(path);
             onClose();
         },
@@ -208,7 +227,7 @@ export default function SearchModal({ open, onClose }: Props) {
         >
             {/* Backdrop */}
             <div
-                className="absolute inset-0 bg-[var(--color-primary)]/95 backdrop-blur-xl"
+                className="absolute inset-0 bg-primary/80 backdrop-blur-2xl"
                 onClick={onClose}
             />
 
@@ -331,13 +350,13 @@ export default function SearchModal({ open, onClose }: Props) {
                                                         />
                                                         <span
                                                             className={`
-                                                                px-2 py-0.5 text-xs font-medium rounded-full flex-shrink-0
-                                                                ${CATEGORY_COLORS[result.category as SearchCategory]}
-                                                            `}
+                                                                 px-2 py-0.5 text-xs font-medium rounded-full flex-shrink-0
+                                                                 ${CATEGORY_COLORS[result.category as ContentCategory]}
+                                                             `}
                                                         >
                                                             {
                                                                 CATEGORY_LABELS[
-                                                                    result.category as SearchCategory
+                                                                    result.category as ContentCategory
                                                                 ]
                                                             }
                                                         </span>

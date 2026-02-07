@@ -1,73 +1,86 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img src="public/assets/banner.png" alt="SPPMC Banner" width="100%">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Shri Prem Prakash Memorial College of Education (SPPMC)
 
-Currently, two official plugins are available:
+### _Excellence in Teacher Education & Professional Development_
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![React](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)](https://vitejs.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![GSAP](https://img.shields.io/badge/Animations-GSAP-green?logo=greensock)](https://greensock.com/gsap/)
 
-## React Compiler
+[Explore Website](https://sppmc.org) • [Admission Guide](https://sppmc.org/admissions) • [Academic Programs](https://sppmc.org/programmes)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+</div>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🏛️ About SPPMC
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Shri Prem Prakash Memorial College of Education (SPPMC) is a premier institution dedicated to shaping the next generation of educators. This digital platform provides a seamless, high-performance experience for students, faculty, and administrative staff, reflecting the institution's commitment to modern excellence.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Key Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **🚀 Ultra-Fast Search Engine**: Highly optimized search with fuzzy matching, synonym expansion, and relevance scoring.
+- **✨ Apple-inspired Animations**: Fluid, sophisticated transitions and scroll-driven interactions powered by **GSAP**.
+- **📱 Responsive Excellence**: A "Mobile-First" design philosophy ensuring a premium experience on all devices.
+- **📚 Rich Academic Portfolios**: Detailed sections for B.Ed and D.El.Ed programs, digital library, and campus facilities.
+- **📄 Regulatory Transparency**: One-click access to all mandatory disclosures and NCTE compliance documents.
+- **⚡ Performance First**: Built on **Vite 7** and **React 19** for lightning-fast load times and HMR.
+
+## 🛠️ Tech Stack
+
+| Category       | Technology                                    |
+| :------------- | :-------------------------------------------- |
+| **Frontend**   | React 19, TypeScript, Tailwind CSS 4          |
+| **Build Tool** | Vite 7                                        |
+| **Animations** | GSAP (GreenSock Animation Platform)           |
+| **Icons**      | Lucide React                                  |
+| **Routing**    | React Router 7                                |
+| **Styling**    | Modern CSS (Glassmorphism, Dynamic Gradients) |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (Latest LTS)
+- [npm](https://www.npmjs.com/)
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Adi15Jain/sppmc_website.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd sppmc
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+## 📂 Project Structure
+
+```bash
+src/
+├── components/     # Reusable UI components (Layout, Sections, UI)
+├── pages/          # Full-page components (Home, About, Admissions, etc.)
+├── data/           # Static data and registries (Search registry, Synonyms)
+├── utils/          # Helper functions and business logic (Search Engine)
+├── assets/         # Static assets (Images, SVGs, CSS)
+└── App.tsx         # Main application routing & structure
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<div align="center">
+  Built with ❤️ for <b>Shri Prem Prakash Memorial College of Education</b>
+</div>
