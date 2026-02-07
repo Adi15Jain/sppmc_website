@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="public/assets/banner.png" alt="SPPMC Banner" width="100%">
 
 # Shri Prem Prakash Memorial College of Education (SPPMC)
 
