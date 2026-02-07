@@ -72,6 +72,37 @@ const MANAGEMENT = [
     },
 ];
 
+const UNDERTAKING_TABLE = [
+    {
+        label: "a) Sanctioned programmes & intake",
+        value: "D.El.Ed.",
+    },
+    {
+        label: "b) Faculty/Staff Details",
+        value: "N.A.",
+    },
+    {
+        label: "c) Last quarter movement",
+        value: "N.A.",
+    },
+    {
+        label: "d) Current session admissions",
+        value: "N.A.",
+    },
+    {
+        label: "e) Fee Structure",
+        value: "N.A.",
+    },
+    {
+        label: "f) Infrastructural facilities",
+        value: "As per NCTE",
+    },
+    {
+        label: "g) Recent facility additions",
+        value: "As per NCTE",
+    },
+];
+
 // ============================================
 // SCROLL ANIMATION HOOK
 // ============================================
@@ -265,77 +296,150 @@ export default function About() {
                         </p>
                     </AnimatedSection>
 
-                    <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-                        {/* Content */}
+                    <div className="grid gap-8 lg:grid-cols-2">
+                        {/* Card 1: About the College */}
                         <AnimatedSection>
-                            <div className="about-journey-card">
+                            <div className="about-journey-card h-full">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/5 text-primary rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                                    <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
+                                    Institutional Profile
+                                </div>
                                 <h3 className="text-2xl font-bold text-heading mb-6">
-                                    The SPPMC Story
+                                    About The College
                                 </h3>
-                                <div className="space-y-4 text-body leading-relaxed">
+                                <div className="space-y-6 text-body leading-relaxed text-md">
                                     <p>
-                                        <strong className="text-heading">
-                                            Shri Prem Prakash Memorial College
-                                        </strong>{" "}
-                                        was established with a profound vision –
-                                        to strengthen the very foundation of
-                                        education by preparing capable,
-                                        committed, and compassionate teachers.
+                                        The Shri PREM PRAKASH MEMORIAL COLLEGE,
+                                        established with an aim to impart high
+                                        quality education to prospective
+                                        teachers. The College is committed to
+                                        nurture, motivate and empower the future
+                                        teachers who will serve as beacon lights
+                                        for posterity, and meet the challenges
+                                        and demands of the globalised world.
                                     </p>
                                     <p>
-                                        Named in honor of Late Shri Prem Prakash
-                                        Ji, whose life exemplified dedication to
-                                        education and social welfare, the
-                                        college carries forward his legacy of
-                                        nurturing minds and building character.
-                                    </p>
-                                    <p>
-                                        Affiliated to{" "}
-                                        <strong className="text-heading">
-                                            SCERT, Government of Uttar Pradesh
-                                        </strong>
-                                        , we follow national standards while
-                                        promoting ethical values, professional
-                                        excellence, and a deep sense of social
-                                        responsibility in every educator we
-                                        shape.
+                                        The courses are designed in such a
+                                        manner so as to help the students
+                                        broaden their horizon coupled with
+                                        problem-solving abilities, managerial
+                                        skills and developing a scientific frame
+                                        of mind. Besides, they are given deep
+                                        insight into the methodology of teaching
+                                        and are trained in such a manner that
+                                        after completing their course, they
+                                        become accomplished teachers and role
+                                        models, both for the students and
+                                        society at large.
                                     </p>
                                 </div>
                             </div>
                         </AnimatedSection>
 
-                        {/* Image Grid */}
+                        {/* Card 2: NCTE Undertaking */}
                         <AnimatedSection delay={200}>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="about-facility-card">
-                                    <img
-                                        src="/images/classroom.jpeg"
-                                        alt="Classroom"
-                                    />
-                                    <div className="about-facility-overlay" />
-                                    <div className="about-facility-content">
-                                        <h4 className="text-white font-bold">
-                                            Modern Classrooms
-                                        </h4>
-                                        <p className="about-facility-desc text-white/70 text-sm mt-1">
-                                            ICT-enabled learning
-                                        </p>
-                                    </div>
+                            <div className="about-journey-card h-full">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/5 text-orange-600 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse" />
+                                    Regulatory Compliance
                                 </div>
-                                <div className="about-facility-card">
-                                    <img
-                                        src="/images/library.jpeg"
-                                        alt="Library"
-                                    />
-                                    <div className="about-facility-overlay" />
-                                    <div className="about-facility-content">
-                                        <h4 className="text-white font-bold">
-                                            Digital Library
-                                        </h4>
-                                        <p className="about-facility-desc text-white/70 text-sm mt-1">
-                                            9,138+ resources
-                                        </p>
-                                    </div>
+                                <h4 className="text-2xl font-bold text-heading mb-6">
+                                    NCTE Undertaking
+                                </h4>
+                                <p className="text-sm text-slate-400 font-medium mb-6 italic">
+                                    As per clause 8(5) of the NCTE Regulation,
+                                    2014
+                                </p>
+                                <ul className="space-y-3 ">
+                                    {UNDERTAKING_TABLE.map((item, i) => (
+                                        <li
+                                            key={i}
+                                            className="flex justify-between items-center gap-4 text-base pb-2.5 border-b border-slate-50 last:border-0"
+                                        >
+                                            <span className="text-slate-500">
+                                                {item.label}
+                                            </span>
+                                            <span className="text-primary font-bold text-right shrink-0">
+                                                {item.value}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </AnimatedSection>
+                    </div>
+
+                    {/* Image & Highlights Grid */}
+                    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <AnimatedSection delay={300} className="h-full">
+                            <div className="about-facility-card">
+                                <img
+                                    src="/images/classroom.jpeg"
+                                    alt="Classroom"
+                                    className="h-full w-full object-cover"
+                                />
+                                <div className="about-facility-overlay" />
+                                <div className="about-facility-content">
+                                    <h4 className="text-white font-bold text-lg">
+                                        Modern Classrooms
+                                    </h4>
+                                    <p className="about-facility-desc text-white/80 text-sm mt-1">
+                                        ICT-Enabled Learning
+                                    </p>
+                                </div>
+                            </div>
+                        </AnimatedSection>
+                        <AnimatedSection delay={400} className="h-full">
+                            <div className="about-facility-card">
+                                <img
+                                    src="/images/library.jpeg"
+                                    alt="Library"
+                                    className="h-full w-full object-cover"
+                                />
+                                <div className="about-facility-overlay" />
+                                <div className="about-facility-content">
+                                    <h4 className="text-white font-bold text-lg">
+                                        Digital Library
+                                    </h4>
+                                    <p className="about-facility-desc text-white/80 text-sm mt-1">
+                                        9,000+ Rich Resources
+                                    </p>
+                                </div>
+                            </div>
+                        </AnimatedSection>
+                        <AnimatedSection delay={500} className="h-full">
+                            <div className="about-facility-card">
+                                <img
+                                    src="/images/seminar_hall.jpeg"
+                                    alt="Seminar Hall"
+                                    className="h-full w-full object-cover"
+                                />
+                                <div className="about-facility-overlay" />
+                                <div className="about-facility-content">
+                                    <h4 className="text-white font-bold text-lg">
+                                        Seminar Hall
+                                    </h4>
+                                    <p className="about-facility-desc text-white/80 text-sm mt-1">
+                                        Interactive Workshops
+                                    </p>
+                                </div>
+                            </div>
+                        </AnimatedSection>
+                        <AnimatedSection delay={600} className="h-full">
+                            <div className="about-facility-card">
+                                <img
+                                    src="/images/computer_lab.jpeg"
+                                    alt="Computer Lab"
+                                    className="h-full w-full object-cover"
+                                />
+                                <div className="about-facility-overlay" />
+                                <div className="about-facility-content">
+                                    <h4 className="text-white font-bold text-lg">
+                                        Computer Lab
+                                    </h4>
+                                    <p className="about-facility-desc text-white/80 text-sm mt-1">
+                                        Advanced IT Systems
+                                    </p>
                                 </div>
                             </div>
                         </AnimatedSection>
